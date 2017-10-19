@@ -1,0 +1,1390 @@
+/***************************************************************************************************
+ *   default.css
+ *   CSS styles for BCCHF Desktop Donation Form
+ *
+ *   @copyright      2015 CAMP PACIFIC
+ *
+ *   @authors       Cindy Son, Technical Director <cindy.son@camppacific.com>
+ *                  Gabrielle Carson, Sr. Front-End Developer <gabrielle.carson@camppacific.com>
+                     Mihai Lazar, Sr. Full Stack Developer <mihai.lazar@camppacific.com>
+                    Patrick Javier, Jr. Front-End Developer <patrick.javier@camppacific.com>
+ *
+ *   @since         October 1, 2015
+ *   @category      CSS
+ *   @package		bcchf-donation
+ *   @subpackage    css
+ *
+ * TABLE OF CONTENTS
+ *
+ * 01 - RESET
+ * 02 - FONTS
+ * 03 - GLOBAL STYLES
+ * 04 - HONOUR ROLL
+ * 05 - PROGRESS BAR
+ * 06 - MAIN CONTENT
+ * 07 - GENERAL FORM
+ * 08 - STEP 1 - DONATION INFORMATION
+ * 09 - STEP 2 - YOUR INFORMATION
+ * 10 - STEP 3 - YOUR PAYMENT DETAILS
+ * 11 - FINAL STEP - REVIEW YOUR DONATION
+ * 12 - THANK YOU PAGE
+ * 13 - FOOTER
+ * 14 - HEADER
+ * 15 - HELPER CLASSES
+ ***************************************************************************************************/
+/* 01 - RESET & BOX SIZING
+ *	http://meyerweb.com/eric/tools/css/reset/
+ *   v2.0 | 20110126
+ *   License: none (public domain)
+ ***********************************************/
+/* line 42, ../scss/_general.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 64, ../scss/_general.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 69, ../scss/_general.scss */
+body {
+  line-height: 1;
+}
+
+/* line 73, ../scss/_general.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 77, ../scss/_general.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 81, ../scss/_general.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 87, ../scss/_general.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* apply a natural box layout model to all elements */
+/* line 93, ../scss/_general.scss */
+*,
+*:after,
+*:before {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* 02 - FONTS
+***********************************************/
+/* 03 - GLOBAL STYLES
+***********************************************/
+/* line 107, ../scss/_general.scss */
+.bcchf_donate {
+  /*
+  	BCCHF Colours
+  	Comps blue: #0f7ac0;
+  	Purple: #b32370
+  	Orange: #f7941f
+  */
+  /* General */
+  /* Typography */
+  /* Inputs */
+  /* Custom radio button and checkboxes */
+  /* Radio button: Visual style */
+  /* Radio button: Visual style selected state */
+  /* when other amount of donation is selected */
+  /* Checkbox: Visual style */
+  /* Buttons */
+  /* Custom Dropdown */
+}
+/* line 116, ../scss/_general.scss */
+.bcchf_donate html,
+.bcchf_donate body {
+  height: 100%;
+  width: 100%;
+}
+/* line 122, ../scss/_general.scss */
+.bcchf_donate body {
+  background-color: #f5f3f3;
+  color: #333;
+}
+/* line 127, ../scss/_general.scss */
+.bcchf_donate .main {
+  overflow: hidden;
+  padding-bottom: 60px;
+  width: 990px;
+}
+/* line 134, ../scss/_general.scss */
+.bcchf_donate h1 {
+  font-family: "futura-pt", verdana, arial;
+  font-size: 32px;
+  font-weight: 800;
+  padding-bottom: 20px;
+}
+/* line 141, ../scss/_general.scss */
+.bcchf_donate h2,
+.bcchf_donate h3,
+.bcchf_donate h4 {
+  font-family: "Calibri", Verdana, Arial, sans-serif;
+  font-weight: bold;
+}
+/* line 148, ../scss/_general.scss */
+.bcchf_donate h2 {
+  font-size: 24px;
+}
+/* line 152, ../scss/_general.scss */
+.bcchf_donate h3 {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+/* line 157, ../scss/_general.scss */
+.bcchf_donate p,
+.bcchf_donate a,
+.bcchf_donate label,
+.bcchf_donate button,
+.bcchf_donate input,
+.bcchf_donate textarea,
+.bcchf_donate small,
+.bcchf_donate li {
+  font-family: "Calibri", Verdana, Arial, sans-serif;
+}
+/* line 168, ../scss/_general.scss */
+.bcchf_donate p {
+  line-height: 1.3;
+}
+/* line 172, ../scss/_general.scss */
+.bcchf_donate a {
+  color: #0f7ac0;
+  font-weight: bold;
+  font-style: italic;
+}
+/* line 178, ../scss/_general.scss */
+.bcchf_donate em {
+  font-style: italic;
+}
+/* line 182, ../scss/_general.scss */
+.bcchf_donate small {
+  color: #7e7e7e;
+  font-size: 12px;
+}
+/* line 187, ../scss/_general.scss */
+.bcchf_donate label {
+  display: inline-block;
+  padding-right: 7px;
+}
+/* line 192, ../scss/_general.scss */
+.bcchf_donate strong {
+  font-weight: bold;
+}
+/* line 196, ../scss/_general.scss */
+.bcchf_donate .error {
+  color: #da6363;
+}
+/* line 200, ../scss/_general.scss */
+.bcchf_donate .error > small {
+  color: #da6363 !important;
+}
+/* line 204, ../scss/_general.scss */
+.bcchf_donate .bcchf_return {
+  color: #333;
+  display: inline-block;
+  text-decoration: none;
+}
+/* line 210, ../scss/_general.scss */
+.bcchf_donate .bcchf_message {
+  font-size: 14px;
+}
+/* line 214, ../scss/_general.scss */
+.bcchf_donate p.error {
+  padding-left: 8px;
+}
+/* line 220, ../scss/_general.scss */
+.bcchf_donate .main input,
+.bcchf_donate .main textarea {
+  box-sizing: border-box;
+  border: 2px solid #d5d5d5;
+  border-radius: 5px;
+  color: #333;
+  font-size: 100%;
+  font-weight: normal;
+  outline: none;
+}
+/* line 233, ../scss/_general.scss */
+.bcchf_donate input:invalid,
+.bcchf_donate textarea:invalid {
+  background-color: #ffffff;
+  box-shadow: none;
+}
+/* line 239, ../scss/_general.scss */
+.bcchf_donate .slick-initialized .slick-slide:not(.slick-current) {
+  visibility: hidden;
+}
+/* line 243, ../scss/_general.scss */
+.bcchf_donate .slick-initialized .slick-slide.slick-current {
+  visibility: visible;
+}
+/* line 249, ../scss/_general.scss */
+.bcchf_donate .main input:focus,
+.bcchf_donate .main textarea:focus {
+  -webkit-box-shadow: 0px 0px 1px 2px #cbebf6 inset;
+  -moz-box-shadow: 0px 0px 1px 2px #cbebf6 inset;
+  -o-box-shadow: 0px 0px 1px 2px #cbebf6 inset;
+  box-shadow: 0px 0px 1px 2px #cbebf6 inset;
+}
+/* line 259, ../scss/_general.scss */
+.bcchf_donate button {
+  box-shadow: none;
+  outline: none;
+}
+/* line 264, ../scss/_general.scss */
+.bcchf_donate input {
+  display: inline-block;
+  padding: 9px 7px;
+}
+/* line 269, ../scss/_general.scss */
+.bcchf_donate textarea {
+  padding: 15px 17px;
+  resize: none;
+}
+/* line 274, ../scss/_general.scss */
+.bcchf_donate input.error,
+.bcchf_donate textarea.error {
+  border-color: #da6363;
+  color: #333;
+}
+/* line 281, ../scss/_general.scss */
+.bcchf_donate input[type="radio"] {
+  /*display: none;*/
+  /* If this is display none, validation will not work*/
+  opacity: 0;
+  position: absolute;
+  z-index: -1;
+}
+/* line 288, ../scss/_general.scss */
+.bcchf_donate .bcchf_radio {
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  height: 128px;
+  width: 108px;
+}
+/* line 296, ../scss/_general.scss */
+.bcchf_donate .bcchf_radio label,
+.bcchf_donate .bcchf_radio_label,
+.bcchf_donate .bcchf_checkbox label {
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+/* line 308, ../scss/_general.scss */
+.bcchf_donate .bcchf_checkbox {
+  display: inline-block;
+  border-radius: 3px;
+  position: relative;
+  height: 41px;
+  width: 41px;
+}
+/* line 317, ../scss/_general.scss */
+.bcchf_donate .bcchf_radio_label {
+  border: 2px solid #d5d5d5;
+  border-radius: 5px;
+}
+/* line 322, ../scss/_general.scss */
+.bcchf_donate .bcchf_radio_top {
+  background-color: #f4f4f4;
+  height: 50%;
+}
+/* line 327, ../scss/_general.scss */
+.bcchf_donate .bcchf_check {
+  border: 3px solid #d5d5d5;
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+}
+/* line 334, ../scss/_general.scss */
+.bcchf_donate .bcchf_radio_bottom {
+  background-color: #fff;
+  height: 50%;
+}
+/* line 339, ../scss/_general.scss */
+.bcchf_donate .bcchf_radio_bottom p {
+  font-size: 20px;
+  text-align: center;
+}
+/* line 345, ../scss/_general.scss */
+.bcchf_donate input[type="radio"]:checked + .bcchf_radio_label {
+  box-shadow: 0 0 10px #888888;
+}
+/* line 349, ../scss/_general.scss */
+.bcchf_donate input[type="radio"]:checked + .bcchf_radio_label .bcchf_radio_top {
+  background-color: #0f7ac0;
+}
+/* line 353, ../scss/_general.scss */
+.bcchf_donate input[type="radio"]:checked + .bcchf_radio_label .bcchf_check {
+  border: 4px solid #fff;
+  background: url("../images/icons/bcchf-checked-white-22x17.png") center center no-repeat;
+}
+/* line 358, ../scss/_general.scss */
+.bcchf_donate input[type="radio"]:checked + .bcchf_radio_label .bcchf_radio_bottom {
+  color: #0f7ac0;
+}
+/* line 362, ../scss/_general.scss */
+.bcchf_donate input[type="radio"]:checked + .bcchf_radio_label .bcchf_radio_bottom p {
+  font-size: 20px;
+  font-weight: bold;
+}
+/* line 368, ../scss/_general.scss */
+.bcchf_donate input#bcchf_other[type="radio"] + .bcchf_radio_label .bcchf_radio_bottom p {
+  overflow: hidden;
+  position: relative;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-overflow: ellipsis;
+  /*z-index: 10;*/
+}
+/* line 377, ../scss/_general.scss */
+.bcchf_donate input#bcchf_other[type="radio"]:checked + .bcchf_radio_label .bcchf_radio_bottom p {
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+}
+/* line 385, ../scss/_general.scss */
+.bcchf_donate .bcchf_checkbox label {
+  background-color: #f5f3f3;
+  border: 3px solid #d5d5d5;
+  border-radius: 3px;
+}
+/* line 391, ../scss/_general.scss */
+.bcchf_donate input[type="checkbox"]:checked + label {
+  background: url("../images/icons/bcchf-checked-blue-25x19.png") center center no-repeat;
+  background-color: #fff;
+  border-color: #0f7ac0;
+}
+/* line 397, ../scss/_general.scss */
+.bcchf_donate input[type="checkbox"] {
+  opacity: 0;
+}
+/* line 402, ../scss/_general.scss */
+.bcchf_donate button,
+.bcchf_donate .bcchf_btn {
+  background-color: #bebebe;
+  border: 0;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 11px 45px;
+  text-align: center;
+}
+/* line 413, ../scss/_general.scss */
+.bcchf_donate .bcchf_btn {
+  display: inline-block;
+  font-style: normal;
+  padding-bottom: 13px;
+  padding-top: 13px;
+  text-decoration: none;
+}
+/* line 421, ../scss/_general.scss */
+.bcchf_donate button:hover,
+.bcchf_donate .bcchf_btn:hover {
+  cursor: pointer;
+}
+/* line 426, ../scss/_general.scss */
+.bcchf_donate button.selected,
+.bcchf_donate .bcchf_btn.selected,
+.bcchf_donate input[type="radio"]:checked + .bcchf_btn {
+  background-color: #0f7ac0;
+  box-shadow: 0 0 10px #888888;
+}
+/* line 433, ../scss/_general.scss */
+.bcchf_donate .bcchf_more {
+  background-color: #f7941f;
+}
+/* line 437, ../scss/_general.scss */
+.bcchf_donate .bcchf_next {
+  background-color: #b32370;
+}
+/* line 442, ../scss/_general.scss */
+.bcchf_donate .bcchf_dropdown {
+  position: relative;
+  text-align: left;
+  width: 273px;
+}
+/* line 448, ../scss/_general.scss */
+.bcchf_donate .bcchf_dropdown .bcchf_dropdown_arrow {
+  background-image: url("../images/icons/bcchf-dropdown-arrow-18x12.png");
+  background-repeat: no-repeat;
+  border: none;
+  height: 15px;
+  position: absolute;
+  padding-left: 16px;
+  right: 0;
+  top: 14px;
+  z-index: 3;
+}
+/* line 460, ../scss/_general.scss */
+.bcchf_donate .bcchf_dropdown select {
+  /*display: none;*/
+  opacity: 1;
+  /* display: none will make the validator ignore this and it won't validate */
+}
+/* line 465, ../scss/_general.scss */
+.bcchf_donate .bcchf_dropdown label {
+  display: inline-block;
+  line-height: 40px;
+  pointer-events: none;
+}
+/* line 471, ../scss/_general.scss */
+.bcchf_donate .bcchf_dropdown ul {
+  background-color: #fff;
+  display: inline-block;
+  border-radius: 5px;
+  border: 2px solid #d5d5d5;
+  height: 40px;
+  left: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 280px;
+  z-index: 3;
+}
+/* line 487, ../scss/_general.scss */
+.bcchf_donate .bcchf_dropdown ul:hover {
+  cursor: pointer;
+}
+/* line 491, ../scss/_general.scss */
+.bcchf_donate .bcchf_dropdown.open ul {
+  height: auto;
+  max-height: 180px;
+  /*max-height: 550px;*/
+  overflow-y: auto;
+}
+/* line 498, ../scss/_general.scss */
+.bcchf_donate .bcchf_dropdown li {
+  color: #333;
+  font-family: 'calibri', verdana;
+  font-size: 16px;
+  padding: 10px;
+}
+/* line 505, ../scss/_general.scss */
+.bcchf_donate .bcchf_dropdown li:hover {
+  color: #0f7ac0;
+}
+/* line 509, ../scss/_general.scss */
+.bcchf_donate .bcchf_dropdown li span {
+  font-style: italic;
+}
+/* line 513, ../scss/_general.scss */
+.bcchf_donate .bcchf_dropdown li.divider {
+  border-bottom: 1px solid #ccc;
+}
+
+/* 04 - HONOUR ROLL
+***********************************************/
+/* line 522, ../scss/_general.scss */
+.bcchf_donate .bcchf_honour {
+  -webkit-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  box-sizing: border-box;
+  /*margin-right: 5px;*/
+  width: 220px;
+}
+/* line 533, ../scss/_general.scss */
+.bcchf_donate .bcchf_honour h3 {
+  background: url("../images/icons/bcchf-sunshine-44x21.png") left center no-repeat;
+  font-size: 20px;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+  padding-left: 54px;
+}
+/* line 542, ../scss/_general.scss */
+.bcchf_donate .bcchf_honour li {
+  border-bottom: 1px solid #e6e6e6;
+  padding: 15px;
+}
+/* line 547, ../scss/_general.scss */
+.bcchf_donate .bcchf_honour li:first-of-type {
+  border-radius: 5px 5px 0 0;
+  background: #01b98e;
+  color: white;
+  padding-left: 30px;
+}
+/* line 554, ../scss/_general.scss */
+.bcchf_donate .bcchf_honour p {
+  font-size: 14px;
+  line-height: 1;
+  padding: 5px 10px 5px 0;
+}
+/* line 560, ../scss/_general.scss */
+.bcchf_donate .bcchf_honour em {
+  color: #888888;
+}
+/* line 564, ../scss/_general.scss */
+.bcchf_donate .bcchf_honour small {
+  color: black;
+}
+/* line 568, ../scss/_general.scss */
+.bcchf_donate .bcchf_honour span {
+  font-size: 26px;
+  margin-right: 5px;
+}
+
+/* 05 - PROGRESS BAR
+***********************************************/
+/* line 577, ../scss/_general.scss */
+.bcchf_donate {
+  /* progress bar */
+  /* progress bar: filled */
+  /* step checkboxes */
+  /* unvisited steps */
+  /* visited steps */
+  /* completed steps */
+  /* adjust step 4 to fit inside container */
+}
+/* line 578, ../scss/_general.scss */
+.bcchf_donate .bcchf_progress,
+.bcchf_donate .bcchf_progress > div {
+  display: block;
+  height: 35px;
+}
+/* line 584, ../scss/_general.scss */
+.bcchf_donate .bcchf_progress p {
+  color: #fff;
+  font-size: 18px;
+  font-style: italic;
+  line-height: 35px;
+  margin-left: 25px;
+}
+/* line 593, ../scss/_general.scss */
+.bcchf_donate .bcchf_progress > div {
+  background-color: #d5d5d5;
+  float: left;
+  position: relative;
+}
+/* line 599, ../scss/_general.scss */
+.bcchf_donate .bcchf_progress > div:first-child {
+  border-radius: 35px 0 0 35px;
+  width: 215px;
+}
+/* line 604, ../scss/_general.scss */
+.bcchf_donate .bcchf_progress > div:nth-child(2) {
+  width: 250px;
+}
+/* line 608, ../scss/_general.scss */
+.bcchf_donate .bcchf_progress > div:nth-child(3) {
+  width: 260px;
+}
+/* line 612, ../scss/_general.scss */
+.bcchf_donate .bcchf_progress > div:last-child {
+  border-radius: 0 35px 35px 0;
+  /*width: 260px;*/
+  width: 265px;
+}
+/* line 619, ../scss/_general.scss */
+.bcchf_donate .bcchf_progress_step1 > div:nth-child(-n+1),
+.bcchf_donate .bcchf_progress_step2 > div:nth-child(-n+2),
+.bcchf_donate .bcchf_progress_step3 > div:nth-child(-n+3),
+.bcchf_donate .bcchf_progress_step4 > div:nth-child(-n+4) {
+  background-color: #b32370;
+}
+/* line 626, ../scss/_general.scss */
+.bcchf_donate .bcchf_progress.bcchf_progress_step4 > div:last-child {
+  width: 260px;
+}
+/* line 631, ../scss/_general.scss */
+.bcchf_donate .bcchf_progress_check {
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
+  z-index: 1000;
+}
+/* line 642, ../scss/_general.scss */
+.bcchf_donate .bcchf_progress_step1 div:nth-last-child(-n+3) .bcchf_progress_check,
+.bcchf_donate .bcchf_progress_step2 div:nth-last-child(-n+2) .bcchf_progress_check,
+.bcchf_donate .bcchf_progress_step3 div:nth-last-child(-n+1) .bcchf_progress_check {
+  background-color: #BEBEBE;
+  border: none;
+  height: 24px;
+  width: 24px;
+}
+/* line 652, ../scss/_general.scss */
+.bcchf_donate .bcchf_progress_step1 div:nth-child(-n+1) .bcchf_progress_check,
+.bcchf_donate .bcchf_progress_step2 div:nth-child(-n+2) .bcchf_progress_check,
+.bcchf_donate .bcchf_progress_step3 div:nth-child(-n+3) .bcchf_progress_check,
+.bcchf_donate .bcchf_progress_step4 div:nth-child(-n+4) .bcchf_progress_check {
+  background-color: #fff;
+  border: 5px solid #b32370;
+  box-sizing: border-box;
+  height: 45px;
+  width: 45px;
+}
+/* line 664, ../scss/_general.scss */
+.bcchf_donate .bcchf_progress_step2 div:nth-child(-n+1) .bcchf_progress_check,
+.bcchf_donate .bcchf_progress_step3 div:nth-child(-n+2) .bcchf_progress_check,
+.bcchf_donate .bcchf_progress_step4 div:nth-child(-n+3) .bcchf_progress_check {
+  background-image: url("../images/icons/bcchf-checked-pink-25x19.png");
+  background-position: center 60%;
+  background-repeat: no-repeat;
+}
+/* line 673, ../scss/_general.scss */
+.bcchf_donate .bcchf_progress > div:nth-child(4) .bcchf_progress_check,
+.bcchf_donate .bcchf_progress_step4 > div:nth-child(4) .bcchf_progress_check {
+  right: 18.5px;
+}
+
+/* 06 - MAIN CONTENT
+***********************************************/
+/* line 682, ../scss/_general.scss */
+.bcchf_donate {
+  /*.bcchf_content {
+  	width: 770px;
+  }*/
+}
+/* line 687, ../scss/_general.scss */
+.bcchf_donate .bcchf_return {
+  margin-top: 30px;
+}
+/* line 691, ../scss/_general.scss */
+.bcchf_donate .bcchf_progress {
+  margin-bottom: 36px;
+  /*margin-top: 20px;*/
+}
+
+/* 07 - GENERAL FORM
+***********************************************/
+/* line 700, ../scss/_general.scss */
+.bcchf_donate {
+  /*form > div > section {
+  	padding-bottom: 30px;
+  }*/
+  /*form > div > .bcchf_message,*/
+  /* Text inputs with labels on the side*/
+  /* Custom dropdown */
+  /*.bcchf_dropdown_container {
+  	height: 53px;
+  	position: relative;
+  }*/
+  /* Checkboxes with messages */
+  /* Text area sections */
+  /* Donation amounts */
+  /* Donation type button select */
+  /* Required and valid forms */
+}
+/* line 701, ../scss/_general.scss */
+.bcchf_donate .slick-slider {
+  width: 990px;
+}
+/* line 705, ../scss/_general.scss */
+.bcchf_donate .bcchf_stack_label {
+  display: block;
+  padding-bottom: 15px;
+}
+/* line 714, ../scss/_general.scss */
+.bcchf_donate .slick-initialized .slick-slide:not(.slick-active) {
+  visibility: hidden;
+}
+/* line 717, ../scss/_general.scss */
+.bcchf_donate .slick-initialized .slick-slide {
+  visibility: visible;
+}
+/* line 720, ../scss/_general.scss */
+.bcchf_donate .bcchf_step:focus {
+  outline: 0;
+}
+/* line 724, ../scss/_general.scss */
+.bcchf_donate .bcchf_step {
+  overflow: hidden;
+}
+/* line 728, ../scss/_general.scss */
+.bcchf_donate .bcchf_step > section {
+  padding-bottom: 30px;
+}
+/* line 733, ../scss/_general.scss */
+.bcchf_donate .bcchf_step > .bcchf_message {
+  padding-bottom: 30px;
+}
+/* line 738, ../scss/_general.scss */
+.bcchf_donate .bcchf_input_container {
+  padding-bottom: 12px;
+}
+/* line 742, ../scss/_general.scss */
+.bcchf_donate .bcchf_input_container > label {
+  display: inline-block;
+  text-align: right;
+  width: 163px;
+}
+/* line 748, ../scss/_general.scss */
+.bcchf_donate .bcchf_input_container .error > em {
+  left: 165px;
+  position: relative;
+}
+/* line 753, ../scss/_general.scss */
+.bcchf_donate .bcchf_thankyou_page .bcchf_input_container > p.error {
+  padding-left: 30px !important;
+}
+/* line 757, ../scss/_general.scss */
+.bcchf_donate .bcchf_input_container input {
+  width: 400px;
+  margin-right: 5px;
+}
+/* line 768, ../scss/_general.scss */
+.bcchf_donate .bcchf_dropdown_container > label {
+  /*padding-top: 12px;*/
+  vertical-align: middle;
+  width: 163px;
+}
+/* line 774, ../scss/_general.scss */
+.bcchf_donate .bcchf_dropdown_container .bcchf_dropdown {
+  /*position: absolute;*/
+  /*
+  top: 0;*/
+  display: inline-block;
+  min-height: 40px;
+  vertical-align: middle;
+}
+/* line 783, ../scss/_general.scss */
+.bcchf_donate .bcchf_dropdown .error {
+  border-color: #da6363;
+  color: #333;
+}
+/* line 788, ../scss/_general.scss */
+.bcchf_donate .bcchf_dropdown_container ul {
+  position: absolute;
+}
+/* line 792, ../scss/_general.scss */
+.bcchf_donate .bcchf_dropdown_container .open ul,
+.bcchf_donate .bcchf_dropdown_container .open label {
+  z-index: 4;
+}
+/* line 797, ../scss/_general.scss */
+.bcchf_donate .bcchf_dropdown_container .bcchf_valid_checkmark {
+  position: relative;
+  right: -12px;
+}
+/* line 803, ../scss/_general.scss */
+.bcchf_donate .bcchf_checkbox_container {
+  overflow: hidden;
+}
+/* line 807, ../scss/_general.scss */
+.bcchf_donate .bcchf_checkbox,
+.bcchf_donate .bcchf_checkbox + p {
+  float: left;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+/* line 815, ../scss/_general.scss */
+.bcchf_donate .bcchf_text_container {
+  width: 570px;
+}
+/* line 819, ../scss/_general.scss */
+.bcchf_donate .bcchf_text_container textarea,
+.bcchf_donate .bcchf_text_container textarea + p {
+  width: 100%;
+}
+/* line 824, ../scss/_general.scss */
+.bcchf_donate .bcchf_text_container textarea {
+  height: 100px;
+  margin-right: 5px;
+}
+/* line 829, ../scss/_general.scss */
+.bcchf_donate .bcchf_text_container .bcchf_valid_checkmark {
+  top: -5px;
+}
+/* line 834, ../scss/_general.scss */
+.bcchf_donate section .bcchf_radio {
+  margin-right: 16px;
+}
+/* line 838, ../scss/_general.scss */
+.bcchf_donate section .bcchf_radio:last-of-type {
+  margin: 0;
+}
+/* line 842, ../scss/_general.scss */
+.bcchf_donate #bcchf_other + .bcchf_radio_label .bcchf_radio_bottom {
+  position: relative;
+}
+/* line 846, ../scss/_general.scss */
+.bcchf_donate #bcchf_other + .bcchf_radio_label input[type="text"] {
+  font-size: 20px;
+  left: 8px;
+  position: absolute;
+  top: 8px;
+  width: 89px;
+  z-index: -1;
+  /*z-index: 10;*/
+  /* set this when the radio is checked */
+}
+/* line 856, ../scss/_general.scss */
+.bcchf_donate #bcchf_other:checked + .bcchf_radio_label input[type="text"] {
+  z-index: 10;
+  /* set this when the radio is checked */
+}
+/* line 861, ../scss/_general.scss */
+.bcchf_donate label.bcchf_btn {
+  margin-right: 17px;
+  padding-left: 0;
+  padding-right: 0;
+  width: 150px;
+}
+/* line 869, ../scss/_general.scss */
+.bcchf_donate .bcchf_valid_checkmark {
+  display: inline-block;
+  height: 15px;
+  padding-right: 20px;
+  position: relative;
+  top: 2px;
+  width: 20px;
+}
+/* line 878, ../scss/_general.scss */
+.bcchf_donate .valid .bcchf_valid_checkmark {
+  background: url("../images/icons/check-green.png") left 90% no-repeat;
+}
+
+/* 08 - STEP 1 - DONATION INFORMATION
+***********************************************/
+/* line 886, ../scss/_general.scss */
+.bcchf_donate {
+  /* In honour of section*/
+  /* Encouragement message section*/
+  /* Donor name section */
+}
+/* line 887, ../scss/_general.scss */
+.bcchf_donate .bcchf_step1 {
+  width: 765px;
+}
+/* line 892, ../scss/_general.scss */
+.bcchf_donate .bcchf_in_honour {
+  padding-bottom: 0;
+}
+/* line 896, ../scss/_general.scss */
+.bcchf_donate .bcchf_in_honour label.bcchf_btn {
+  width: 164px;
+}
+/* line 900, ../scss/_general.scss */
+.bcchf_donate .bcchf_in_honour .bcchf_checkbox_container {
+  padding-bottom: 30px;
+}
+/* line 904, ../scss/_general.scss */
+.bcchf_donate .bcchf_in_honour .bcchf_btn {
+  margin-bottom: 30px;
+}
+/* line 908, ../scss/_general.scss */
+.bcchf_donate .bcchf_in_honour .bcchf_input_container {
+  padding-bottom: 23px;
+}
+/* line 913, ../scss/_general.scss */
+.bcchf_donate .bcchf_encouragement .bcchf_checkbox_container {
+  padding-top: 10px;
+}
+/* line 918, ../scss/_general.scss */
+.bcchf_donate .bcchf_donor_name .bcchf_checkbox_container {
+  padding-top: 15px;
+}
+/* line 922, ../scss/_general.scss */
+.bcchf_donate #bcchf_donor_id {
+  vertical-align: middle;
+}
+/* line 926, ../scss/_general.scss */
+.bcchf_donate .bcchf_donor_help {
+  /* Question mark style */
+  /*background-color: #bebebe;
+  border-radius: 50%;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 26px;
+  font-style: normal;
+  height: 37px;
+  padding-top: 5px;
+  text-align: center
+  text-decoration: none;
+  width: 37px;
+  vertical-align: middle;*/
+  /* tip */
+  color: #333;
+  display: inline-block;
+  font-size: 11px;
+  font-style: italic;
+  text-align: left;
+  width: 130px;
+  vertical-align: middle;
+}
+
+/* 09 - STEP 2 - YOUR INFORMATION
+***********************************************/
+/*
+#bcchf_initial {
+	width: 50px;
+}
+
+#bcchf_city {
+	width: 248px
+}
+
+#bcchf_postal_code {
+	width: 98px;
+}
+
+#bcchf_phone {
+	width: 190px;
+}
+*/
+/* 10 - STEP 3 - YOUR PAYMENT DETAILS
+***********************************************/
+/* line 977, ../scss/_general.scss */
+.bcchf_donate .bcchf_payment_cta {
+  padding-bottom: 28px;
+}
+
+.bcchf_donate .bcchf_payment_cta_monthly {
+  padding-bottom: 28px;
+}
+/* line 981, ../scss/_general.scss */
+.bcchf_donate .bcchf_paypal {
+  background: url("../images/buttons/paypal.png");
+  height: 44px;
+  margin-left: 5px;
+  overflow: hidden;
+  width: 228px;
+  vertical-align: middle;
+}
+/* line 990, ../scss/_general.scss */
+.bcchf_donate #bcchf_cvv,
+.bcchf_donate #bcchf_expire_month,
+.bcchf_donate #bcchf_expire_year {
+  text-align: center;
+  width: 58px;
+}
+/* line 997, ../scss/_general.scss */
+.bcchf_donate .bcchf_cc_input img {
+  display: inline-block !important;
+  vertical-align: middle;
+}
+/* line 1002, ../scss/_general.scss */
+.bcchf_donate .bcchf_cc_input .bcchf_message {
+  /*padding-left: 160px;*/
+  padding-top: 4px;
+}
+/* line 1007, ../scss/_general.scss */
+.bcchf_donate .bcchf_step3 .bcchf_checkbox_container {
+  padding-top: 5px;
+}
+/* line 1011, ../scss/_general.scss */
+.bcchf_donate .bcchf_step3 .bcchf_next,
+.bcchf_donate .bcchf_step3 .bcchf_next + img {
+  vertical-align: middle;
+}
+/* line 1016, ../scss/_general.scss */
+.bcchf_donate .bcchf_step3 img {
+  display: inline-block !important;
+}
+/* line 1020, ../scss/_general.scss */
+.bcchf_donate .bcchf_step3 .bcchf_next {
+  margin-right: 12px;
+}
+
+/* 11 - FINAL STEP - REVIEW YOUR DONATION
+***********************************************/
+/* line 1029, ../scss/_general.scss */
+.bcchf_donate .bcchf_step_final h4,
+.bcchf_donate .bcchf_step_final li,
+.bcchf_donate .bcchf_step_final ul {
+  padding-bottom: 10px;
+}
+/* line 1035, ../scss/_general.scss */
+.bcchf_donate .bcchf_step_final ul {
+  /*text-transform: capitalize; */
+}
+/* line 1039, ../scss/_general.scss */
+.bcchf_donate .bcchf_step_final > ul:first-of-type > li:nth-of-type(2),
+.bcchf_donate .bcchf_step_final ul:first-of-type li:nth-of-type(3),
+.bcchf_donate .bcchf_step_final ul:first-of-type li:nth-of-type(5),
+.bcchf_donate .bcchf_step_final ul:first-of-type li:nth-of-type(7),
+.bcchf_donate .bcchf_step_final ul:last-of-type li:nth-of-type(5) {
+  text-transform: none;
+}
+/* line 1047, ../scss/_general.scss */
+.bcchf_donate .bcchf_step_final ul:last-of-type li:nth-of-type(10) > span {
+  text-transform: uppercase;
+}
+/* line 1051, ../scss/_general.scss */
+.bcchf_donate .bcchf_step_final .bcchf_message + p {
+  padding-bottom: 15px;
+}
+/* line 1055, ../scss/_general.scss */
+.bcchf_donate .bcchf_step_final section {
+  padding-bottom: 50px;
+}
+
+/* 12 - THANK YOU PAGE
+***********************************************/
+/* line 1063, ../scss/_general.scss */
+.bcchf_donate {
+  /* facebook */
+  /* Survey section */
+  /* Acknowledgement card form */
+  /* Three columns*/
+}
+/* line 1064, ../scss/_general.scss */
+.bcchf_donate header {
+  background: white;
+  height: 95px;
+  margin-bottom: 75px;
+}
+/* line 1070, ../scss/_general.scss */
+.bcchf_donate header .center {
+  left: 0;
+  position: relative;
+  width: 990px;
+}
+/* line 1076, ../scss/_general.scss */
+.bcchf_donate header a {
+  /*-webkit-box-shadow: 5px 0 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 0 10px 0 rgba(0, 0, 0, 0.1);*/
+  position: absolute;
+  top: 0;
+}
+/* line 1083, ../scss/_general.scss */
+.bcchf_donate .bcchf_thankyou_page h1 {
+  padding-bottom: 12px;
+}
+/* line 1087, ../scss/_general.scss */
+.bcchf_donate .bcchf_thankyou_page .bcchf_input_container > label {
+  width: 185px;
+}
+/* line 1091, ../scss/_general.scss */
+.bcchf_donate .bcchf_thankyou {
+  width: 621px;
+}
+/* line 1095, ../scss/_general.scss */
+.bcchf_donate .bcchf_thanks {
+  color: #b32370;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 1.2;
+  padding-bottom: 16px;
+  text-transform: uppercase;
+}
+/* line 1104, ../scss/_general.scss */
+.bcchf_donate .bcchf_received_msg {
+  font-weight: bold;
+  font-size: 21px;
+  padding-bottom: 10px;
+}
+/* line 1111, ../scss/_general.scss */
+.bcchf_donate .bcchf_fb {
+  -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 1, 0.3);
+  -moz-box-shadow: 0 0 5px 1px rgba(0, 0, 1, 0.3);
+  -o-box-shadow: 0 0 5px 1px rgba(0, 0, 1, 0.3);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 1, 0.3);
+  border-radius: 5px;
+  margin: 40px 10px;
+  padding-top: 0px;
+  text-align: center;
+  position: relative;
+}
+/* line 1123, ../scss/_general.scss */
+.bcchf_donate .bcchf_fb > p {
+  background-color: #0f7ac0;
+  border-radius: 5px 5px 0 0;
+  color: white;
+  font-size: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  text-align: center;
+}
+/* line 1133, ../scss/_general.scss */
+.bcchf_donate .bcchf_fb_widget {
+  height: 60px;
+  margin: 0 auto;
+  padding: 20px 0;
+  text-align: center;
+  width: 400px;
+}
+/* line 1142, ../scss/_general.scss */
+.bcchf_donate .bcchf_survey_msg {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 23px;
+}
+/* line 1148, ../scss/_general.scss */
+.bcchf_donate .bcchf_thanks_acknowledgement {
+  color: #b32370;
+}
+/* line 1152, ../scss/_general.scss */
+.bcchf_donate .bcchf_survey .bcchf_checkbox_container {
+  padding-top: 14px;
+}
+/* line 1156, ../scss/_general.scss */
+.bcchf_donate .bcchf_survey .bcchf_checkbox_container:last-of-type {
+  padding-bottom: 43px;
+}
+/* line 1161, ../scss/_general.scss */
+.bcchf_donate .bcchf_personalized_msg .bcchf_text_container label {
+  line-height: 1.2;
+  text-align: right;
+  vertical-align: top;
+  width: 185px;
+}
+/* line 1168, ../scss/_general.scss */
+.bcchf_donate .bcchf_personalized_msg .bcchf_text_container {
+  padding-bottom: 10px;
+  width: 100%;
+}
+/* line 1173, ../scss/_general.scss */
+.bcchf_donate .bcchf_personalized_msg textarea {
+  width: 400px;
+}
+/* line 1177, ../scss/_general.scss */
+.bcchf_donate .bcchf_step > .bcchf_personalized_msg {
+  padding-bottom: 45px;
+}
+/* line 1181, ../scss/_general.scss */
+.bcchf_donate .bcchf_titles {
+  padding-bottom: 15px;
+  position: relative;
+  width: 185px;
+}
+/* line 1187, ../scss/_general.scss */
+.bcchf_donate .bcchf_thankyou_page .bcchf_honour {
+  margin-right: 3px;
+}
+/* line 1192, ../scss/_general.scss */
+.bcchf_donate .bcchf_explore {
+  padding-top: 40px;
+}
+/* line 1195, ../scss/_general.scss */
+.bcchf_donate .bcchf_explore .columns-4 {
+  margin-right: 22px;
+  padding-top: 20px;
+}
+/* line 1200, ../scss/_general.scss */
+.bcchf_donate .bcchf_explore .columns-4:last-of-type {
+  margin: 0;
+}
+/* line 1204, ../scss/_general.scss */
+.bcchf_donate .bcchf_explore article img,
+.bcchf_donate .bcchf_explore article h2 {
+  padding-bottom: 15px;
+}
+/* line 1210, ../scss/_general.scss */
+.bcchf_donate .bcchf_explore article a {
+  background: #f5a623;
+  color: white;
+  display: block;
+  font-style: normal;
+  margin-top: 20px;
+  padding: 13px 0;
+  text-align: center;
+  text-decoration: none;
+  width: 165px;
+}
+/* line 1222, ../scss/_general.scss */
+.bcchf_donate .columns-4 {
+  float: left;
+  width: 31.85%;
+}
+
+/* 13 - FOOTER
+***********************************************/
+/* line 1232, ../scss/_general.scss */
+.bcchf_donate footer {
+  background-color: #444444;
+  text-align: center;
+}
+/* line 1237, ../scss/_general.scss */
+.bcchf_donate #footer {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  position: static;
+}
+/* line 1244, ../scss/_general.scss */
+.bcchf_donate #footer a {
+  color: #e17000;
+  font-style: normal;
+  font-weight: normal;
+}
+/* line 1250, ../scss/_general.scss */
+.bcchf_donate #footer input {
+  border: none;
+}
+/* line 1263, ../scss/_general.scss */
+.bcchf_donate .bcchf-newsletter-footer {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+/* line 1269, ../scss/_general.scss */
+.bcchf_donate .bcchf-footer-fc-last h3 {
+  color: #FFF;
+  font-family: "futura-pt", verdana, arial;
+  font-size: 11px;
+  font-weight: 800;
+  margin: 0 0 8px;
+  padding: 0;
+  text-transform: uppercase;
+}
+/* line 1279, ../scss/_general.scss */
+.bcchf_donate .bcchf_input_email {
+  background-color: #F1F1F1;
+  border: none;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: block;
+  font-size: 13px;
+  height: 22px;
+  line-height: 22px;
+  margin-top: 10px;
+  padding: 0 10px;
+  width: 100%;
+  z-index: 10;
+}
+/* line 1296, ../scss/_general.scss */
+.bcchf_donate .bcchf_input_subscribe {
+  background-color: #f7941f;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  font-family: "futura-pt",verdana,arial;
+  font-weight: 800;
+  font-size: 14px;
+  height: 29px;
+  margin-top: 10px;
+  padding: 0;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+/* 14 - HEADER
+***********************************************/
+/* line 1315, ../scss/_general.scss */
+.bcchf_donate {
+  /*.bcchf_header img {
+  	float: left;
+  	margin-right: 20px;
+  }*/
+}
+/* line 1316, ../scss/_general.scss */
+.bcchf_donate .bcchf_header {
+  /*padding: 20px 0 28px 0;*/
+  padding-bottom: 28px;
+  padding-top: 10px;
+  width: 770px;
+}
+/* line 1323, ../scss/_general.scss */
+.bcchf_donate .bcchf_header_image {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  float: left;
+  height: 146px;
+  margin-right: 20px;
+  overflow: hidden;
+  width: 146px;
+}
+/* line 1340, ../scss/_general.scss */
+.bcchf_donate .bcchf_header h2 {
+  line-height: 27px;
+  padding: 10px 0 15px;
+}
+
+/* 15 - HELPER CLASSES
+***********************************************/
+/* line 1350, ../scss/_general.scss */
+.bcchf_donate .clearfix {
+  clear: both;
+}
+/* line 1354, ../scss/_general.scss */
+.bcchf_donate .center {
+  margin: 0 auto;
+}
+/* line 1358, ../scss/_general.scss */
+.bcchf_donate .replace {
+  display: inline-block;
+  text-indent: -999%;
+}
+/* line 1363, ../scss/_general.scss */
+.bcchf_donate .align_right {
+  text-align: right;
+}
+/* line 1367, ../scss/_general.scss */
+.bcchf_donate .vertical_align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 1374, ../scss/_general.scss */
+.bcchf_donate .left {
+  float: left;
+}
+/* line 1378, ../scss/_general.scss */
+.bcchf_donate .right {
+  float: right;
+}
+/* line 1382, ../scss/_general.scss */
+.bcchf_donate .hide {
+  display: none;
+}
+/* line 1386, ../scss/_general.scss */
+.bcchf_donate :disabled {
+  opacity: 0.5;
+}
+/* line 1390, ../scss/_general.scss */
+.bcchf_donate :disabled:hover {
+  cursor: default;
+}
+/* line 1394, ../scss/_general.scss */
+.bcchf_donate .hidden {
+  opacity: 0;
+}
+/* line 1397, ../scss/_general.scss */
+.bcchf_donate .round-mask {
+  height: 100%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  overflow: hidden;
+}

@@ -1,0 +1,1282 @@
+@charset "UTF-8";
+/***************************************************************************************************
+ *   default.css
+ *   CSS styles for BCCHF Desktop Donation Form
+ *
+ *   @copyright      2015 CAMP PACIFIC
+ *
+ *   @authors       Cindy Son, Technical Director <cindy.son@camppacific.com>
+ *                  Gabrielle Carson, Sr. Front-End Developer <gabrielle.carson@camppacific.com>
+                     Mihai Lazar, Sr. Full Stack Developer <mihai.lazar@camppacific.com>
+                    Patrick Javier, Jr. Front-End Developer <patrick.javier@camppacific.com>
+ *
+ *   @since         October 1, 2015
+ *   @category      CSS
+ *   @package		bcchf-donation
+ *   @subpackage    css
+ *
+ * TABLE OF CONTENTS
+ *
+ * 01 - RESET
+ * 02 - FONTS
+ * 03 - GLOBAL STYLES
+ * 04 - HONOUR ROLL
+ * 05 - PAGE SPECIFIC
+ * 06 - FOOTER
+ * 07 - HEADER
+ * 08 - HELPER CLASSES
+ ***************************************************************************************************/
+
+/* 01 - RESET & BOX SIZING
+ *	http://meyerweb.com/eric/tools/css/reset/
+ *   v2.0 | 20110126
+ *   License: none (public domain)
+ ***********************************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* apply a natural box layout model to all elements */
+*,
+*:after,
+*:before {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* 02 - FONTS
+***********************************************/
+
+
+
+
+/* 03 - GLOBAL STYLES
+***********************************************/
+/*
+	BCCHF Colours
+	Comps blue: #0f7ac0;
+	Purple: #b32370
+	Orange: #f7941f
+*/
+
+/* General */
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	background-color: #f5f3f3;
+	color: #333;
+}
+
+.main {
+	overflow: hidden;
+	padding-bottom: 60px;
+	width: 990px;
+}
+
+/* Typography */
+h1 {
+	font-family: "futura-pt", verdana, arial;
+	font-size: 32px;
+	font-weight: 800;
+	padding-bottom: 20px;
+}
+
+h2,
+h3,
+h4 {
+	font-family: "Calibri", Verdana, Arial, sans-serif;
+	font-weight: bold;
+}
+
+h2  {
+	font-size: 24px;
+}
+
+h3 {
+	font-size: 20px;
+	padding-bottom: 10px;
+}
+
+p,
+a,
+label,
+button,
+input,
+textarea,
+small,
+li {
+	font-family: "Calibri", Verdana, Arial, sans-serif;
+}
+
+p {
+	line-height: 1.3;
+}
+
+a {
+	color: #0f7ac0;
+	font-weight: bold;
+	font-style: italic;
+}
+
+em {
+	font-style: italic;
+}
+
+small {
+	color: #7e7e7e;
+	font-size: 12px;
+}
+
+label {
+	display: inline-block;
+	padding-right: 7px;
+}
+
+strong {
+	font-weight: bold;
+}
+
+.error {
+	color: #da6363;
+}
+
+.error > small {
+	color: #da6363 !important;
+}
+
+.bcchf_return {
+	color: #333;
+	display: inline-block;
+	text-decoration: none;
+}
+
+.bcchf_message {
+	font-size: 14px;
+}
+
+p.error {
+	padding-left: 8px;
+}
+
+/* Inputs */
+input,
+textarea {
+	box-sizing: border-box;
+	border: 2px solid #d5d5d5;
+	border-radius: 5px;
+	color: #333;
+	font-size: 100%;
+	font-weight: normal;
+	outline: none;
+}
+
+.slick-initialized .slick-slide:not(.slick-current) {
+    visibility: hidden;
+}
+
+.slick-initialized .slick-slide.slick-current
+{
+    visibility: visible;
+}
+
+input:focus,
+textarea:focus {
+	-webkit-box-shadow: 0px 0px 1px 2px #cbebf6 inset;
+	-moz-box-shadow: 0px 0px 1px 2px #cbebf6 inset;
+	-o-box-shadow: 0px 0px 1px 2px #cbebf6 inset;
+	box-shadow: 0px 0px 1px 2px #cbebf6 inset;
+}
+
+button {
+	box-shadow: none;
+	outline: none;
+}
+
+input {
+	display: inline-block;
+	padding: 9px 7px;
+}
+
+textarea {
+	padding: 15px 17px;
+	resize: none;
+}
+
+input.error,
+textarea.error {
+	border-color: #da6363;
+	color: #333;
+}
+
+/* Custom radio button and checkboxes */
+input[type="radio"] {
+	/*display: none;*/			/* If this is display none, validation will not work*/
+	position: absolute;
+	z-index: -1;
+}
+
+.bcchf_radio {
+	border-radius: 5px;
+	display: inline-block;
+	position: relative;
+	height: 128px;
+	width: 108px;
+}
+
+.bcchf_radio label,
+.bcchf_radio_label,
+.bcchf_checkbox label {
+	cursor: pointer;
+	height: 100%;
+	left: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.bcchf_checkbox {
+	display: inline-block;
+	border-radius: 3px;
+	position: relative;
+	height: 41px;
+	width: 41px;
+}
+
+/* Radio button: Visual style */
+.bcchf_radio_label {
+	border: 2px solid #d5d5d5;
+	border-radius: 5px;
+}
+
+.bcchf_radio_top {
+	background-color: #f4f4f4;
+	height: 50%;
+}
+
+.bcchf_check {
+	border: 3px solid #d5d5d5;
+	border-radius: 50%;
+	height: 36px;
+	width: 36px;
+}
+
+.bcchf_radio_bottom {
+	background-color: #fff;
+	height: 50%;
+}
+
+.bcchf_radio_bottom p {
+	font-size: 20px;
+	text-align: center;
+}
+
+/* Radio button: Visual style selected state */
+input[type="radio"]:checked + .bcchf_radio_label {
+	box-shadow: 0 0 10px #888888;
+}
+
+input[type="radio"]:checked + .bcchf_radio_label .bcchf_radio_top {
+	background-color: #0f7ac0;
+}
+
+input[type="radio"]:checked + .bcchf_radio_label .bcchf_check {
+	border: 4px solid #fff;
+	background: url("../images/icons/bcchf-checked-white-22x17.png") center center no-repeat;
+}
+
+input[type="radio"]:checked + .bcchf_radio_label .bcchf_radio_bottom {
+	color: #0f7ac0;
+}
+
+input[type="radio"]:checked + .bcchf_radio_label .bcchf_radio_bottom p{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/* when other amount of donation is selected */
+input#bcchf_other[type="radio"]+ .bcchf_radio_label .bcchf_radio_bottom p {
+	overflow: hidden;
+	position: relative;
+	padding-left: 15px;
+	padding-right: 15px;
+	text-overflow: ellipsis;
+	/*z-index: 10;*/
+}
+
+input#bcchf_other[type="radio"]:checked + .bcchf_radio_label .bcchf_radio_bottom p {
+	overflow: hidden;
+	position: relative;
+	z-index: -1;
+}
+
+
+/* Checkbox: Visual style */
+.bcchf_checkbox label {
+	background-color: #f5f3f3;
+	border: 3px solid #d5d5d5;
+	border-radius: 3px;
+}
+
+input[type="checkbox"]:checked + label {
+	background: url("../images/icons/bcchf-checked-blue-25x19.png") center center no-repeat;
+	background-color: #fff;
+	border-color: #0f7ac0;
+}
+
+input[type="checkbox"] {
+	opacity: 0;
+}
+
+/* Buttons */
+button,
+.bcchf_btn {
+	background-color: #bebebe;
+	border: 0;
+	color: #fff;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 11px 45px;
+	text-align: center;
+}
+
+.bcchf_btn {
+	display: inline-block;
+	font-style: normal;
+	padding-bottom: 13px;
+	padding-top: 13px;
+	text-decoration: none;
+}
+
+button:hover,
+.bcchf_btn:hover {
+	cursor: pointer;
+}
+
+button.selected,
+.bcchf_btn.selected,
+input[type="radio"]:checked + .bcchf_btn {
+	background-color: #0f7ac0;
+	box-shadow: 0 0 10px #888888;
+}
+
+.bcchf_more {
+	background-color: #f7941f;
+}
+
+.bcchf_next {
+	background-color: #b32370;
+}
+
+/* Custom Dropdown */
+.bcchf_dropdown {
+	position: relative;
+	text-align: left;
+	width: 273px;
+}
+
+.bcchf_dropdown .bcchf_dropdown_arrow {
+	background-image: url("../images/icons/bcchf-dropdown-arrow-18x12.png");
+	background-repeat: no-repeat;
+	border: none;
+	height: 15px;
+	position: absolute;
+	padding-left: 16px;
+	right: 0;
+	top: 14px;
+	z-index: 3;
+}
+
+.bcchf_dropdown select{
+	/*display: none;*/
+	opacity: 1; 			/* display: none will make the validator ignore this and it won't validate */
+}
+
+.bcchf_dropdown label {
+	display: inline-block;
+	line-height: 40px;
+	pointer-events: none;
+}
+
+.bcchf_dropdown ul {
+	background-color: #fff;
+	display: inline-block;
+	border-radius: 5px;
+	border: 2px solid #d5d5d5;
+	height: 40px;
+	left: 0;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	width: 280px;
+	z-index: 3;
+
+}
+
+.bcchf_dropdown ul:hover {
+	cursor: pointer;
+}
+
+.bcchf_dropdown.open ul {
+	height: auto;
+	max-height: 180px;
+	/*max-height: 550px;*/
+	overflow-y: auto;
+}
+
+.bcchf_dropdown li {
+	color: #333;
+	font-family: 'calibri', verdana;
+	font-size: 16px;
+	padding: 10px;
+}
+
+.bcchf_dropdown li:hover {
+	color: #0f7ac0;
+}
+
+.bcchf_dropdown li span {
+	font-style: italic;
+}
+
+.bcchf_dropdown li.divider {
+	border-bottom: 1px solid #ccc;
+}
+
+/* 04 - HONOUR ROLL
+***********************************************/
+.bcchf_honour {
+	-webkit-box-shadow: 0 0 5px 1px rgba(0,0,0,.3);
+	-moz-box-shadow: 0 0 5px 1px rgba(0,0,0,.3);
+	-o-box-shadow: 0 0 5px 1px rgba(0,0,0,.3);
+	box-shadow: 0 0 5px 1px rgba(0,0,0,.3);
+	border-radius: 5px;
+	box-sizing: border-box;
+	/*margin-right: 5px;*/
+	width: 220px;
+}
+
+.bcchf_honour h3 {
+	background: url("../images/icons/bcchf-sunshine-44x21.png")left center no-repeat;
+	font-size: 20px;
+	font-weight: normal;
+	margin: 0;
+	padding: 0;
+	padding-left: 54px;
+}
+
+.bcchf_honour li {
+	border-bottom: 1px solid #e6e6e6;
+	padding: 15px;
+}
+
+.bcchf_honour li:first-of-type {
+	border-radius: 5px 5px 0 0;
+	background: #01b98e;
+	color: white;
+	padding-left: 30px;
+}
+
+.bcchf_honour p {
+	font-size: 14px;
+	line-height: 1;
+	padding: 5px 10px 5px 0;
+}
+
+.bcchf_honour em {
+	color: #888888;
+}
+
+.bcchf_honour small {
+	color: black;
+}
+
+.bcchf_honour span {
+	font-size: 26px;
+	margin-right: 5px;
+}
+
+/* 07 - PROGRESS BAR
+***********************************************/
+.bcchf_progress,
+.bcchf_progress > div {
+	display: block;
+	height: 35px;
+}
+
+.bcchf_progress p {
+	color: #fff;
+	font-size: 18px;
+	font-style: italic;
+	line-height: 35px;
+	margin-left: 25px;
+}
+
+/* progress bar */
+.bcchf_progress > div {
+	background-color: #d5d5d5;
+	float: left;
+	position: relative;
+}
+
+.bcchf_progress > div:first-child {
+	border-radius: 35px 0 0 35px;
+	width: 215px;
+}
+
+.bcchf_progress > div:nth-child(2) {
+	width: 250px;
+}
+
+.bcchf_progress > div:nth-child(3) {
+	width: 260px;
+}
+
+.bcchf_progress > div:last-child {
+	border-radius: 0 35px 35px 0;
+	/*width: 260px;*/
+	width: 265px;
+}
+
+/* progress bar: filled */
+.bcchf_progress_step1 > div:nth-child(-n+1),
+.bcchf_progress_step2 > div:nth-child(-n+2),
+.bcchf_progress_step3 > div:nth-child(-n+3),
+.bcchf_progress_step4 > div:nth-child(-n+4) {
+	background-color: #b32370;
+}
+
+.bcchf_progress.bcchf_progress_step4 > div:last-child {
+	width: 260px;
+}
+
+/* step checkboxes */
+.bcchf_progress_check {
+	border-radius: 50%;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	-webkit-transform: translate(50%, -50%);
+	transform: translate(50%, -50%);
+	z-index: 1000;
+}
+
+/* unvisited steps */
+.bcchf_progress_step1 div:nth-last-child(-n+3) .bcchf_progress_check,
+.bcchf_progress_step2 div:nth-last-child(-n+2) .bcchf_progress_check,
+.bcchf_progress_step3 div:nth-last-child(-n+1) .bcchf_progress_check {
+	background-color: #BEBEBE;
+	border: none;
+	height: 24px;
+	width: 24px;
+}
+
+/* visited steps */
+.bcchf_progress_step1 div:nth-child(-n+1) .bcchf_progress_check,
+.bcchf_progress_step2 div:nth-child(-n+2) .bcchf_progress_check,
+.bcchf_progress_step3 div:nth-child(-n+3) .bcchf_progress_check,
+.bcchf_progress_step4 div:nth-child(-n+4) .bcchf_progress_check {
+	background-color: #fff;
+	border: 5px solid #b32370;
+	box-sizing: border-box;
+	height: 45px;
+	width: 45px;
+}
+
+/* completed steps */
+.bcchf_progress_step2 div:nth-child(-n+1) .bcchf_progress_check,
+.bcchf_progress_step3 div:nth-child(-n+2) .bcchf_progress_check,
+.bcchf_progress_step4 div:nth-child(-n+3) .bcchf_progress_check {
+	background-image: url('../images/icons/bcchf-checked-pink-25x19.png');
+	background-position: center 60%;
+	background-repeat: no-repeat;
+}
+
+/* adjust step 4 to fit inside container */
+.bcchf_progress > div:nth-child(4) .bcchf_progress_check,
+.bcchf_progress_step4 > div:nth-child(4) .bcchf_progress_check {
+	right: 18.5px;
+}
+
+/* 05 - MAIN CONTENT
+***********************************************/
+/*.bcchf_content {
+	width: 770px;
+}*/
+
+.bcchf_return {
+	margin-top: 30px;
+}
+
+.bcchf_progress {
+	margin-bottom: 36px;
+	/*margin-top: 20px;*/
+}
+
+/* 05 - GENERAL FORM
+***********************************************/
+.slick-slider {
+	width: 990px;
+}
+
+.bcchf_stack_label {
+	display: block;
+	padding-bottom: 15px;
+}
+
+/*form > div > section {
+	padding-bottom: 30px;
+}*/
+
+.slick-initialized .slick-slide:not(.slick-active){
+	visibility: hidden;	
+}
+.slick-initialized .slick-slide {
+	visibility: visible;
+}
+.bcchf_step:focus {
+	outline: 0;
+}
+
+.bcchf_step {
+	overflow: hidden;
+}
+
+.bcchf_step > section {
+	padding-bottom: 30px;
+}
+
+/*form > div > .bcchf_message,*/
+.bcchf_step > .bcchf_message {
+	padding-bottom: 30px;
+}
+
+/* Text inputs with labels on the side*/
+.bcchf_input_container {
+	padding-bottom: 12px;
+}
+
+.bcchf_input_container > label {
+	display: inline-block;
+	text-align: right;
+	width: 163px;
+}
+
+.bcchf_input_container .error > em {
+	left: 165px;
+	position: relative;
+}
+
+.bcchf_thankyou_page .bcchf_input_container > p.error {
+	padding-left: 30px !important;
+}
+
+.bcchf_input_container input {
+	width: 400px;
+	margin-right: 5px;
+}
+
+/* Custom dropdown */
+/*.bcchf_dropdown_container {
+	height: 53px;
+	position: relative;
+}*/
+
+.bcchf_dropdown_container > label {
+	/*padding-top: 12px;*/
+	vertical-align: middle;
+	width: 163px;
+}
+
+.bcchf_dropdown_container .bcchf_dropdown {
+	/*position: absolute;*/
+	/*
+	top: 0;*/
+	display: inline-block;
+	min-height: 40px;
+	vertical-align: middle;
+}
+
+.bcchf_dropdown .error{
+    border-color: #da6363;
+    color: #333;
+}
+
+.bcchf_dropdown_container ul {
+	position: absolute;
+}
+
+.bcchf_dropdown_container .open ul,
+.bcchf_dropdown_container .open label {
+	z-index: 4;
+}
+
+.bcchf_dropdown_container .bcchf_valid_checkmark {
+	position: relative;
+	right: -12px;
+}
+
+/* Checkboxes with messages */
+.bcchf_checkbox_container {
+	overflow: hidden;
+}
+
+.bcchf_checkbox,
+.bcchf_checkbox + p {
+	float: left;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+/* Text area sections */
+.bcchf_text_container {
+	width: 570px;
+}
+
+.bcchf_text_container textarea,
+.bcchf_text_container textarea + p {
+	width: 100%;
+}
+
+.bcchf_text_container textarea {
+	height: 100px;
+	margin-right: 5px;
+}
+
+.bcchf_text_container .bcchf_valid_checkmark {
+	top: -5px;
+}
+
+/* Donation amounts */
+section .bcchf_radio {
+	margin-right: 16px;
+}
+
+section .bcchf_radio:last-of-type {
+	margin: 0;
+}
+
+#bcchf_other + .bcchf_radio_label .bcchf_radio_bottom {
+	position: relative;
+}
+
+#bcchf_other + .bcchf_radio_label input[type="text"] {
+	font-size: 20px;
+	left: 8px;
+    position: absolute;
+    top: 8px;
+    width: 89px;
+	z-index: -1;
+	/*z-index: 10;*/  /* set this when the radio is checked */
+}
+
+#bcchf_other:checked + .bcchf_radio_label input[type="text"] {
+	z-index: 10;  /* set this when the radio is checked */
+}
+
+/* Donation type button select */
+label.bcchf_btn {
+	margin-right: 17px;
+	padding-left: 0;
+	padding-right: 0;
+	width: 150px;
+}
+
+/* Required and valid forms */
+.bcchf_valid_checkmark {
+	display: inline-block;
+	height: 15px;
+	padding-right: 20px;
+	position: relative;
+	top: 2px;
+	width: 20px;
+}
+
+.valid .bcchf_valid_checkmark {
+	background: url("../images/icons/check-green.png") left 90% no-repeat;
+}
+
+/* 06 - STEP 1 - DONATION INFORMATION
+***********************************************/
+.bcchf_step1 {
+	width: 765px;
+}
+
+/* In honour of section*/
+.bcchf_in_honour {
+	padding-bottom: 0;
+}
+
+.bcchf_in_honour label.bcchf_btn {
+	width: 164px;
+}
+
+.bcchf_in_honour .bcchf_checkbox_container {
+	padding-bottom: 30px;
+}
+
+.bcchf_in_honour .bcchf_btn {
+	margin-bottom: 30px;
+}
+
+.bcchf_in_honour .bcchf_input_container {
+	padding-bottom: 23px;
+}
+
+/* Encouragement message section*/
+.bcchf_encouragement .bcchf_checkbox_container {
+	padding-top: 10px;
+}
+
+/* Donor name section */
+.bcchf_donor_name .bcchf_checkbox_container {
+	padding-top: 15px;
+}
+
+#bcchf_donor_id {
+	vertical-align: middle;
+}
+
+.bcchf_donor_help {
+	/* Question mark style */
+	/*background-color: #bebebe;
+	border-radius: 50%;
+	color: #ffffff;
+	display: inline-block;
+    font-size: 26px;
+	font-style: normal;
+    height: 37px;
+	padding-top: 5px;
+	text-align: center
+    text-decoration: none;
+	width: 37px;
+	vertical-align: middle;*/
+
+	/* tip */
+	color: #333;
+	display: inline-block;
+    font-size: 11px;
+	font-style: italic;
+	text-align: left;
+	width: 130px;
+	vertical-align: middle;
+}
+
+
+/* 07 - STEP 2 - YOUR INFORMATION
+***********************************************/
+/*
+#bcchf_initial {
+	width: 50px;
+}
+
+#bcchf_city {
+	width: 248px
+}
+
+#bcchf_postal_code {
+	width: 98px;
+}
+
+#bcchf_phone {
+	width: 190px;
+}
+*/
+
+/* 07 - STEP 3 - YOUR PAYMENT DETAILS
+***********************************************/
+.bcchf_payment_cta {
+	padding-bottom: 28px;
+}
+
+.bcchf_payment_cta_monthly {
+	padding-bottom: 28px;
+}
+
+.bcchf_paypal {
+	background: url("/images/buttons/paypal.png");
+	height: 44px;
+	margin-left: 5px;
+	overflow: hidden;
+	width: 228px;
+	vertical-align: middle;
+}
+
+#bcchf_cvv,
+#bcchf_expire_month,
+#bcchf_expire_year  {
+	text-align: center;
+	width: 58px;
+}
+
+.bcchf_cc_input img {
+	display: inline-block !important;
+	vertical-align: middle;
+}
+
+.bcchf_cc_input .bcchf_message {
+	/*padding-left: 160px;*/
+	padding-top: 4px;
+}
+
+.bcchf_step3 .bcchf_checkbox_container {
+	padding-top: 5px;
+}
+
+.bcchf_step3 .bcchf_next,
+.bcchf_step3 .bcchf_next + img {
+	vertical-align: middle;
+}
+
+.bcchf_step3 img {
+	display: inline-block !important;
+}
+
+.bcchf_step3 .bcchf_next {
+	margin-right: 12px;
+}
+
+/* 07 - FINAL STEP - REVIEW YOUR DONATION
+***********************************************/
+.bcchf_step_final h4,
+.bcchf_step_final li,
+.bcchf_step_final ul {
+	padding-bottom: 10px;
+}
+
+.bcchf_step_final ul {
+	text-transform: capitalize;
+}
+
+.bcchf_step_final > ul:first-of-type >  li:nth-of-type(2),
+.bcchf_step_final ul:first-of-type  li:nth-of-type(3),
+.bcchf_step_final ul:first-of-type  li:nth-of-type(5),
+.bcchf_step_final ul:first-of-type  li:nth-of-type(7),
+.bcchf_step_final ul:last-of-type  li:nth-of-type(5) {
+	text-transform: none;
+}
+
+.bcchf_step_final ul:last-of-type  li:nth-of-type(10) > span {
+	text-transform: uppercase;
+}
+
+.bcchf_step_final .bcchf_message + p {
+	padding-bottom: 15px;
+}
+
+.bcchf_step_final section {
+	padding-bottom: 50px;
+}
+
+
+/* 07 - THANK YOU PAGE
+***********************************************/
+header {
+	background: white;
+	height: 95px;
+	margin-bottom: 75px;
+}
+
+header .center {
+	left: 0;
+	position: relative;
+	width: 990px;
+}
+
+header a {
+	-webkit-box-shadow: 5px 0 10px 0 rgba(0,0,0,.1);
+	box-shadow: 5px 0 10px 0 rgba(0,0,0,.1);
+	position: absolute;
+	top:0;
+}
+
+.bcchf_thankyou_page h1 {
+	padding-bottom: 12px;
+}
+
+.bcchf_thankyou_page .bcchf_input_container > label {
+	width: 185px;
+}
+
+.bcchf_thankyou {
+	width: 621px;
+}
+
+.bcchf_thanks {
+	color: #b32370;
+	font-weight: bold;
+	font-size: 30px;
+	line-height: 1.2;
+	padding-bottom: 16px;
+	text-transform: uppercase;
+}
+
+.bcchf_received_msg {
+	font-weight: bold;
+	font-size: 21px;
+	padding-bottom: 10px;
+}
+
+/* facebook */
+.bcchf_fb {
+	-webkit-box-shadow: 0 0 2px 1px rgba(0,0,1,.3);
+	-moz-box-shadow: 0 0 5px 1px rgba(0,0,1,.3);
+	-o-box-shadow: 0 0 5px 1px rgba(0,0,1,.3);
+	box-shadow: 0 0 5px 1px rgba(0,0,1,.3);
+	border-radius: 5px;
+	margin: 40px 10px;
+	padding-top: 0px;
+	text-align: center;
+	position: relative;
+}
+
+.bcchf_fb > p {
+	background-color: #0f7ac0;
+	border-radius: 5px 5px 0 0;
+	color: white;
+	font-size: 20px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	text-align: center;
+}
+
+.bcchf_fb_widget {
+    height: 60px;
+    margin: 0 auto;
+	padding: 20px 0;
+    text-align: center;
+    width: 400px;
+}
+
+/* Survey section */
+.bcchf_survey_msg {
+	font-size: 20px;
+	font-weight: bold;
+	padding-bottom: 23px;
+}
+
+.bcchf_thanks_acknowledgement {
+	color: #b32370;
+}
+
+.bcchf_survey .bcchf_checkbox_container {
+	padding-top: 14px;
+}
+
+.bcchf_survey .bcchf_checkbox_container:last-of-type {
+	padding-bottom: 43px;
+}
+
+/* Acknowledgement card form */
+.bcchf_personalized_msg .bcchf_text_container label {
+	line-height: 1.2;
+	text-align: right;
+	vertical-align: top;
+	width: 185px;
+}
+
+.bcchf_personalized_msg .bcchf_text_container {
+	padding-bottom: 10px;
+	width: 100%;
+}
+
+.bcchf_personalized_msg textarea {
+	width: 400px;
+}
+
+.bcchf_step > .bcchf_personalized_msg {
+	padding-bottom: 45px;
+}
+
+.bcchf_titles {
+	padding-bottom: 15px;
+	position: relative;
+	width: 185px;
+}
+
+.bcchf_thankyou_page .bcchf_honour {
+	margin-right: 3px;
+}
+
+/* Three columns*/
+.bcchf_explore {
+	padding-top: 40px;
+}
+.bcchf_explore .columns-4 {
+	margin-right: 22px;
+	padding-top: 20px;
+}
+
+.bcchf_explore .columns-4:last-of-type {
+	margin: 0;
+}
+
+.bcchf_explore article img,
+.bcchf_explore article h2 {
+	padding-bottom: 15px;
+}
+
+
+.bcchf_explore article a {
+	background: #f5a623;
+	color: white;
+	display: block;
+	font-style: normal;
+	margin-top: 20px;
+	padding: 13px 0;
+	text-align: center;
+	text-decoration: none;
+	width: 165px;
+}
+
+.columns-4 {
+	float: left;
+	width: 31.85%
+}
+
+/* 06 - FOOTER
+***********************************************/
+footer {
+	background-color: #444444;
+	text-align: center;
+}
+
+/* 07 - HEADER
+***********************************************/
+.bcchf_header {
+	/*padding: 20px 0 28px 0;*/
+	padding-bottom: 28px;
+	padding-top: 10px;
+	width: 770px;
+}
+
+.bcchf_header_image {
+	-webkit-border-radius: 50%;l
+	-moz-border-radius: 50%;
+	-o-border-radius: 50%;
+	border-radius: 50%;
+	float: left;
+	height: 146px;
+	margin-right: 20px;
+	overflow: hidden;
+	width: 146px;
+}
+
+/*.bcchf_header img {
+	float: left;
+	margin-right: 20px;
+}*/
+
+.bcchf_header h2 {
+	line-height: 27px;
+	padding: 10px 0 15px;
+}
+
+
+/* 07 - HELPER CLASSES
+***********************************************/
+.clearfix {
+	clear: both;
+}
+
+.center {
+	margin: 0 auto;
+}
+
+.replace {
+	display: inline-block;
+	text-indent: -999%;
+}
+
+.align_right {
+	text-align: right;
+}
+
+.vertical_align {
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.hide {
+	display: none;
+}
+
+:disabled {
+	opacity: 0.5;
+}
+
+:disabled:hover {
+	cursor: default;
+}
+
+.hidden {
+	opacity: 0;
+}
+.round-mask {
+	height: 100%;
+	-webkit-border-radius:50%;
+	border-radius: 50% ;
+	overflow: hidden;
+}
