@@ -44,10 +44,10 @@
 					<ul>
 						
 						<li class="clearfix">
-							<a href="http://www.youtube.com/user/bcchf" class="button button-social-youtube" rel="ext"></a>
-							<a href="http://www.facebook.com/BCCHF" class="button button-social-facebook" rel="ext"></a>
-							<a href="http://twitter.com/BCCHF" class="button button-social-twitter" rel="ext"></a>
-							<a href="https://instagram.com/bcchf/" class="button button-social-instagram" rel="ext"></a>
+							<a href="http://www.youtube.com/user/bcchf" class="button-social-youtube" rel="ext"></a>
+							<a href="http://www.facebook.com/BCCHF" class="button-social-facebook" rel="ext"></a>
+							<a href="http://twitter.com/BCCHF" class="button-social-twitter" rel="ext"></a>
+							<a href="https://instagram.com/bcchf/" class="button-social-instagram" rel="ext"></a>
 						</li>
 					</ul>
 

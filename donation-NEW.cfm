@@ -101,20 +101,27 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz
 <!-- Enable search engine to index this page and follow links, replace with no-index or no-follow to disable -->
 <meta name="robots" content="index, follow">
 
+<link href="css/vaccine.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700" rel="stylesheet">
+
 <!-- basic favicon -->
 <link rel="shortcut icon" href="https://www.bcchf.ca/themes/bcchf/favicon.ico" />
 
 <!-- For development -->
 <link rel="stylesheet" type="text/css" media="screen" href="../css/combined_secure.css?m=1445910939" />
+<link rel="stylesheet" href="css/footer.css" media="all">
 <link rel="stylesheet" href="css/donate.css" media="all">
 <link rel="stylesheet" href="css/slick.css" media="all">
+<link rel="stylesheet" href="css/style.css" media="all">
 
 <!-- Typekit settings for Futura font 
 <script src="https://use.typekit.net/pcl4xdw.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>-->
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+
 
 <script type="text/javascript" src="https://use.typekit.com/diz6qqm.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+-->
 
 </head>
 
@@ -126,16 +133,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<header>
 		<div class="center">
-			<a href="http://bcchf.ca" target="_blank"><img src="images/decorations/bcchf-header-logo.png" alt=""></a>
+			<a href="http://bcchf.ca" target="_blank"><img src="images/snowtheme/logo-tag.png" width="175" height="166" alt=""></a>
 		</div>
 	</header>
 	<div class="main center">
+		<h2>Step 1</h2>
         <cfinclude template="includes/topHeadline.cfm">
 		<section>
 			<!-- Progress bar -->
 			<div class="bcchf_progress bcchf_progress_step1 js_bcchf_progress">
 				<div>
-					<p>Step <span class="js_bcchf_step_num">1</span> of 4</p>
 					<div class="bcchf_progress_check"></div>
 				</div>
 				<div>
@@ -172,6 +179,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script type="text/javascript" src="../js/exactResponseMessages.js"></script>
 	<script type="text/javascript" src="js/default.jquery.js"></script>
     <script type="text/javascript" src="../js/ua-parser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script type="text/javascript" src="js/foundation.min.js"></script>
+    <script type="text/javascript" src="js/scripts.min.js"></script>
     
     <script type="text/javascript">
 	<!--

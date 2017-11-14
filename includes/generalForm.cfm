@@ -58,7 +58,7 @@
     <cfif IsDefined('sup_pge_UUID') AND sup_pge_UUID NEQ ''>
     <!--- there is an ID in the URL, load info --->
     
-    	<h3>Step One - Your Donation</h3>
+    	<h3>Your Donation</h3>
         <p class="bcchf_message"><em>Fields marked with * are required.</em></p>
 
         <!-- Donation type -->
@@ -144,7 +144,7 @@
                         <div class="bcchf_check center vertical_align"></div>
                     </div>
                     <div class="bcchf_radio_bottom">
-                        <p class="vertical_align">Other</p>
+                        <p class="vertical_align">Other...</p>
                         <input type="text" name="bcchf_other_amt" id="bcchf_other_amt" />
                     </div>
                 </div>
@@ -319,7 +319,7 @@
     
     
     
-        <h3>Step One - Your Donation</h3>
+        <h3>Your Donation</h3>
         <p class="bcchf_message"><em>Fields marked with * are required.</em></p>
 
         <!-- Donation type -->
@@ -403,7 +403,7 @@
                         <div class="bcchf_check center vertical_align"></div>
                     </div>
                     <div class="bcchf_radio_bottom">
-                        <p class="vertical_align">Other</p>
+                        <p class="vertical_align">Other...</p>
                         <input type="text" name="bcchf_other_amt" />
                     </div>
                 </div>
@@ -552,15 +552,15 @@
 
 	
 
-    <!-- Honour Roll -->
+    <!-- Honour Roll 
     <cfset HRlen = 10>
     <cfset HRloc = 'left'>
     <cfinclude template="honourRoll.cfm">
-    
+    -->
     
     
     <div class="clearfix"></div>
-    <button type="button"  class="bcchf_next js_bcchf_next">Continue to Step Two &raquo;</button>
+    <button type="button"  class="bcchf_next js_bcchf_next">Continue</button>
 </div>
 <!-- Step 1 - Your Donation -->
 
@@ -568,7 +568,7 @@
 <!-- Step 2 - Your Information -->
 
 <div class="bcchf_step js_bcchf_step ignore_validation">
-    <h3>Step Two - Your Information</h3>
+    <h3>Your Information</h3>
     <p class="bcchf_message"><em>Fields marked with * are required.</em></p>
 
     <section>
@@ -716,8 +716,8 @@
             <p class="bcchf_message error hide"><em>Please enter your phone number.</em></p>
         </div>
     </section>
-    <button type="button" class="bcchf_next js_bcchf_next">Continue to Step Three &raquo;</button>
-    <p><a href="" class="bcchf_return js_bcchf_return">&laquo; Back to Step One</a></p>
+    <button type="button" class="bcchf_next js_bcchf_next">Continue</button>
+    <p><a href="" class="bcchf_return js_bcchf_return">Back to previous page</a></p>
 
 </div>
 <!-- Step 2 - Your Information -->
@@ -727,7 +727,7 @@
 
 <div class="bcchf_step bcchf_step3 js_bcchf_step ignore_validation">
 
-    <h3>Step Three - Your Payment Details</h3>
+    <h3>Your Payment Details</h3>
     <p class="bcchf_message" id="s3topMSG"><em>Your card will not be charged until you've had a chance to review all the information in the next and final step.</em></p>
 
     <!-- Tax receipt choices -->
@@ -789,9 +789,9 @@
             <p>I allow the Foundation to contact me with information about my gift and how I can support BC Children's Hospital.</p>
         </div>
     </section>
-    <button type="button" class="bcchf_next js_bcchf_next">Continue to Review & Pay &raquo;</button>
+    <button type="button" class="bcchf_next js_bcchf_next">Continue</button>
     <!--- <img src="images/icons/verisign.png" alt="VeriSign Secured" /> --->
-    <p><a href="" class="bcchf_return js_bcchf_return">&laquo; Back to Step Two</a></p>
+    <p><a href="" class="bcchf_return js_bcchf_return">Back to previous page</a></p>
 </div>
 <!-- Step 3 - Your Payment Details -->
 
@@ -799,7 +799,7 @@
 <!-- Final Step - Review your donation -->
 
 <div class="bcchf_step bcchf_step_final js_bcchf_step">
-    <h3>Final Step - Review Your Donation</h3>
+    <h3>Review Your Donation</h3>
     <p class="bcchf_message"><em>After completing this step your card will be charged.</em></p>
     <p>Please review your information and make any necessary edits before submitting your dontation.</p>
 
@@ -812,7 +812,7 @@
     
     <!-- Step 1 - Your Donation -->
     <section>
-        <h4>Step One - Your Donation</h4>
+        <h4>Your Donation</h4>
         <ul class="js_bcchf_review">
             <li>Donation Type:  <span id="js_bcchf_donation_type"></span></li>
             <li>Amount:  $<span id="js_bcchf_gift_amount"></span></li>
@@ -826,7 +826,7 @@
 
     <!-- Step 2 - Your Information -->
     <section>
-        <h4>Step Two - Your Information</h4>
+        <h4>Your Information</h4>
         <ul class="js_bcchf_review">
             <li>Salutation: <span id="js_bcchf_salutation"></span></li>
             <li>First Name: <span id="js_bcchf_first_name"></span></li>
@@ -846,7 +846,7 @@
 
     <!-- Step 3 - Your Payment Details -->
     <section>
-        <h4>Step Three - Your Payment Details</h4>
+        <h4>Your Payment Details</h4>
         <ul class="js_bcchf_review">
             <li>Cardholder name: <span id="js_bcchf_cc_name"></span></li>
             <li>Credit Card No: **** **** **** <span id="js_bcchf_cc_number"></span></li>
@@ -860,7 +860,7 @@
     </section>
 
     <button type="button" class="bcchf_next js_bcchf_submit">Submit Donation</button>
-    <p><a href="" class="bcchf_return js_bcchf_return">&laquo; Back to Step Three</a></p>
+    <p><a href="" class="bcchf_return js_bcchf_return">Back to previous page</a></p>
 </div>
 
 </form>

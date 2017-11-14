@@ -37,174 +37,23 @@
  *   v2.0 | 20110126
  *   License: none (public domain)
  ***********************************************/
-/* line 42, ../scss/_general.scss */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
 
-/* HTML5 display-role reset for older browsers */
-/* line 64, ../scss/_general.scss */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block;
-}
-
-/* line 69, ../scss/_general.scss */
-body {
-  line-height: 1;
-}
-
-/* line 73, ../scss/_general.scss */
-ol, ul {
-  list-style: none;
-}
-
-/* line 77, ../scss/_general.scss */
-blockquote, q {
-  quotes: none;
-}
-
-/* line 81, ../scss/_general.scss */
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-
-/* line 87, ../scss/_general.scss */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/* apply a natural box layout model to all elements */
-/* line 93, ../scss/_general.scss */
-*,
-*:after,
-*:before {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
 
 /* 02 - FONTS
 ***********************************************/
 /* 03 - GLOBAL STYLES
 ***********************************************/
-/* line 107, ../scss/_general.scss */
-.bcchf_donate {
-  /*
-  	BCCHF Colours
-  	Comps blue: #0f7ac0;
-  	Purple: #b32370
-  	Orange: #f7941f
-  */
-  /* General */
-  /* Typography */
-  /* Inputs */
-  /* Custom radio button and checkboxes */
-  /* Radio button: Visual style */
-  /* Radio button: Visual style selected state */
-  /* when other amount of donation is selected */
-  /* Checkbox: Visual style */
-  /* Buttons */
-  /* Custom Dropdown */
-}
-/* line 116, ../scss/_general.scss */
-.bcchf_donate html,
-.bcchf_donate body {
-  height: 100%;
-  width: 100%;
-}
-/* line 122, ../scss/_general.scss */
-.bcchf_donate body {
-  background-color: #f5f3f3;
-  color: #333;
-}
 /* line 127, ../scss/_general.scss */
 .bcchf_donate .main {
   overflow: hidden;
   padding-bottom: 60px;
   width: 990px;
 }
-/* line 134, ../scss/_general.scss */
-.bcchf_donate h1 {
-  font-family: "futura-pt", verdana, arial;
-  font-size: 32px;
-  font-weight: 800;
-  padding-bottom: 20px;
-}
-/* line 141, ../scss/_general.scss */
-.bcchf_donate h2,
-.bcchf_donate h3,
-.bcchf_donate h4 {
-  font-family: "Calibri", Verdana, Arial, sans-serif;
-  font-weight: bold;
-}
-/* line 148, ../scss/_general.scss */
-.bcchf_donate h2 {
-  font-size: 24px;
-}
-/* line 152, ../scss/_general.scss */
-.bcchf_donate h3 {
-  font-size: 20px;
-  padding-bottom: 10px;
-}
-/* line 157, ../scss/_general.scss */
-.bcchf_donate p,
-.bcchf_donate a,
-.bcchf_donate label,
-.bcchf_donate button,
-.bcchf_donate input,
-.bcchf_donate textarea,
-.bcchf_donate small,
-.bcchf_donate li {
-  font-family: "Calibri", Verdana, Arial, sans-serif;
-}
-/* line 168, ../scss/_general.scss */
-.bcchf_donate p {
-  line-height: 1.3;
-}
-/* line 172, ../scss/_general.scss */
-.bcchf_donate a {
-  color: #0f7ac0;
-  font-weight: bold;
-  font-style: italic;
-}
-/* line 178, ../scss/_general.scss */
-.bcchf_donate em {
-  font-style: italic;
-}
-/* line 182, ../scss/_general.scss */
-.bcchf_donate small {
-  color: #7e7e7e;
-  font-size: 12px;
-}
+
 /* line 187, ../scss/_general.scss */
 .bcchf_donate label {
   display: inline-block;
   padding-right: 7px;
-}
-/* line 192, ../scss/_general.scss */
-.bcchf_donate strong {
-  font-weight: bold;
 }
 /* line 196, ../scss/_general.scss */
 .bcchf_donate .error {
@@ -216,7 +65,6 @@ table {
 }
 /* line 204, ../scss/_general.scss */
 .bcchf_donate .bcchf_return {
-  color: #333;
   display: inline-block;
   text-decoration: none;
 }
@@ -232,9 +80,6 @@ table {
 .bcchf_donate .main input,
 .bcchf_donate .main textarea {
   box-sizing: border-box;
-  border: 2px solid #d5d5d5;
-  border-radius: 5px;
-  color: #333;
   font-size: 100%;
   font-weight: normal;
   outline: none;
@@ -295,8 +140,8 @@ table {
   border-radius: 5px;
   display: inline-block;
   position: relative;
-  height: 128px;
-  width: 108px;
+  height: 118px;
+  width: 118px;
 }
 /* line 296, ../scss/_general.scss */
 .bcchf_donate .bcchf_radio label,
@@ -313,59 +158,19 @@ table {
 /* line 308, ../scss/_general.scss */
 .bcchf_donate .bcchf_checkbox {
   display: inline-block;
-  border-radius: 3px;
   position: relative;
-  height: 41px;
-  width: 41px;
-}
-/* line 317, ../scss/_general.scss */
-.bcchf_donate .bcchf_radio_label {
-  border: 2px solid #d5d5d5;
-  border-radius: 5px;
 }
 /* line 322, ../scss/_general.scss */
 .bcchf_donate .bcchf_radio_top {
-  background-color: #f4f4f4;
-  height: 50%;
-}
-/* line 327, ../scss/_general.scss */
-.bcchf_donate .bcchf_check {
-  border: 3px solid #d5d5d5;
-  border-radius: 50%;
-  height: 36px;
-  width: 36px;
+  height: 60%;
 }
 /* line 334, ../scss/_general.scss */
 .bcchf_donate .bcchf_radio_bottom {
-  background-color: #fff;
-  height: 50%;
+  height: 40%;
 }
 /* line 339, ../scss/_general.scss */
 .bcchf_donate .bcchf_radio_bottom p {
-  font-size: 20px;
   text-align: center;
-}
-/* line 345, ../scss/_general.scss */
-.bcchf_donate input[type="radio"]:checked + .bcchf_radio_label {
-  box-shadow: 0 0 10px #888888;
-}
-/* line 349, ../scss/_general.scss */
-.bcchf_donate input[type="radio"]:checked + .bcchf_radio_label .bcchf_radio_top {
-  background-color: #0f7ac0;
-}
-/* line 353, ../scss/_general.scss */
-.bcchf_donate input[type="radio"]:checked + .bcchf_radio_label .bcchf_check {
-  border: 4px solid #fff;
-  background: url("../images/icons/bcchf-checked-white-22x17.png") center center no-repeat;
-}
-/* line 358, ../scss/_general.scss */
-.bcchf_donate input[type="radio"]:checked + .bcchf_radio_label .bcchf_radio_bottom {
-  color: #0f7ac0;
-}
-/* line 362, ../scss/_general.scss */
-.bcchf_donate input[type="radio"]:checked + .bcchf_radio_label .bcchf_radio_bottom p {
-  font-size: 20px;
-  font-weight: bold;
 }
 /* line 368, ../scss/_general.scss */
 .bcchf_donate input#bcchf_other[type="radio"] + .bcchf_radio_label .bcchf_radio_bottom p {
@@ -382,78 +187,26 @@ table {
   position: relative;
   z-index: -1;
 }
-/* line 385, ../scss/_general.scss */
-.bcchf_donate .bcchf_checkbox label {
-  background-color: #f5f3f3;
-  border: 3px solid #d5d5d5;
-  border-radius: 3px;
-}
 /* line 391, ../scss/_general.scss */
-.bcchf_donate input[type="checkbox"]:checked + label {
-  background: url("../images/icons/bcchf-checked-blue-25x19.png") center center no-repeat;
-  background-color: #fff;
-  border-color: #0f7ac0;
-}
+
 /* line 397, ../scss/_general.scss */
 .bcchf_donate input[type="checkbox"] {
   opacity: 0;
-}
-/* line 402, ../scss/_general.scss */
-.bcchf_donate button,
-.bcchf_donate .bcchf_btn {
-  background-color: #bebebe;
-  border: 0;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 11px 45px;
-  text-align: center;
-}
-/* line 413, ../scss/_general.scss */
-.bcchf_donate .bcchf_btn {
-  display: inline-block;
-  font-style: normal;
-  padding-bottom: 13px;
-  padding-top: 13px;
-  text-decoration: none;
 }
 /* line 421, ../scss/_general.scss */
 .bcchf_donate button:hover,
 .bcchf_donate .bcchf_btn:hover {
   cursor: pointer;
 }
-/* line 426, ../scss/_general.scss */
-.bcchf_donate button.selected,
-.bcchf_donate .bcchf_btn.selected,
-.bcchf_donate input[type="radio"]:checked + .bcchf_btn {
-  background-color: #0f7ac0;
-  box-shadow: 0 0 10px #888888;
-}
 /* line 433, ../scss/_general.scss */
 .bcchf_donate .bcchf_more {
   background-color: #f7941f;
-}
-/* line 437, ../scss/_general.scss */
-.bcchf_donate .bcchf_next {
-  background-color: #b32370;
 }
 /* line 442, ../scss/_general.scss */
 .bcchf_donate .bcchf_dropdown {
   position: relative;
   text-align: left;
   width: 273px;
-}
-/* line 448, ../scss/_general.scss */
-.bcchf_donate .bcchf_dropdown .bcchf_dropdown_arrow {
-  background-image: url("../images/icons/bcchf-dropdown-arrow-18x12.png");
-  background-repeat: no-repeat;
-  border: none;
-  height: 15px;
-  position: absolute;
-  padding-left: 16px;
-  right: 0;
-  top: 14px;
-  z-index: 3;
 }
 /* line 460, ../scss/_general.scss */
 .bcchf_donate .bcchf_dropdown select {
@@ -469,10 +222,7 @@ table {
 }
 /* line 471, ../scss/_general.scss */
 .bcchf_donate .bcchf_dropdown ul {
-  background-color: #fff;
   display: inline-block;
-  border-radius: 5px;
-  border: 2px solid #d5d5d5;
   height: 40px;
   left: 0;
   margin: 0;
@@ -623,7 +373,7 @@ table {
 .bcchf_donate .bcchf_progress_step2 > div:nth-child(-n+2),
 .bcchf_donate .bcchf_progress_step3 > div:nth-child(-n+3),
 .bcchf_donate .bcchf_progress_step4 > div:nth-child(-n+4) {
-  background-color: #b32370;
+  background-color: #00c1d5;
 }
 /* line 626, ../scss/_general.scss */
 .bcchf_donate .bcchf_progress.bcchf_progress_step4 > div:last-child {
@@ -654,7 +404,7 @@ table {
 .bcchf_donate .bcchf_progress_step3 div:nth-child(-n+3) .bcchf_progress_check,
 .bcchf_donate .bcchf_progress_step4 div:nth-child(-n+4) .bcchf_progress_check {
   background-color: #fff;
-  border: 5px solid #b32370;
+  border: 5px solid #00c1d5;
   box-sizing: border-box;
   height: 45px;
   width: 45px;
@@ -663,9 +413,7 @@ table {
 .bcchf_donate .bcchf_progress_step2 div:nth-child(-n+1) .bcchf_progress_check,
 .bcchf_donate .bcchf_progress_step3 div:nth-child(-n+2) .bcchf_progress_check,
 .bcchf_donate .bcchf_progress_step4 div:nth-child(-n+3) .bcchf_progress_check {
-  background-image: url("../images/icons/bcchf-checked-pink-25x19.png");
-  background-position: center 60%;
-  background-repeat: no-repeat;
+  
 }
 /* line 673, ../scss/_general.scss */
 .bcchf_donate .bcchf_progress > div:nth-child(4) .bcchf_progress_check,
@@ -680,10 +428,6 @@ table {
   /*.bcchf_content {
   	width: 770px;
   }*/
-}
-/* line 687, ../scss/_general.scss */
-.bcchf_donate .bcchf_return {
-  margin-top: 30px;
 }
 /* line 691, ../scss/_general.scss */
 .bcchf_donate .bcchf_progress {
@@ -713,7 +457,7 @@ table {
 }
 /* line 701, ../scss/_general.scss */
 .bcchf_donate .slick-slider {
-  width: 990px;
+  width: 846px;
 }
 /* line 705, ../scss/_general.scss */
 .bcchf_donate .bcchf_stack_label {
@@ -810,8 +554,8 @@ table {
 .bcchf_donate .bcchf_checkbox,
 .bcchf_donate .bcchf_checkbox + p {
   float: left;
-  padding-left: 10px;
-  padding-top: 10px;
+  padding-left: 20px;
+  padding-top: 16px;
 }
 /* line 815, ../scss/_general.scss */
 .bcchf_donate .bcchf_text_container {
@@ -846,10 +590,10 @@ table {
 /* line 846, ../scss/_general.scss */
 .bcchf_donate #bcchf_other + .bcchf_radio_label input[type="text"] {
   font-size: 20px;
-  left: 8px;
+  left: 14px;
   position: absolute;
   top: 8px;
-  width: 89px;
+  width: 90px;
   z-index: -1;
   /*z-index: 10;*/
   /* set this when the radio is checked */
@@ -858,13 +602,6 @@ table {
 .bcchf_donate #bcchf_other:checked + .bcchf_radio_label input[type="text"] {
   z-index: 10;
   /* set this when the radio is checked */
-}
-/* line 861, ../scss/_general.scss */
-.bcchf_donate label.bcchf_btn {
-  margin-right: 17px;
-  padding-left: 0;
-  padding-right: 0;
-  width: 150px;
 }
 /* line 869, ../scss/_general.scss */
 .bcchf_donate .bcchf_valid_checkmark {
@@ -890,23 +627,15 @@ table {
 }
 /* line 887, ../scss/_general.scss */
 .bcchf_donate .bcchf_step1 {
-  width: 765px;
+  width: 846px;
 }
 /* line 892, ../scss/_general.scss */
 .bcchf_donate .bcchf_in_honour {
   padding-bottom: 0;
 }
-/* line 896, ../scss/_general.scss */
-.bcchf_donate .bcchf_in_honour label.bcchf_btn {
-  width: 164px;
-}
 /* line 900, ../scss/_general.scss */
 .bcchf_donate .bcchf_in_honour .bcchf_checkbox_container {
   padding-bottom: 30px;
-}
-/* line 904, ../scss/_general.scss */
-.bcchf_donate .bcchf_in_honour .bcchf_btn {
-  margin-bottom: 30px;
 }
 /* line 908, ../scss/_general.scss */
 .bcchf_donate .bcchf_in_honour .bcchf_input_container {
@@ -975,9 +704,6 @@ table {
   padding-bottom: 28px;
 }
 
-.bcchf_donate .bcchf_payment_cta_monthly {
-  padding-bottom: 28px;
-}
 /* line 981, ../scss/_general.scss */
 .bcchf_donate .bcchf_paypal {
   background: url("../images/buttons/paypal.png");
@@ -1095,15 +821,6 @@ table {
 .bcchf_donate .bcchf_thankyou {
   width: 621px;
 }
-/* line 1095, ../scss/_general.scss */
-.bcchf_donate .bcchf_thanks {
-  color: #b32370;
-  font-weight: bold;
-  font-size: 30px;
-  line-height: 1.2;
-  padding-bottom: 16px;
-  text-transform: uppercase;
-}
 /* line 1104, ../scss/_general.scss */
 .bcchf_donate .bcchf_received_msg {
   font-weight: bold;
@@ -1148,7 +865,7 @@ table {
 }
 /* line 1148, ../scss/_general.scss */
 .bcchf_donate .bcchf_thanks_acknowledgement {
-  color: #b32370;
+  color: #00c1d5;
 }
 /* line 1152, ../scss/_general.scss */
 .bcchf_donate .bcchf_survey .bcchf_checkbox_container {
