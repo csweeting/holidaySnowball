@@ -135,7 +135,7 @@ jQuery(document).ready(function($) {
         var $screens = $container.find('.screen');
         var $cta = $('#cta');
         var $triggers = $('.screen-trigger');
-        var intro_frames = 12;
+        var intro_frames = 10;
         var total_frames = 144;
         var controller = new ScrollMagic.Controller();
         var obj = {curImg: 0};
