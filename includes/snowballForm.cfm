@@ -55,6 +55,8 @@
     <input type="hidden" name="hiddenSupID" id="hiddenSupID" value="#THIS.EVENT.SupID#" />
     <input type="hidden" name="hiddentype" id="hiddentype" value="#THIS.EVENT.SupportType#">
     
+    <input type="hidden" id="bcchf_encouragement_msg" name="bcchf_encouragement_msg" value="">
+        
     <cfif IsDefined('sup_pge_UUID') AND sup_pge_UUID NEQ ''>
     <!--- there is an ID in the URL, load info --->
     
@@ -480,22 +482,6 @@
         
         
         <!-- Encouragement message -->
-        <section class="bcchf_encouragement">
-            <div class="bcchf_text_container js_bcchf_text_container">
-                <label class="bcchf_stack_label">Enter a message of encouragement (Optional).</label>
-                <textarea id="bcchf_encouragement_msg" name="bcchf_encouragement_msg">#THIS.EVENT.topHeaderDonationSupportMessage#</textarea>
-                <p class="align_right"><small><span class="js_bcchf_textbox_counter">0</span>/180 Characters</small></p>
-                <p class="bcchf_message error hide"><em>Your first name must not contain spaces.</em></p>
-            </div>
-
-            <div class="bcchf_checkbox_container">
-                <div class="bcchf_checkbox">
-                    <input type="checkbox" id="bcchf_hide_message" name="bcchf_hide_message" value="1"/>
-                    <label for="bcchf_hide_message"></label>
-                </div>
-                <p>Do not show my message in the honour roll.</p>
-            </div>
-        </section>
 
         <!-- Donor name -->
         <section class="bcchf_donor_name">
@@ -524,18 +510,7 @@
                 <p class="bcchf_message error hide"><em></em></p>
             </div>
 
-            <div class="bcchf_checkbox_container">
-                <div class="bcchf_checkbox">
-                    <input type="checkbox" id="bcchf_hide_name" name="bcchf_hide_name" value="1"/>
-                    <label for="bcchf_hide_name"></label>
-                </div>
-                <!--- 
-                <cfif THIS.EVENT.token EQ 'MW'>
-                <p style="padding-top:1px;">Do not show my name in the honour roll <br />that displays both online and on the Miracle Weekend televised scroll.</p>
-                <cfelse> </cfif>--->
-                <p>Do not show my name in the honour roll.</p>
-                
-            </div>
+            
         </section>
 
         <!-- Special instructions -->
@@ -552,11 +527,6 @@
 
 	
 
-    <!-- Honour Roll 
-    <cfset HRlen = 10>
-    <cfset HRloc = 'left'>
-    <cfinclude template="honourRoll.cfm">
-    -->
     
     
     <div class="clearfix"></div>
@@ -817,8 +787,6 @@
             <li>Donation Type:  <span id="js_bcchf_donation_type"></span></li>
             <li>Amount:  $<span id="js_bcchf_gift_amount"></span></li>
             <li>Withdrawn on:  <span id="js_bcchf_donation_on"></span> of each month</li>
-            <li>Your Message:  <span id="js_bcchf_encouragement_msg"></span></li>
-            <li>Honour roll scroll name: <span id="js_bcchf_donor_company_name"></span><span id="js_bcchf_donor_first_name"></span> <span id="js_bcchf_donor_last_name"></span></li>
             <li>Special Instructions: <span id="js_bcchf_special_instr"></span></li>
         </ul>
         <button class="js_bcchf_goto" data-slide="0">Edit Your Donation</button>
@@ -830,7 +798,6 @@
         <ul class="js_bcchf_review">
             <li>Salutation: <span id="js_bcchf_salutation"></span></li>
             <li>First Name: <span id="js_bcchf_first_name"></span></li>
-            <li>Middle Initial: <span id="js_"></span></li>
             <li>Last Name: <span id="js_bcchf_last_name"></span></li>
             <li>Email: <span id="js_bcchf_email"></span></li>
             <li>Address 1: <span id="js_bcchf_address"></span></li>
