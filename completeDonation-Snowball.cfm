@@ -44,6 +44,26 @@ SELECT * FROM tblGeneral WHERE pge_UUID = '#sup_pge_UUID#'
 
 </cfif>
 
+<!--- lookup event details --->
+<CFQUERY name="selectDonation" datasource="#APPLICATION.DSN.Superhero#">
+SELECT Sum(Hero_Donate.Amount) AS sumAmount, Count(Hero_Donate.ID) AS countAmount FROM Hero_Donate 
+WHERE Campaign = 2017
+AND Event = 'HolidaySNowball' 
+</CFQUERY>
+
+<cfif selectDonation.sumAmount EQ ''>
+	<cfset totalDonations = 0>
+<cfelse>
+	<cfset totalDonations = selectDonation.sumAmount>
+</cfif>
+
+<cfif selectDonation.countAmount EQ ''>
+	<cfset countDonations = 0>
+<cfelse>
+	<cfset countDonations = selectDonation.countAmount>
+</cfif>
+
+
 <!--- load some information about the donation to be used on this page --->
 
 <!--- defaults --->
@@ -309,11 +329,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                             <h5>Snowball Stats</h5>
                             <dl>
-                                <dt>$150</dt>
+                                <dt>#DollarFormat(selectTransaction.gift)#</dt>
                                 <dd>Your donation</dd>
-                                <dt>$23,750</dt>
+                                <dt>#DollarFormat(totalDonations)#</dt>
                                 <dd>Raised so far</dd>
-                                <dt>279</dt>
+                                <dt>#CountDonations#</dt>
                                 <dd>Snowballs thrown</dd>
                             </dl>
 
