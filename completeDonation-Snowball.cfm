@@ -181,7 +181,7 @@ ga('ecommerce:send');
     <!-- For development -->
     <link rel="stylesheet" type="text/css" media="screen" href="../css/combined_secure.css?m=1445910939" />
     <link rel="stylesheet" href="css/footer.css" media="all">
-    <link rel="stylesheet" href="css/donate.css" media="all">
+    <link rel="stylesheet" href="css/donate-snowball.css" media="all">
     <link rel="stylesheet" href="css/slick.css" media="all">
     <link rel="stylesheet" href="css/style.css" media="all">
 
@@ -360,7 +360,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <div class="small-12 columns">
                             <h2>Step 3</h2>
                             <h1>Share and don't forget to tag the friends you want to hit with your snowball.</h1>
-                            <button id="facebook-share"><svg xmlns="http://www.w3.org/2000/svg" width="23.24" height="50" viewBox="0 0 23.24 50"><defs><style>.cls-1{fill:#ffffff;}</style></defs><path class="cls-1" d="M-28.64,712.14h-7v25H-46v-25H-51v-8.83H-46V697.6c0-4.08,1.94-10.48,10.48-10.48l7.69,0v8.57h-5.58a2.12,2.12,0,0,0-2.2,2.41v5.19h7.92Z" transform="translate(50.96 -687.12)"/></svg> Share</button>
+                            <button id="facebook-share"><svg xmlns="http://www.w3.org/2000/svg" width="23.24" height="50" viewBox="0 0 23.24 50"><defs><style>.cls-1{fill:##ffffff;}</style></defs><path class="cls-1" d="M-28.64,712.14h-7v25H-46v-25H-51v-8.83H-46V697.6c0-4.08,1.94-10.48,10.48-10.48l7.69,0v8.57h-5.58a2.12,2.12,0,0,0-2.2,2.41v5.19h7.92Z" transform="translate(50.96 -687.12)"/></svg> Share</button>
                             <p>If you don’t have a Facebook account or would prefer not to participate in the snowball fight, that’s okay. We’ve received your donation and appreciate your support over the holiday season.</p>
                         </div>
                     </div>
@@ -407,7 +407,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </main>
     
     
-    <cfinclude template="includes/footer.cfm">
+    <cfinclude template="includes/footer-snowball.cfm">
     
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="js/slick.min.js"></script>
