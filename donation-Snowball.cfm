@@ -110,7 +110,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz
 <!-- For development -->
 <link rel="stylesheet" type="text/css" media="screen" href="../css/combined_secure.css?m=1445910939" />
 <link rel="stylesheet" href="css/footer.css" media="all">
-<link rel="stylesheet" href="css/donate.css" media="all">
+<link rel="stylesheet" href="css/donate-snowball.css" media="all">
 <link rel="stylesheet" href="css/slick.css" media="all">
 <link rel="stylesheet" href="css/style.css" media="all">
 
@@ -158,7 +158,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 			<div id="formContainer">
 				
-                <cfinclude template="includes/generalForm.cfm">
+                <cfinclude template="includes/snowballForm.cfm">
 			
             </div><!--- end of form container ---->
             
@@ -170,7 +170,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
 		</section>
 	</div>
-	<cfinclude template="includes/footer.cfm">
+	<cfinclude template="includes/footer-snowball.cfm">
 
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 	<!--- ---><script type="text/javascript" src="js/slick.min.js"></script> 
