@@ -1380,6 +1380,7 @@ jQuery.noConflict();
 					// Empty any existing copy
 					this.review_sections.eq(i).html('');
 					
+						
 					/// remove any past e-xact messaging
 					toggleDivOff('exactResponseNegative');
 					toggleDivOff('topExactMessage');
@@ -1387,7 +1388,7 @@ jQuery.noConflict();
 					document.getElementById('topExactMessage').innerHTML = '';
 
 					// We only need to get the values of the visible inputs
-					if (input.is(':visible')) {
+					
 						// If there's more than one input with the same name,
 						// it's probably a radio button or checkbox
 						if (input.length > 1) {
@@ -1447,9 +1448,8 @@ jQuery.noConflict();
 
 						// Update the copy based on the input value
 						this.review_sections.eq(i).html(val);
-					} else {
+					if (input.is(':visible')) {} else {
 						// If an input is not visible
-
 						// If it's just a one time donation, hide the Withdrawn on copy
 						if (id === 'bcchf_donation_on') {
 							this.review_sections.eq(i).parent().addClass('hide');
