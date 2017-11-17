@@ -80,7 +80,9 @@ jQuery(document).ready(function($) {
 
     $.fn.snowballThrowStyleSelector = function(options) {
         var settings = $.extend( {
-            landing_page : 'http://snowball.glance.ca/'
+            prod_landing_page : 'https://secure.bcchf.ca/donate/',
+            stage_landing_page : 'http://snowball.glance.ca/',
+            dev_landing_page : 'http://www.holidaysnowball.dev/'
         }, options);
 
         var $container = this;
@@ -103,7 +105,7 @@ jQuery(document).ready(function($) {
         });
 
         $share_button.on('click', function() {
-            fbShare(id);
+            fbShare(id, {page: settings.prod_landing_page});
         });
 
         return this;
@@ -111,13 +113,14 @@ jQuery(document).ready(function($) {
 
     function fbShare(id, options) {
         var settings = $.extend({
+            page: '',
             winWidth: 600,
             winHeight: 450 
         }, options);
 
         var winTop = (screen.height / 2) - (settings.winHeight / 2);
         var winLeft = (screen.width / 2) - (settings.winWidth / 2);
-        window.open('https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsnowball.glance.ca%2F'+ encodeURIComponent(id + '.html') +'&amp;src=sdkpreparse', 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width='+settings.winWidth+',height='+settings.winHeight);
+        window.open('https://www.facebook.com/sharer/sharer.php?u='+ encodeURIComponent(settings.page + id + '.html') +'&amp;src=sdkpreparse', 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width='+settings.winWidth+',height='+settings.winHeight);
     }
 
 
