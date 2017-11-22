@@ -48,7 +48,7 @@ SELECT * FROM tblGeneral WHERE pge_UUID = '#sup_pge_UUID#'
 <CFQUERY name="selectDonation" datasource="#APPLICATION.DSN.Superhero#">
 SELECT Sum(Hero_Donate.Amount) AS sumAmount, Count(Hero_Donate.ID) AS countAmount FROM Hero_Donate 
 WHERE Campaign = 2017
-AND Event = 'HolidaySNowball' 
+AND Event = 'HolidaySnowball' 
 </CFQUERY>
 
 <cfif selectDonation.sumAmount EQ ''>
