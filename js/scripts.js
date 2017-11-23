@@ -86,26 +86,39 @@ jQuery(document).ready(function($) {
         }, options);
 
         var $container = this;
+        var $videos = $container.find('video');
         var $styles = $container.find('a');
         var $share_button = $('#facebook-share');
-        var id = $styles.first().attr('id');
+        var id = $styles.first().data('share');
+
+        // auto play selected previews
+        // $styles.filter('.selected').find('video').get(0).play();
 
         $styles.on('click', function(e) {
             e.preventDefault();
             var $this = $(this);
+            var $video = $this.find('video').get(0);
             var $indicator = $this.find('.indicator');
             var state = $this.data('state');
 
-            id = $this.attr('id');
+            id = $this.data('share');
+
+            $videos.each(function() {
+                var $v = $(this).get(0);
+                $v.pause();
+                $v.currentTime = 0;
+            });
+
+            $styles.data('state', '').removeClass('selected');
 
             if (state != 'selected') {
-                $styles.data('state', '').removeClass('selected');
                 $this.data('state', 'selected').addClass('selected');
+                $video.play();
             }
         });
 
         $share_button.on('click', function() {
-            fbShare(id, {page: settings.prod_landing_page});
+            fbShare(id);
         });
 
         return this;
@@ -113,14 +126,13 @@ jQuery(document).ready(function($) {
 
     function fbShare(id, options) {
         var settings = $.extend({
-            page: '',
             winWidth: 600,
             winHeight: 450 
         }, options);
 
         var winTop = (screen.height / 2) - (settings.winHeight / 2);
         var winLeft = (screen.width / 2) - (settings.winWidth / 2);
-        window.open('https://www.facebook.com/sharer/sharer.php?u='+ encodeURIComponent(settings.page + id + '.html') +'&amp;src=sdkpreparse', 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width='+settings.winWidth+',height='+settings.winHeight);
+        window.open('https://www.facebook.com/sharer/sharer.php?u='+ encodeURIComponent(id) +'&amp;src=sdkpreparse', 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width='+settings.winWidth+',height='+settings.winHeight);
     }
 
 
@@ -143,7 +155,7 @@ jQuery(document).ready(function($) {
         var controller = new ScrollMagic.Controller();
         var obj = {curImg: 0};
         var desktop = Foundation.MediaQuery.atLeast('medium');
-        var $counter = $('#counter');
+        var $header = $('.site-header');
         var $nav = $('#screen-nav a');
 
         var intro_tween = TweenMax.to(obj, .9,
@@ -176,11 +188,11 @@ jQuery(document).ready(function($) {
                 var fwd = e.scrollDirection === "FORWARD";
                 if (fwd) {
                     TweenMax.to($bg_container, .9, {top:'-100vh', ease: Cubic.easeInOut});
-                    if (!desktop) {$counter.addClass('hidden');}
+                    $header.addClass('hidden');
 
                 } else {
                     TweenMax.to($bg_container, .9, {top:'0', ease: Cubic.easeInOut});
-                    $counter.removeClass('hidden');
+                    $header.removeClass('hidden');
                 }
             });
             

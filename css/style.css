@@ -4181,7 +4181,8 @@ h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a {
 
 h1, .h1 {
   color: #00c1d5;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  line-height: .9 !important; }
 
 h2, .h2 {
   color: #00c1d5;
@@ -4249,12 +4250,17 @@ h3, .h3 {
   background-color: #f48020;
   color: #fefefe;
   font-weight: 700;
-  padding: 0.85em 2.25em; }
+  padding: 0.85em 2.25em;
+  border-width: 0.15rem; }
   [data-whatinput='mouse'] .bcchf_next {
     outline: 0; }
   .bcchf_next:hover, .bcchf_next:focus {
     background-color: #d6670b;
     color: #fefefe; }
+  .bcchf_next:hover {
+    background-color: transparent;
+    color: #f48020;
+    border-color: #f48020; }
 
 .bcchf_return {
   font-style: italic;
@@ -4364,8 +4370,8 @@ input[type="checkbox"]:checked + label {
   .bcchf_snowball > header img {
     width: 8.75rem;
     height: 8.3rem;
-    border-bottom-left-radius: 0.35rem;
-    border-bottom-right-radius: 0.35rem;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
     box-shadow: 0 0 0.35rem rgba(0, 0, 0, 0.15); }
   .bcchf_donate > header.site-header,
   .bcchf_snowball > header.site-header {
@@ -4375,10 +4381,13 @@ input[type="checkbox"]:checked + label {
       .bcchf_snowball > header.site-header {
         margin-bottom: 3.4rem; } }
     @media screen and (max-width: 39.9375em) {
+      .bcchf_donate > header.site-header .row,
+      .bcchf_snowball > header.site-header .row {
+        width: 94%; }
       .bcchf_donate > header.site-header img,
       .bcchf_snowball > header.site-header img {
-        width: 6.5625rem;
-        height: 6.225rem; } }
+        width: 5.4rem;
+        height: 5.1rem; } }
 
 .bcchf_snowball > header {
   position: fixed;
@@ -4386,6 +4395,24 @@ input[type="checkbox"]:checked + label {
   top: 0;
   left: 0;
   width: 100%; }
+
+.site-header img {
+  position: relative;
+  z-index: 2; }
+
+.site-header #counter {
+  opacity: 0;
+  transform: translate(0, -20rem);
+  transition: transform .45s .3s ease-in-out, opacity .3s ease-in-out; }
+  body.ready .site-header #counter {
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: transform .45s .3s ease-in-out, opacity .3s ease-in-out; }
+
+body.ready .site-header.hidden #counter {
+  transform: translate(0, -20rem);
+  opacity: 0;
+  transition: transform .3s ease-in-out, opacity .45s .3s ease-in-out; }
 
 .spinner {
   position: fixed;
@@ -4459,37 +4486,31 @@ input[type="checkbox"]:checked + label {
     transform: translateY(0); }
 
 #counter {
-  margin-top: 1.5rem;
-  pointer-events: none;
-  opacity: 0;
-  transform: translate(0, -20rem);
-  transition: transform .45s .3s ease-in-out, opacity .3s ease-in-out; }
+  margin-top: 1.2rem;
+  pointer-events: none; }
   @media print, screen and (min-width: 40em) {
     #counter {
       text-align: right;
       margin-top: 2rem; } }
-  body.ready #counter {
-    transform: translate(0, 0);
-    opacity: 1; }
-    body.ready #counter.hidden {
-      transform: translate(0, -20rem);
-      opacity: 0; }
   #counter h4 {
     font-family: "Roboto", sans-serif !important;
     text-transform: uppercase;
-    color: #0093a2; }
+    color: #00c1d5; }
+    @media screen and (max-width: 39.9375em) {
+      #counter h4 {
+        font-size: 0.65rem; } }
   #counter .throwCount {
-    font-size: 1.55rem;
+    font-size: 1.3rem;
     font-family: "Vaccine", sans-serif;
     font-weight: 700;
     color: #00c1d5; }
     #counter .throwCount .odometer-digit {
-      line-height: 2.55rem;
-      margin: 0.1rem;
+      line-height: 2.15rem;
+      margin: 0.05rem;
       background: linear-gradient(#e2e1e1 0, #fefefe 40%, #fefefe 60%, #e2e1e1 100%);
       box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2); }
     #counter .throwCount .odometer-digit-spacer {
-      width: 1.95rem; }
+      width: 1.65rem; }
     #counter .throwCount .odometer-digit-inner {
       left: .3em; }
     #counter .throwCount .odometer-value {
@@ -4512,6 +4533,9 @@ input[type="checkbox"]:checked + label {
   width: 100%;
   height: 100vh;
   overflow: hidden; }
+  @media screen and (max-width: 39.9375em) {
+    .bcchf_snowball_page .row {
+      width: 94%; } }
   .bcchf_snowball_page #slides {
     position: fixed;
     left: 0;
@@ -4564,16 +4588,16 @@ input[type="checkbox"]:checked + label {
         font-size: .5em; }
       .bcchf_snowball_page .screen .row h1 {
         font-size: 2em;
-        line-height: .9 !important; }
+        line-height: .82 !important; }
       .bcchf_snowball_page .screen .row h2 {
         font-size: 1.5em;
         font-weight: 700;
-        line-height: .9 !important; }
+        line-height: .85 !important; }
         .bcchf_snowball_page .screen .row h2 small {
           font-weight: 600; }
       .bcchf_snowball_page .screen .row p {
         font-family: "Vaccine", sans-serif;
-        font-size: .9em;
+        font-size: .75em;
         line-height: 1.15 !important;
         letter-spacing: -.03em;
         color: #00c1d5;
@@ -4597,20 +4621,27 @@ input[type="checkbox"]:checked + label {
         line-height: 1;
         text-align: center;
         cursor: pointer;
-        background-color: #00c1d5;
+        background-color: #f48020;
         color: #fefefe;
         padding-left: 2em;
-        padding-right: 2em; }
+        padding-right: 2em;
+        border-width: 0.15rem; }
         [data-whatinput='mouse'] .bcchf_snowball_page .screen .row .button {
           outline: 0; }
         .bcchf_snowball_page .screen .row .button:hover, .bcchf_snowball_page .screen .row .button:focus {
-          background-color: #009cac;
+          background-color: #e06c0b;
           color: #fefefe; }
+        .bcchf_snowball_page .screen .row .button:hover {
+          background-color: transparent;
+          border-color: #f48020;
+          color: #f48020; }
       @media screen and (max-width: 39.9375em) {
         .bcchf_snowball_page .screen .row {
           height: calc(100vh - 4rem);
-          padding-top: 9.5rem;
-          font-size: 7.2vw; } }
+          padding-top: 6.5rem;
+          font-size: 6.8vw; }
+          .bcchf_snowball_page .screen .row p {
+            font-size: .9em; } }
   .bcchf_snowball_page .screen-trigger {
     position: absolute;
     right: 0;
@@ -4627,7 +4658,8 @@ input[type="checkbox"]:checked + label {
   .bcchf_snowball_page #screen-nav {
     position: fixed;
     top: calc(50% - 3.75rem);
-    right: 2.25rem; }
+    right: -2.25rem;
+    transition: right .9s .3s ease-in-out; }
     .bcchf_snowball_page #screen-nav a {
       display: block;
       width: 0.75rem;
@@ -4666,6 +4698,8 @@ input[type="checkbox"]:checked + label {
     .bcchf_snowball_page.preloaded .spinner {
       opacity: 0;
       transform: scale(1.1); }
+    .bcchf_snowball_page.preloaded #screen-nav {
+      right: 2.25rem; }
     .bcchf_snowball_page.preloaded #cta {
       transform: translate(0, 0);
       opacity: 1; }
@@ -4821,12 +4855,21 @@ input[type="checkbox"]:checked + label {
   background-color: #00c1d5;
   color: #fefefe;
   font-weight: 700;
-  padding: 0.85em 2.25em; }
+  padding: 0.85em 2.25em;
+  border-width: 0.15rem; }
   [data-whatinput='mouse'] .bcchf_step_final section button {
     outline: 0; }
   .bcchf_step_final section button:hover, .bcchf_step_final section button:focus {
     background-color: #009cac;
     color: #fefefe; }
+  .bcchf_step_final section button:hover {
+    background-color: transparent;
+    border-color: #00c1d5;
+    color: #00c1d5; }
+
+@media print, screen and (min-width: 40em) {
+  .bcchf_thankyou h1 {
+    font-size: 2.25rem; } }
 
 @media print, screen and (min-width: 40em) {
   #thanks-top .columns:first-child {
@@ -4862,10 +4905,18 @@ input[type="checkbox"]:checked + label {
   margin-top: 0.75rem;
   text-align: center; }
   .snowball-throw-styles a .preview {
+    position: relative;
     height: 0;
-    padding-bottom: 100%;
+    padding-bottom: calc(100% - 0.3rem);
     background: #f6f7fa no-repeat center/cover;
     border: 3px solid #fefefe; }
+    .snowball-throw-styles a .preview video {
+      visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
   .snowball-throw-styles a .indicator {
     width: 1.6rem;
     height: 1.6rem;
@@ -4879,7 +4930,7 @@ input[type="checkbox"]:checked + label {
       margin: 0.3rem;
       border-radius: 50%; }
   .snowball-throw-styles a h6 {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     margin: 0.75rem 0; }
   .snowball-throw-styles a:hover {
     color: #00c1d5; }
@@ -4887,6 +4938,8 @@ input[type="checkbox"]:checked + label {
       border-color: #00c1d5; }
   .snowball-throw-styles a.selected .preview {
     border-color: #00c1d5; }
+    .snowball-throw-styles a.selected .preview video {
+      visibility: visible; }
   .snowball-throw-styles a.selected .indicator span {
     background-color: #00c1d5; }
   @media screen and (max-width: 39.9375em) {
@@ -4894,13 +4947,13 @@ input[type="checkbox"]:checked + label {
       margin-bottom: 1rem; } }
 
 #the-corkscrew .preview {
-  background-image: url(../images/snowtheme/snowball-preview-1-thumb.png); }
+  background-image: url(../images/snowtheme/snowball-preview-1-thumb.jpg); }
 
 #the-triple-whammy .preview {
-  background-image: url(../images/snowtheme/snowball-preview-2-thumb.png); }
+  background-image: url(../images/snowtheme/snowball-preview-2-thumb.jpg); }
 
 #the-just-chuck-it .preview {
-  background-image: url(../images/snowtheme/snowball-preview-3-thumb.png); }
+  background-image: url(../images/snowtheme/snowball-preview-3-thumb.jpg); }
 
 #thanks-step3 p {
   font-weight: 500; }
@@ -4920,13 +4973,15 @@ input[type="checkbox"]:checked + label {
   cursor: pointer;
   background-color: #f48020;
   color: #fefefe;
+  transition: none;
   display: block;
   margin: 0.75rem auto 1.5rem;
   font-weight: 500;
   padding: 0.45em 1em 0.3em .85em;
   border-radius: 0.5rem;
   line-height: 2.5rem;
-  font-size: 1.9rem; }
+  font-size: 1.9rem;
+  border-width: 0.15rem; }
   [data-whatinput='mouse'] #facebook-share {
     outline: 0; }
   #facebook-share:hover, #facebook-share:focus {
@@ -4937,6 +4992,12 @@ input[type="checkbox"]:checked + label {
     position: relative;
     top: -0.2rem;
     margin-right: .6em; }
+  #facebook-share:hover {
+    background-color: transparent;
+    border-color: #f48020;
+    color: #f48020; }
+    #facebook-share:hover svg * {
+      fill: #f48020; }
   @media screen and (max-width: 39.9375em) {
     #facebook-share {
       display: block;

@@ -36,7 +36,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	a {text-decoration: none;}
 }
 
-h1, .h1 {color: $primary-color; text-transform: uppercase;}
+h1, .h1 {color: $primary-color; text-transform: uppercase; line-height: .9 !important;}
 
 h2, .h2 {color: $primary-color; text-transform: uppercase; font-weight: 600;}
 
@@ -64,7 +64,8 @@ h6, .h6 {}
 
 .bcchf_next {
     @include button(false, $secondary-color, darken($secondary-color,10%), $white, solid);
-    font-weight: 700; padding: 0.85em 2.25em; 
+    font-weight: 700; padding: 0.85em 2.25em; border-width: rem-calc(3);
+    &:hover {background-color: transparent; color: $secondary-color; border-color: $secondary-color;}
 }
 .bcchf_return {font-style: italic; color: $black; font-size: rem-calc(16); 
     &:before {content: "<"; display: inline; padding-right: rem-calc(5);}
@@ -151,12 +152,13 @@ input[type="checkbox"]:checked + label {
 .bcchf_donate > header,
 .bcchf_snowball > header {background: transparent; height: auto; margin-bottom: rem-calc(68);
     a {position: relative;}
-    img {width: rem-calc(175); height: rem-calc(166); border-bottom-left-radius: rem-calc(7); border-bottom-right-radius: rem-calc(7); box-shadow: #{rem-calc(0 0 7)} rgba(0,0,0,.15);}
+    img {width: rem-calc(175); height: rem-calc(166); border-bottom-left-radius: rem-calc(5); border-bottom-right-radius: rem-calc(5); box-shadow: #{rem-calc(0 0 7)} rgba(0,0,0,.15);}
 
     &.site-header {margin-bottom: rem-calc(30);
         @include breakpoint(medium) {margin-bottom: rem-calc(68);}
         @include breakpoint(small down) {
-            img {width: rem-calc(131.25); height: rem-calc(124.5);}
+            .row {width: 94%;}
+            img {width: rem-calc(108); height: rem-calc(102);}
         }
     }
 }
@@ -173,6 +175,22 @@ input[type="checkbox"]:checked + label {
 
 // Landing
 // ------
+
+.site-header {
+    // @include breakpoint(small down) {opacity: 0; transform: translate(0,#{rem-calc(-400)}); transition: transform .45s .3s ease-in-out, opacity .3s ease-in-out; 
+    //     body.ready & {transform: translate(0,0); opacity: 1; transition: transform .45s .3s ease-in-out, opacity .3s ease-in-out; 
+    //         &.hidden {transform: translate(0,#{rem-calc(-400)}); opacity: 0; transition: transform .3s ease-in-out, opacity .45s .3s ease-in-out; }
+    //     }
+    // }
+
+    img {position: relative; z-index: 2;}
+
+    #counter {opacity: 0; transform: translate(0,#{rem-calc(-400)}); transition: transform .45s .3s ease-in-out, opacity .3s ease-in-out; 
+        body.ready & {transform: translate(0,0); opacity: 1; transition: transform .45s .3s ease-in-out, opacity .3s ease-in-out;}
+    }
+    body.ready &.hidden #counter {transform: translate(0,#{rem-calc(-400)}); opacity: 0; transition: transform .3s ease-in-out, opacity .45s .3s ease-in-out;}
+} 
+
 
 .spinner {position: fixed; bottom: 5vh; left: calc(50% - #{rem-calc(36)}); width: rem-calc(72); text-align: center; pointer-events: none; transition: opacity .3s .6s ease-in-out, transform .3s .6s ease-in-out;
     > div {width: rem-calc(18); height: rem-calc(18); margin: rem-calc(3); background-color: $primary-color; border-radius: 100%; display: inline-block; animation: sk-bouncedelay 1.4s infinite ease-in-out both;}
@@ -199,19 +217,17 @@ input[type="checkbox"]:checked + label {
 $themeName: "odometer-theme-default";
 @include spinning-odometer($themeName);
 
-#counter {margin-top: rem-calc(30); pointer-events: none; opacity: 0; transform: translate(0,#{rem-calc(-400)}); transition: transform .45s .3s ease-in-out, opacity .3s ease-in-out; 
+#counter {margin-top: rem-calc(24); pointer-events: none; 
     @include breakpoint(medium) {text-align: right; margin-top: rem-calc(40);}
 
-    body.ready & {transform: translate(0,0); opacity: 1;
-        &.hidden {transform: translate(0,#{rem-calc(-400)}); opacity: 0;}
+    h4 {font-family: $body-font-family; text-transform: uppercase; color: $primary-color;
+        @include breakpoint(small down) {font-size: rem-calc(13);}
     }
-
-    h4 {font-family: $body-font-family; text-transform: uppercase; color: darken($primary-color,10%);}
     
-    .throwCount {font-size: rem-calc(31); font-family: $header-font-family; font-weight: $global-weight-bold; color: $primary-color; 
+    .throwCount {font-size: rem-calc(26); font-family: $header-font-family; font-weight: $global-weight-bold; color: $primary-color; 
 
-        .odometer-digit {line-height: rem-calc(51); margin: rem-calc(2); background: linear-gradient(lighten($medium-gray,10%) 0, $white 40%, $white 60%, lighten($medium-gray,10%) 100%); box-shadow: #{rem-calc(0 0 10)} rgba(0,0,0,.2);}
-        .odometer-digit-spacer {width: rem-calc(39);}
+        .odometer-digit {line-height: rem-calc(43); margin: rem-calc(1); background: linear-gradient(lighten($medium-gray,10%) 0, $white 40%, $white 60%, lighten($medium-gray,10%) 100%); box-shadow: #{rem-calc(0 0 10)} rgba(0,0,0,.2);}
+        .odometer-digit-spacer {width: rem-calc(33);}
         .odometer-digit-inner {left: .3em;}
         .odometer-value {margin-top: .1em;}
         .odometer-formatting-mark {display: none;}
@@ -225,6 +241,10 @@ $themeName: "odometer-theme-default";
 
 
 .bcchf_snowball_page {position: relative; left: 0; top: 0; width: 100%; height: 100vh; overflow: hidden;
+
+    .row {
+        @include breakpoint(small down) {width: 94%;}
+    }
 
     #slides {position: fixed; left: 0; top: 0; width: 100%; height: 100vh;
         div {position: absolute; left: 0; top: 0; width: 100%; height: 100%; visibility: hidden; background: $white no-repeat center/cover;
@@ -243,19 +263,22 @@ $themeName: "odometer-theme-default";
 
         .row {height: calc(100vh - #{rem-calc(170)}); padding-top: rem-calc(230); font-size: 6vh; 
             small {color: inherit !important; font-size: .5em;}
-            h1 {font-size: 2em; line-height: .9 !important;}
-            h2 {font-size: 1.5em; font-weight: 700; line-height: .9 !important;
+            h1 {font-size: 2em; line-height: .82 !important;}
+            h2 {font-size: 1.5em; font-weight: 700; line-height: .85 !important;
                 small {font-weight: 600;}
             }
-            p {font-family: $header-font-family; font-size: .9em; line-height: 1.15 !important; letter-spacing: -.03em; color: $primary-color; font-weight: 600;
+            p {font-family: $header-font-family; font-size: .75em; line-height: 1.15 !important; letter-spacing: -.03em; color: $primary-color; font-weight: 600;
                 &:last-child {margin-bottom: 0;}
             }
-            .button {width: auto; font-family: $body-font-family; letter-spacing: 0; margin-bottom: 0;
-                @include button(false, $primary-color, darken($primary-color,8%), $white, solid);
-                padding-left: 2em; padding-right: 2em; 
+            .button {width: auto; font-family: $body-font-family; letter-spacing: 0; margin-bottom: 0; 
+                @include button(false, $secondary-color, darken($secondary-color,8%), $white, solid);
+                padding-left: 2em; padding-right: 2em; border-width: rem-calc(3);
+                &:hover {background-color: transparent; border-color: $secondary-color; color: $secondary-color;}
             }
 
-            @include breakpoint(small down) {height: calc(100vh - #{rem-calc(80)}); padding-top: rem-calc(190);  font-size: 7.2vw;}
+            @include breakpoint(small down) {height: calc(100vh - #{rem-calc(80)}); padding-top: rem-calc(130);  font-size: 6.8vw;
+                p {font-size: .9em;}
+            }
         }
     }
 
@@ -266,7 +289,7 @@ $themeName: "odometer-theme-default";
         &#screen-4-trigger-out {top: 300vh;}
     }
 
-    #screen-nav {position: fixed; top: calc(50% - #{rem-calc(75)}); right: rem-calc(45); 
+    #screen-nav {position: fixed; top: calc(50% - #{rem-calc(75)}); right: rem-calc(-45); transition: right .9s .3s ease-in-out;
         a {display: block; width: rem-calc(15); height: rem-calc(15); border-radius: 50%; margin-bottom: rem-calc(15); background-color: $white;
             &.selected {background-color: rgba($dark-gray,.8);}
         }
@@ -282,6 +305,8 @@ $themeName: "odometer-theme-default";
 
     &.preloaded {height: 400vh;
         .spinner {opacity: 0; transform: scale(1.1);}
+
+        #screen-nav {right: rem-calc(45);}
 
         #cta {transform: translate(0,0); opacity: 1; 
             @include breakpoint(medium) {pointer-events: auto;
@@ -400,7 +425,8 @@ $themeName: "odometer-theme-default";
 
     section button {
         @include button(false, $primary-color, darken($primary-color,8%), $white, solid);
-        font-weight: 700; padding: 0.85em 2.25em; 
+        font-weight: 700; padding: 0.85em 2.25em; border-width: rem-calc(3);
+        &:hover {background-color: transparent; border-color: $primary-color; color: $primary-color;}
     }
 }
 
@@ -409,6 +435,12 @@ $themeName: "odometer-theme-default";
 // Thank you page
 // ------
 
+
+.bcchf_thankyou {
+    @include breakpoint(medium) {
+        h1 {font-size: rem-calc(45);}
+    }
+}
 
 #thanks-top {
 
@@ -433,16 +465,20 @@ $themeName: "odometer-theme-default";
     
     .snowball-throw-styles {
         a {display: block; margin-top: rem-calc(15); text-align: center;
-            .preview {height: 0; padding-bottom: 100%; background: #f6f7fa no-repeat center/cover; border: 3px solid $white;}
+            .preview {position: relative; height: 0; padding-bottom: calc(100% - #{rem-calc(6)}); background: #f6f7fa no-repeat center/cover; border: 3px solid $white;
+                video {visibility: hidden; position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+            }
             .indicator {width: rem-calc(32); height: rem-calc(32); margin: 0 auto; border: 2px solid $primary-color; border-radius: 50%;
                 span {display: block; width: rem-calc(16); height: rem-calc(16); margin: rem-calc(6); border-radius: 50%;}
             }
-            h6 {font-size: rem-calc(22); margin: rem-calc(15 0);}
+            h6 {font-size: rem-calc(18); margin: rem-calc(15 0);}
             &:hover {color: $primary-color;
                 .preview {border-color: $primary-color;}
             }
             &.selected {
-                .preview {border-color: $primary-color;}
+                .preview {border-color: $primary-color;
+                    video {visibility: visible;}
+                }
                 .indicator span {background-color: $primary-color;}
             }
 
@@ -451,13 +487,13 @@ $themeName: "odometer-theme-default";
     }
 
     #the-corkscrew {
-        .preview {background-image: url(../images/snowtheme/snowball-preview-1-thumb.png);}
+        .preview {background-image: url(../images/snowtheme/snowball-preview-1-thumb.jpg);}
     }
     #the-triple-whammy {
-        .preview {background-image: url(../images/snowtheme/snowball-preview-2-thumb.png);}
+        .preview {background-image: url(../images/snowtheme/snowball-preview-2-thumb.jpg);}
     }
     #the-just-chuck-it {
-        .preview {background-image: url(../images/snowtheme/snowball-preview-3-thumb.png);}
+        .preview {background-image: url(../images/snowtheme/snowball-preview-3-thumb.jpg);}
     }
 
 
@@ -467,9 +503,13 @@ $themeName: "odometer-theme-default";
 
     #facebook-share {
         @include button(false, $secondary-color, darken($secondary-color,10%), $white, solid);
-        display: block; margin: #{rem-calc(15)} auto #{rem-calc(30)}; font-weight: 500; padding: 0.45em 1em 0.3em .85em; border-radius: rem-calc(10); line-height: rem-calc(50); font-size: rem-calc(38);
+        transition: none; display: block; margin: #{rem-calc(15)} auto #{rem-calc(30)}; font-weight: 500; padding: 0.45em 1em 0.3em .85em; border-radius: rem-calc(10); line-height: rem-calc(50); font-size: rem-calc(38); border-width: rem-calc(3);
 
         svg {vertical-align: middle; position: relative; top: rem-calc(-4); margin-right: .6em;}
+
+        &:hover {background-color: transparent; border-color: $secondary-color; color: $secondary-color;
+            svg * {fill: $secondary-color;}
+        }
 
         @include breakpoint(small down) {display: block; width: 100%;}
     }
