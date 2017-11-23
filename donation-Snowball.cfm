@@ -107,8 +107,8 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz
 <!-- basic favicon -->
 <link rel="shortcut icon" href="https://www.bcchf.ca/themes/bcchf/favicon.ico" />
 
-<!-- For development -->
-<link rel="stylesheet" type="text/css" media="screen" href="../css/combined_secure.css?m=1445910939" />
+<!-- For development 
+<link rel="stylesheet" type="text/css" media="screen" href="../css/combined_secure.css?m=1445910939" />-->
 <link rel="stylesheet" href="css/footer.css" media="all">
 <link rel="stylesheet" href="css/donate-snowball.css" media="all">
 <link rel="stylesheet" href="css/slick.css" media="all">
