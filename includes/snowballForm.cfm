@@ -756,7 +756,7 @@
                 <input type="checkbox" id="bcchf_allow_contact" name="bcchf_allow_contact" value="1"/>
                 <label for="bcchf_allow_contact"></label>
             </div>
-            <p>I allow the Foundation to contact me with information about my gift and how I can support BC Children's Hospital.</p>
+            <p>I allow the Foundation to contact me with information about my gift and how I can support BC&nbsp;Children's&nbsp;Hospital.</p>
         </div>
     </section>
     <button type="button" class="bcchf_next js_bcchf_next">Continue</button>
@@ -815,7 +815,7 @@
     <section>
         <h4>Your Payment Details</h4>
         <ul class="js_bcchf_review">
-            <li>Cardholder name: <span id="js_bcchf_cc_name"></span></li>
+            <li>Cardholder Name: <span id="js_bcchf_cc_name"></span></li>
             <li>Credit Card No: **** **** **** <span id="js_bcchf_cc_number"></span></li>
             <li>Expiry Date: <span id="js_bcchf_expire_month"></span> / <span id="js_bcchf_expire_year"></span></li>
         </ul>
