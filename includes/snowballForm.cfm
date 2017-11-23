@@ -796,6 +796,7 @@
     <section>
         <h4>Your Information</h4>
         <ul class="js_bcchf_review">
+            <li>Company Name: <span id="js_bcchf_company_name"></span></li>
             <li>Salutation: <span id="js_bcchf_salutation"></span></li>
             <li>First Name: <span id="js_bcchf_first_name"></span></li>
             <li>Last Name: <span id="js_bcchf_last_name"></span></li>
