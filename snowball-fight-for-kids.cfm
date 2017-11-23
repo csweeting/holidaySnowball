@@ -40,7 +40,7 @@
     <meta property="og:type" content="article"/>
     <meta property="og:title" content="Join the Big BC Snowball Fight for Kids"/>
     <meta property="og:site_name" content="BC Children's Hospital Foundation"/>
-    <meta property="og:description" content="Show your support for BC Children’s Hospital by participating in BC’s biggest digital snowball fight." />
+    <meta property="og:description" content="Show your support for BC Children's Hospital by participating in BC's biggest digital snowball fight." />
     <meta property="og:url" content="https://secure.bcchf.ca/donate/snowball-fight-for-kids.cfm"/>
     <meta property="og:image" content="https://secure.bcchf.ca/donate/images/snowtheme/the-big-snowball-fight-for-kids.png"/>
     <meta property="og:image:width" content="1200"/>
