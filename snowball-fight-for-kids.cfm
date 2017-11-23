@@ -46,7 +46,7 @@
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="630"/>
     
-    <link rel="stylesheet" href="css/style.css?v=3.9" media="all">
+    <link rel="stylesheet" href="css/style.css?v=4.0" media="all">
 
 </head>
 <body class="bcchf_snowball">
@@ -309,6 +309,6 @@
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <script type="text/javascript" src="js/foundation.min.js"></script>
-    <script type="text/javascript" src="js/scripts.min.js?v=3.9"></script>
+    <script type="text/javascript" src="js/scripts.min.js?v=4.0"></script>
 </body>
 </html>

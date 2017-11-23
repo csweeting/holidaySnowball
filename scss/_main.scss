@@ -71,6 +71,8 @@ h6, .h6 {}
     &:before {content: "<"; display: inline; padding-right: rem-calc(5);}
 }
 
+button:focus {outline:0;}
+
 
 
 
