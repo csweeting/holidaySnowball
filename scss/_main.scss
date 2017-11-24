@@ -154,7 +154,7 @@ input[type="checkbox"]:checked + label {
 .bcchf_donate > header,
 .bcchf_snowball > header {background: transparent; height: auto; margin-bottom: rem-calc(68);
     a {position: relative;}
-    img {width: rem-calc(149); height: rem-calc(141); border-bottom-left-radius: rem-calc(5); border-bottom-right-radius: rem-calc(5); box-shadow: #{rem-calc(0 0 7)} rgba(0,0,0,.15);}
+    img {width: rem-calc(166); height: rem-calc(158); border-bottom-left-radius: rem-calc(5); border-bottom-right-radius: rem-calc(5); box-shadow: #{rem-calc(0 0 7)} rgba(0,0,0,.15);}
 
     &.site-header {margin-bottom: rem-calc(30);
         @include breakpoint(medium) {margin-bottom: rem-calc(68);}
@@ -509,9 +509,9 @@ $themeName: "odometer-theme-default";
 
     #facebook-share {
         @include button(false, $secondary-color, darken($secondary-color,10%), $white, solid);
-        transition: none; display: block; margin: #{rem-calc(15)} auto #{rem-calc(30)}; font-weight: 500; padding: 0.45em 1em 0.3em .85em; border-radius: rem-calc(10); line-height: rem-calc(50); font-size: rem-calc(38); border-width: rem-calc(3);
+        transition: none; display: block; margin: #{rem-calc(15)} auto #{rem-calc(30)}; font-weight: 500; padding: 0.38em 1em 0.25em .85em; border-radius: rem-calc(10); line-height: rem-calc(42); font-size: rem-calc(32); border-width: rem-calc(3);
 
-        svg {vertical-align: middle; position: relative; top: rem-calc(-4); margin-right: .6em;}
+        svg {vertical-align: middle; position: relative; top: rem-calc(-4); margin-right: .6em; height: rem-calc(42);}
 
         &:hover {background-color: transparent; border-color: $secondary-color; color: $secondary-color;
             svg * {fill: $secondary-color;}

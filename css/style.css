@@ -4371,8 +4371,8 @@ input[type="checkbox"]:checked + label {
     position: relative; }
   .bcchf_donate > header img,
   .bcchf_snowball > header img {
-    width: 7.45rem;
-    height: 7.05rem;
+    width: 8.3rem;
+    height: 7.9rem;
     border-bottom-left-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
     box-shadow: 0 0 0.35rem rgba(0, 0, 0, 0.15); }
@@ -4989,10 +4989,10 @@ body.ready .site-header.hidden #counter {
   display: block;
   margin: 0.75rem auto 1.5rem;
   font-weight: 500;
-  padding: 0.45em 1em 0.3em .85em;
+  padding: 0.38em 1em 0.25em .85em;
   border-radius: 0.5rem;
-  line-height: 2.5rem;
-  font-size: 1.9rem;
+  line-height: 2.1rem;
+  font-size: 1.6rem;
   border-width: 0.15rem; }
   [data-whatinput='mouse'] #facebook-share {
     outline: 0; }
@@ -5003,7 +5003,8 @@ body.ready .site-header.hidden #counter {
     vertical-align: middle;
     position: relative;
     top: -0.2rem;
-    margin-right: .6em; }
+    margin-right: .6em;
+    height: 2.1rem; }
   #facebook-share:hover {
     background-color: transparent;
     border-color: #f48020;
