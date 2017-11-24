@@ -4371,8 +4371,8 @@ input[type="checkbox"]:checked + label {
     position: relative; }
   .bcchf_donate > header img,
   .bcchf_snowball > header img {
-    width: 8.75rem;
-    height: 8.3rem;
+    width: 7.45rem;
+    height: 7.05rem;
     border-bottom-left-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
     box-shadow: 0 0 0.35rem rgba(0, 0, 0, 0.15); }

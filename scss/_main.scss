@@ -154,7 +154,7 @@ input[type="checkbox"]:checked + label {
 .bcchf_donate > header,
 .bcchf_snowball > header {background: transparent; height: auto; margin-bottom: rem-calc(68);
     a {position: relative;}
-    img {width: rem-calc(175); height: rem-calc(166); border-bottom-left-radius: rem-calc(5); border-bottom-right-radius: rem-calc(5); box-shadow: #{rem-calc(0 0 7)} rgba(0,0,0,.15);}
+    img {width: rem-calc(149); height: rem-calc(141); border-bottom-left-radius: rem-calc(5); border-bottom-right-radius: rem-calc(5); box-shadow: #{rem-calc(0 0 7)} rgba(0,0,0,.15);}
 
     &.site-header {margin-bottom: rem-calc(30);
         @include breakpoint(medium) {margin-bottom: rem-calc(68);}
