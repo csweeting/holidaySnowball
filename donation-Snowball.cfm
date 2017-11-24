@@ -112,7 +112,7 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz
 <link rel="stylesheet" href="css/footer.css" media="all">
 <link rel="stylesheet" href="css/donate-snowball.css" media="all">
 <link rel="stylesheet" href="css/slick.css" media="all">
-<link rel="stylesheet" href="css/style.css?v=4.0" media="all">
+<link rel="stylesheet" href="css/style.css?v=4.1" media="all">
 
 <!-- Typekit settings for Futura font 
 <script src="https://use.typekit.net/pcl4xdw.js"></script>
@@ -181,7 +181,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <script type="text/javascript" src="../js/ua-parser.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <script type="text/javascript" src="js/foundation.min.js"></script>
-    <script type="text/javascript" src="js/scripts.min.js?v=4.0"></script>
+    <script type="text/javascript" src="js/scripts.min.js?v=4.1"></script>
     
     <script type="text/javascript">
 	<!--

@@ -228,6 +228,9 @@ $themeName: "odometer-theme-default";
     
     .throwCount {font-size: rem-calc(26); font-family: $header-font-family; font-weight: $global-weight-bold; color: $primary-color; 
 
+        .odometer .odometer-inside .odometer-digit:first-child,
+        .odometer .odometer-inside .odometer-formatting-mark:nth-child(2) {display: none !important;}
+
         .odometer-digit {line-height: rem-calc(43); margin: rem-calc(1); background: linear-gradient(lighten($medium-gray,10%) 0, $white 40%, $white 60%, lighten($medium-gray,10%) 100%); box-shadow: #{rem-calc(0 0 10)} rgba(0,0,0,.2);}
         .odometer-digit-spacer {width: rem-calc(33);}
         .odometer-digit-inner {left: .3em;}
@@ -247,13 +250,14 @@ $themeName: "odometer-theme-default";
     .row {
         @include breakpoint(small down) {width: 94%;}
     }
-
+    #slides-fg,
     #slides {position: fixed; left: 0; top: 0; width: 100%; height: 100vh;
-        div {position: absolute; left: 0; top: 0; width: 100%; height: 100%; visibility: hidden; background: $white no-repeat center/cover;
+        div {position: absolute; left: 0; top: 0; width: 100%; height: 100%; visibility: hidden; background: transparent no-repeat center/cover;
             &:first-child {visibility: visible;}
         }
         @include breakpoint(small down) {left: -25%; width: 125%; top: -15vh; height: 115vh;}
     }
+    #slides-fg {z-index: 2;}
 
     #screen_h {position: fixed; left: 0; top: 0; width: 100%; height: 500vh; mix-blend-mode: multiply;}
 

@@ -1,4 +1,4 @@
-// @codekit-prepend "init-foundation.js", "tinypubsub.js", "velocity.js", "velocity.ui.js", "scrollmagic/uncompressed/ScrollMagic.js", "scrollmagic/uncompressed/plugins/animation.gsap.js", "odometer.min.js";
+// @codekit-prepend "init-foundation.js", "tinypubsub.js", "velocity.js", "velocity.ui.js", "scrollmagic/uncompressed/ScrollMagic.js", "scrollmagic/uncompressed/plugins/animation.gsap.js", "odometer.js";
 
 
 /*!
@@ -78,12 +78,7 @@ jQuery(document).ready(function($) {
     // Snowball Throw Style Selector
     // ------
 
-    $.fn.snowballThrowStyleSelector = function(options) {
-        var settings = $.extend( {
-            prod_landing_page : 'https://secure.bcchf.ca/donate/',
-            stage_landing_page : 'http://snowball.glance.ca/',
-            dev_landing_page : 'http://www.holidaysnowball.dev/'
-        }, options);
+    $.fn.snowballThrowStyleSelector = function() {
 
         var $container = this;
         var $videos = $container.find('video');
@@ -92,7 +87,7 @@ jQuery(document).ready(function($) {
         var id = $styles.first().data('share');
 
         // auto play selected previews
-        // $styles.filter('.selected').find('video').get(0).play();
+        $styles.filter('.selected').find('video').get(0).play();
 
         $styles.on('click', function(e) {
             e.preventDefault();
@@ -144,13 +139,15 @@ jQuery(document).ready(function($) {
         var $html = $('html');
         var $window = $(window);
         var $container = this;
-        var $bg_container = $('#screen_h');
-        var $bg = $container.find('#slides');
-        var $bg_frames = $bg.find('div');
+        var $screen_container = $('#screen_h');
+        var $frames = $container.find('#slides-fg div, #slides div');
+        var $bg_frames = $container.find('#slides div');
+        var $fg_frames = $container.find('#slides-fg div');
         var $screens = $container.find('.screen');
         var $cta = $('#cta');
         var $triggers = $('.screen-trigger');
         var intro_frames = 10;
+        var fg_frames = 34;
         var total_frames = 144;
         var controller = new ScrollMagic.Controller();
         var obj = {curImg: 0};
@@ -165,7 +162,8 @@ jQuery(document).ready(function($) {
                 immediateRender: true, // load first image automatically
                 ease: Linear.easeNone,
                 onUpdate: function () {
-                    $bg_frames.css({visibility: 'hidden'}).eq(obj.curImg).css({visibility: 'visible'});        
+                    $bg_frames.css({visibility: 'hidden'}).eq(obj.curImg).css({visibility: 'visible'});
+                    $fg_frames.css({visibility: 'hidden'}).eq(obj.curImg).css({visibility: 'visible'});
                 }
             }
         );
@@ -187,11 +185,11 @@ jQuery(document).ready(function($) {
             .on('start', function(e) {
                 var fwd = e.scrollDirection === "FORWARD";
                 if (fwd) {
-                    TweenMax.to($bg_container, .9, {top:'-100vh', ease: Cubic.easeInOut});
+                    TweenMax.to($screen_container, .9, {top:'-100vh', ease: Cubic.easeInOut});
                     $header.addClass('hidden');
 
                 } else {
-                    TweenMax.to($bg_container, .9, {top:'0', ease: Cubic.easeInOut});
+                    TweenMax.to($screen_container, .9, {top:'0', ease: Cubic.easeInOut});
                     $header.removeClass('hidden');
                 }
             });
@@ -200,9 +198,9 @@ jQuery(document).ready(function($) {
             .on('start', function(e) {
                 var fwd = e.scrollDirection === "FORWARD";
                 if (fwd) {
-                    TweenMax.to($bg_container, .9, {top:'-200vh', ease: Cubic.easeInOut});
+                    TweenMax.to($screen_container, .9, {top:'-200vh', ease: Cubic.easeInOut});
                 } else {
-                    TweenMax.to($bg_container, .9, {top:'-100vh', ease: Cubic.easeInOut});
+                    TweenMax.to($screen_container, .9, {top:'-100vh', ease: Cubic.easeInOut});
                 }
             });
 
@@ -210,9 +208,9 @@ jQuery(document).ready(function($) {
             .on('start', function(e) {
                 var fwd = e.scrollDirection === "FORWARD";
                 if (fwd) {
-                    TweenMax.to($bg_container, .9, {top:'-300vh', ease: Cubic.easeInOut});
+                    TweenMax.to($screen_container, .9, {top:'-300vh', ease: Cubic.easeInOut});
                 } else {
-                    TweenMax.to($bg_container, .9, {top:'-200vh', ease: Cubic.easeInOut});
+                    TweenMax.to($screen_container, .9, {top:'-200vh', ease: Cubic.easeInOut});
                 }
             });
 
@@ -220,9 +218,9 @@ jQuery(document).ready(function($) {
             .on('start', function(e) {
                 var fwd = e.scrollDirection === "FORWARD";
                 if (fwd) {
-                    TweenMax.to($bg_container, .9, {top:'-400vh', ease: Cubic.easeInOut});
+                    TweenMax.to($screen_container, .9, {top:'-400vh', ease: Cubic.easeInOut});
                 } else {
-                    TweenMax.to($bg_container, .9, {top:'-300vh', ease: Cubic.easeInOut});
+                    TweenMax.to($screen_container, .9, {top:'-300vh', ease: Cubic.easeInOut});
                 }
             });
 
@@ -234,14 +232,18 @@ jQuery(document).ready(function($) {
                 id = Math.floor(prog * (total_frames - intro_frames)) + intro_frames;
             }
             $bg_frames.css({visibility: 'hidden'}).eq(id).css({visibility: 'visible'});
+            $fg_frames.css({visibility: 'hidden'});
+            if (prog < fg_frames/total_frames) {
+                $fg_frames.eq(id).css({visibility: 'visible'});
+            }
         }
 
         var preload = [];
-        $bg_frames.each(function(i) {
+        $frames.each(function(i) {
             var style = $(this).attr('style');
-            var start = style.indexOf('images'); // var start = 22; // 'background-image: url('
-            var end = style.indexOf('.jpg');
-            preload[i] = style.substring(start, end) + '.jpg';
+            var start = style.indexOf('url(') + 4;
+            var end = style.indexOf(');');
+            preload[i] = style.substring(start, end).replace(/^\"+|\"+$/g, '');
         });
 
         var promises = [];

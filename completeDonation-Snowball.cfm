@@ -203,7 +203,7 @@ ga('ecommerce:send');
     <link rel="stylesheet" href="css/footer.css" media="all">
     <link rel="stylesheet" href="css/donate-snowball.css" media="all">
     <link rel="stylesheet" href="css/slick.css" media="all">
-    <link rel="stylesheet" href="css/style.css?v=4.0" media="all">
+    <link rel="stylesheet" href="css/style.css?v=4.1" media="all">
 
     <!-- Typekit settings for Futura font 
     <script src="https://use.typekit.net/pcl4xdw.js"></script>
@@ -352,9 +352,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                     <div class="row snowball-throw-styles">
                         <div class="small-12 medium-4 columns">
-                            <a href="javascript:void(0)" id="the-corkscrew" data-share="https://secure.bcchf.ca/donate/snowball-fight-for-kids.cfm" class="selected">
+                            <a href="javascript:void(0)" id="the-corkscrew" data-share="https://www.facebook.com/BCCHF/videos/10155306942110805/" class="selected">
                                 <div class="preview">
-                                    <video autoplay loop poster="images/snowtheme/snowball-preview-1-thumb.jpg">
+                                    <video muted playsinline loop poster="images/snowtheme/snowball-preview-1-thumb.jpg">
                                         <source src="videos/BCCH_throw_cork.mov" type="video/mp4">
                                     </video>
                                 </div>
@@ -363,9 +363,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </a>
                         </div>
                         <div class="small-12 medium-4 columns">
-                            <a href="javascript:void(0)" id="the-triple-whammy" data-share="https://secure.bcchf.ca/donate/snowball-fight-for-kids.cfm">
+                            <a href="javascript:void(0)" id="the-triple-whammy" data-share="https://www.facebook.com/BCCHF/videos/10155306946090805/">
                                 <div class="preview">
-                                    <video loop poster="images/snowtheme/snowball-preview-2-thumb.jpg">
+                                    <video muted playsinline loop poster="images/snowtheme/snowball-preview-2-thumb.jpg">
                                         <source src="videos/BCCH_throw_triple.mov" type="video/mp4">
                                     </video>
                                 </div>
@@ -374,9 +374,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             </a>
                         </div>
                         <div class="small-12 medium-4 columns">
-                            <a href="javascript:void(0)" id="the-just-chuck-it" data-share="https://secure.bcchf.ca/donate/snowball-fight-for-kids.cfm">
+                            <a href="javascript:void(0)" id="the-just-chuck-it" data-share="https://www.facebook.com/BCCHF/videos/10155306934990805/">
                                 <div class="preview">
-                                    <video loop poster="images/snowtheme/snowball-preview-3-thumb.jpg">
+                                    <video muted playsinline loop poster="images/snowtheme/snowball-preview-3-thumb.jpg">
                                         <source src="videos/BCCH_throw_straight.mov" type="video/mp4">
                                     </video>
                                 </div>
@@ -447,7 +447,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<script type="text/javascript" src="js/default.jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <script type="text/javascript" src="js/foundation.min.js"></script>
-    <script type="text/javascript" src="js/scripts.min.js?v=4.0"></script>
+    <script type="text/javascript" src="js/scripts.min.js?v=4.1"></script>
 
     <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
