@@ -231,7 +231,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 	<header>
 		<div class="center">
-			<a href="http://bcchf.ca" target="_blank"><img src="images/decorations/bcchf-header-logo.png" alt=""></a>
+			<a href="http://bcchf.ca" target="_blank"><img src="images/snowtheme/logo-tag.png" width="175" height="166" alt=""></a>
 		</div>
 	</header>
 	<div class="main center">
