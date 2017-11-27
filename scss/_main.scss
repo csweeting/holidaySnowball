@@ -228,9 +228,6 @@ $themeName: "odometer-theme-default";
     
     .throwCount {font-size: rem-calc(26); font-family: $header-font-family; font-weight: $global-weight-bold; color: $primary-color; 
 
-        .odometer .odometer-inside .odometer-digit:first-child,
-        .odometer .odometer-inside .odometer-formatting-mark:nth-child(2) {display: none !important;}
-
         .odometer-digit {line-height: rem-calc(43); margin: rem-calc(1); background: linear-gradient(lighten($medium-gray,10%) 0, $white 40%, $white 60%, lighten($medium-gray,10%) 100%); box-shadow: #{rem-calc(0 0 10)} rgba(0,0,0,.2);}
         .odometer-digit-spacer {width: rem-calc(33);}
         .odometer-digit-inner {left: .3em;}
@@ -241,6 +238,8 @@ $themeName: "odometer-theme-default";
             .odometer-digit {line-height: rem-calc(62); margin: rem-calc(3);}
             .odometer-digit-spacer {width: rem-calc(48);}
         }
+
+        .odometer-inside .odometer-digit:first-child {display: none;}
     }
 }
 

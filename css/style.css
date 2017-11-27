@@ -4507,9 +4507,6 @@ body.ready .site-header.hidden #counter {
     font-family: "Vaccine", sans-serif;
     font-weight: 700;
     color: #00c1d5; }
-    #counter .throwCount .odometer .odometer-inside .odometer-digit:first-child,
-    #counter .throwCount .odometer .odometer-inside .odometer-formatting-mark:nth-child(2) {
-      display: none !important; }
     #counter .throwCount .odometer-digit {
       line-height: 2.15rem;
       margin: 0.05rem;
@@ -4531,6 +4528,8 @@ body.ready .site-header.hidden #counter {
           margin: 0.15rem; }
         #counter .throwCount .odometer-digit-spacer {
           width: 2.4rem; } }
+    #counter .throwCount .odometer-inside .odometer-digit:first-child {
+      display: none; }
 
 .bcchf_snowball_page {
   position: relative;
