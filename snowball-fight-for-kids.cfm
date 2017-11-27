@@ -297,7 +297,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <article id="screen-2" class="screen">
                 <div class="row align-middle">
                     <div class="small-12 columns">
-                        <p>This season, show kids <br />you care by making a <br />donation to participate <br />in BC’s biggest digital <br />snowball fight. Supporting <br />kids is easy as 1-2-3.</p>
+                        <p>This season, show kids <br />you care by making a <br />donation to participate <br />in BC's biggest digital <br />snowball fight. Supporting <br />kids is easy as 1-2-3.</p>
                     </div>
                 </div>
             </article>

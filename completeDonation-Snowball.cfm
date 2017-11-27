@@ -347,7 +347,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="row">
                         <div class="small-12 columns">
                             <h2>Step 2</h2>
-                            <h1>You’ve earned a snowball, now choose how you want to throw it:</h1>
+                            <h1>You've earned a snowball, now choose how you want to throw it:</h1>
                         </div>
                     </div>
                     <div class="row snowball-throw-styles">
@@ -393,7 +393,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <h2>Step 3</h2>
                             <h1>Share and don't forget to tag the friends you want to hit with your snowball.</h1>
                             <button id="facebook-share"><svg xmlns="http://www.w3.org/2000/svg" width="23.24" height="50" viewBox="0 0 23.24 50"><defs><style>.cls-1{fill:##ffffff;}</style></defs><path class="cls-1" d="M-28.64,712.14h-7v25H-46v-25H-51v-8.83H-46V697.6c0-4.08,1.94-10.48,10.48-10.48l7.69,0v8.57h-5.58a2.12,2.12,0,0,0-2.2,2.41v5.19h7.92Z" transform="translate(50.96 -687.12)"/></svg> Share</button>
-                            <p>If you don’t have a Facebook account or would prefer not to participate in the snowball fight, that’s okay. We’ve received your donation and appreciate your support over the holiday season.</p>
+                            <p>If you don't have a Facebook account or would prefer not to participate in the snowball fight, that's okay. We've received your donation and appreciate your support over the holiday season.</p>
                         </div>
                     </div>
                 </section>
