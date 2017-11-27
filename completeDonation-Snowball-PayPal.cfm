@@ -315,7 +315,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 
 				<input type="hidden" name="PayerID" value="#URL.PayerID#">                
                 <!--- <input type="submit" value=" Complete Transaction " name="submit"> --->
-                <input type="submit" value=" Complete Transaction " class="bcchf_next js_bcchf_submit" id="button-submit-donation" />
+                <!--- <input type="submit" value=" Complete Transaction " class="bcchf_next js_bcchf_submit" id="button-submit-donation" /> --->
+                <button type="submit" class="bcchf_next js_bcchf_submit" id="button-submit-donation">Complete Transaction</button>
                 
             </div>
             </form>
