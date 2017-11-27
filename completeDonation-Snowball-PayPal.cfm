@@ -154,7 +154,7 @@ SetEncoding("url","utf-8");
 		
 		
         
-        <cfset THIS.EVENT.DonorInfoReview = '<table cellpadding="5" cellspacing="3" border="0" style="text-align:left;"><tr><td width="150">Donor</td><td>#SUPPORTER.title# #SUPPORTER.fName# #SUPPORTER.lname#</td><td>&nbsp;</td></tr><tr><td valign="top">Address</td><td>#SUPPORTER.address# #SUPPORTER.addtwo#<br />#SUPPORTER.city#, #SUPPORTER.prov# #SUPPORTER.post#</td><td>&nbsp;</td></tr><tr><td>Phone Number</td><td>#SUPPORTER.phone#</td><td>&nbsp;</td></tr><tr><td>Email Address</td><td>#SUPPORTER.email#</td><td>&nbsp;</td></tr><tr><td colspan="3">#subMSG#</td></tr></table>'>
+        <cfset THIS.EVENT.DonorInfoReview = 'Donor:&nbsp;#SUPPORTER.title# #SUPPORTER.fName# #SUPPORTER.lname#<br />&nbsp;<br />Address:&nbsp;#SUPPORTER.address# #SUPPORTER.addtwo#<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#SUPPORTER.city#, #SUPPORTER.prov# #SUPPORTER.post#<br />&nbsp;<br />Phone Number:&nbsp;#SUPPORTER.phone#<br />&nbsp;<br />Email Address:&nbsp;#SUPPORTER.email#<br />&nbsp;<br />#subMSG#'>
         
         
 </cfsilent>  
@@ -236,7 +236,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	</header>
 	<div class="main center">
         
-        <cfinclude template="includes/topHeadline.cfm">
+        <!--- <cfinclude template="includes/topHeadline.cfm"> --->
+        <h1>Review Your Donation</h1>
+        <p>After this step your donation will be completed.</p>
 		
 		<section>
 			<!-- Progress bar -->
@@ -262,14 +264,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <form action="executeDonation-New-PayPal.cfm?#CGI.QUERY_STRING#" method="post" class="bcchf-form clearfix">
             <div class="form-section" id="cc-section">
             
-            <h3>Final Step - Review Your Donation</h3>
-            <p class="bcchf_message"><em>After this step your donation will be completed.</em></p>
+            <!--- <h3>Review Your Donation</h3>
+            <p class="bcchf_message"><em>After this step your donation will be completed.</em></p> --->
     
             
-            <div>&nbsp;</div><div>&nbsp;</div>
-            <section>
-        	<h4>Step One - Your Donation</h4>
             <div>&nbsp;</div>
+            <section>
+        	<h3>Donation Information</h3>
+        	<div>&nbsp;</div>
             <div>#THIS.EVENT.DonationInfoReview#</div>
             
             
@@ -296,24 +298,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </section>
             <div>&nbsp;</div><div>&nbsp;</div>
             <section>
-            <h4>Step Two - Your Information</h4>
+            <h3>Your Information</h3>
         	<div>&nbsp;</div>
             <div>#THIS.EVENT.DonorInfoReview#</div>
 			</section>
             
-                     <div>&nbsp;</div><div>&nbsp;</div>   
+            <div>&nbsp;</div>  
             <section>
-        	<h4>Step Three - Your Payment Details</h4>
+        	<h3>Your Payment Details</h3>
 			<div>&nbsp;</div>
             <div><img src="../images/donate/PPcheckoutSM.png" width="69" height="33" /></div>
             </section>
             
             <div>&nbsp;</div>
-            	<div>&nbsp;<br />Almost done, click to submit your donation.<br></div>
+            	<div>&nbsp;<br />Almost done, click to submit your donation.<br />&nbsp;<br /></div>
                 
 				<input type="hidden" name="PayerID" value="#URL.PayerID#">                
                 <!--- <input type="submit" value=" Complete Transaction " name="submit"> --->
-                <input type="submit" value="" id="button-submit-donation" />
+                <input type="submit" value=" Complete Transaction " class="bcchf_next js_bcchf_submit" id="button-submit-donation" />
                 
             </div>
             </form>
