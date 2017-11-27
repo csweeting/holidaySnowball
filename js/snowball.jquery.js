@@ -664,10 +664,15 @@ jQuery.noConflict();
 				
 				// Hide or show the monthly or one time donation amounts radio buttons ON CHANGE
 				donation_types.on('change', function(e) {
+					
 					var type = e.currentTarget.id.replace('bcchf_', ''),
 						default_attr = 'data-' + e.currentTarget.id.replace('bcchf_', '') + '_default',
 						amt;
 
+					//redirecting tributes to general form
+					if (type === 'tribute') {
+						window.location.href = 'https://secure.bcchf.ca/donate/donation.cfm';
+					}
 					// Update the input values and copy based on which
 					// donation type was selected
 					for (var i = 0; i < donation_radios.length; i++) {

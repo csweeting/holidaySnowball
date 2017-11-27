@@ -1,5 +1,12 @@
 <cfsilent>
 
+<cfscript>
+    function pad( str, n ){
+        return replace( RJustify( str, n ), ' ', '0', 'all' );
+    }
+</cfscript>
+
+
     <!--- lookup event details --->
     <CFQUERY name="selectDonation" datasource="#APPLICATION.DSN.Superhero#">
     SELECT Sum(Hero_Donate.Amount) AS sumAmount, Count(Hero_Donate.ID) AS countAmount FROM Hero_Donate 
@@ -18,6 +25,8 @@
     <cfelse>
         <cfset countDonations = selectDonation.countAmount>
     </cfif>
+    
+    <cfset countDonations = pad(countDonations, 5)>
     
 </cfsilent>
 <!doctype html>
