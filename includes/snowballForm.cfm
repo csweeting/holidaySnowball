@@ -333,7 +333,7 @@
             <label class="bcchf_btn" for="bcchf_once">One-time</label>
             <cfif IsDefined('URL.lp')><cfelse>
             <input type="radio" id="bcchf_tribute" name="bcchf_donation_type" value="hon/mem" <cfif THIS.EVENT.hiddenDonationType EQ 'hom/mem'>checked</cfif> required/>
-            <label class="bcchf_btn" for="bcchf_tribute">in Honour / Memory</label>
+            <label class="bcchf_btn" for="bcchf_tribute">In Honour / Memory</label>
             </cfif>
             <p class="bcchf_message error hide"><em></em></p>
         </section>
