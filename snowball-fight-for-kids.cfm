@@ -331,7 +331,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                              <small>Step 3</small>
                              <br />Tag <br />friends <br />you want <br />to hit.
                         </h2>
-                        <p><a href="donation.cfm?Event=HolidaySnowball&amp;Donation=Gen&amp;SHP=Yes&amp;Monthly=Yes" class="button">Let's get started</a></p>
+                        <p><a href="donation.cfm?Event=HolidaySnowball&amp;Donation=Gen&amp;SHP=Yes&amp;Monthly=Yes&amp;lp" class="button">Let's get started</a></p>
                     </div>
                 </div>
             </article>
