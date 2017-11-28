@@ -112,7 +112,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div id="counter">
                     <h4>Snowballs Thrown:</h4>
                     <cfoutput>
-                    <div class="throwCount odometer" data-value="#countDonations#"></div>
+                    <div class="throwCount odometer" data-value="1#countDonations#"></div>
                     </cfoutput>
                 </div>
             </div>
