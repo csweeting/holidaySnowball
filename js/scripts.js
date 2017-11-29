@@ -34,6 +34,15 @@ jQuery(document).ready(function($) {
         $('body').addClass('touchDevice');
     }
 
+    // var iOS = /(iPad|iPhone|iPod)/g.test(navigator.userAgent);
+    // if (iOS) {
+    //     $('body').addClass('iOS');
+    // }
+    var is_android = /(android)/i.test(navigator.userAgent);
+    if (is_android) {
+        $('body').addClass('is-android');
+    }
+
     // Blend Mode Detection
     // ------
     
@@ -55,7 +64,7 @@ jQuery(document).ready(function($) {
     }
 
     if ($('.bcchf_snowball_page').length) {
-        $('.bcchf_snowball_page').snowballLanding();
+        $('.bcchf_snowball_page').snowballLanding({is_android: is_android});
     }
 
     if ($('.throwCount').length) {
@@ -135,7 +144,10 @@ jQuery(document).ready(function($) {
     // Snowball landing animation
     // ------
 
-    $.fn.snowballLanding = function() {
+    $.fn.snowballLanding = function(options) {
+        var settings = $.extend({
+            is_android: false
+        }, options);
         var $html = $('html');
         var $window = $(window);
         var $container = this;
@@ -238,15 +250,19 @@ jQuery(document).ready(function($) {
             }
         }
 
+
         var preload = [];
-        $frames.each(function(i) {
+        var promises = [];
+        var $preload_bg = $bg_frames.slice(0,intro_frames);
+        var $preload_fg = $fg_frames.slice(0,intro_frames);
+        var $preload_frames = settings.is_android ? $.fn.add.call($preload_bg,$preload_fg) : $frames;
+        $preload_frames.each(function(i) {
             var style = $(this).attr('style');
             var start = style.indexOf('url(') + 4;
             var end = style.indexOf(');');
             preload[i] = style.substring(start, end).replace(/^\"+|\"+$/g, '');
         });
-
-        var promises = [];
+        
         for (var i = 0; i < preload.length; i++) {
             (function(url, promise) {
                 var img = new Image();
@@ -257,22 +273,28 @@ jQuery(document).ready(function($) {
             })(preload[i], promises[i] = $.Deferred());
         }
         $.when.apply($, promises).done(function() {
+            
             setTimeout(function() {
                 $container.addClass('preloaded');
             }, 300);
-            setTimeout(function() {
+            
+            if (!settings.is_android) {
+                setTimeout(function() {
 
-                controller.addScene([
-                    scroll_frames_scene,
-                    msg_1_out,
-                    msg_2_out,
-                    msg_3_out,
-                    msg_4_out,
-                ]);
+                    controller.addScene([
+                        scroll_frames_scene,
+                        msg_1_out,
+                        msg_2_out,
+                        msg_3_out,
+                        msg_4_out,
+                    ]);         
 
-            }, 450);
+                }, 450);
+            }
+
             setTimeout(startIntro, 900);
-        });
+        });        
+        
 
         function startIntro() {
             var pageHeight = $window.height() * 5;
