@@ -4399,6 +4399,9 @@ input[type="checkbox"]:checked + label {
   left: 0;
   width: 100%; }
 
+.bcchf_snowball.is-android > header {
+  position: absolute; }
+
 .site-header img {
   position: relative;
   z-index: 2; }
@@ -4575,8 +4578,7 @@ body.ready .site-header.hidden #counter {
     left: 0;
     top: 0;
     width: 100%;
-    height: 500vh;
-    mix-blend-mode: multiply; }
+    height: 500vh; }
   .bcchf_snowball_page .screen {
     position: absolute;
     left: 0;
@@ -4724,6 +4726,27 @@ body.ready .site-header.hidden #counter {
       .bcchf_snowball_page.preloaded #cta.done {
         bottom: -100vh;
         pointer-events: none; }
+  body.is-android .bcchf_snowball_page #cta {
+    position: absolute;
+    bottom: auto;
+    top: calc(100vh - 6.5rem); }
+  body.is-android .bcchf_snowball_page.preloaded {
+    height: auto; }
+  body.is-android .bcchf_snowball_page #screen_h {
+    position: relative;
+    height: auto; }
+  body.is-android .bcchf_snowball_page .screen {
+    position: relative; }
+    body.is-android .bcchf_snowball_page .screen:not(#screen-1) {
+      height: auto !important;
+      top: auto !important;
+      padding: 1.5rem 0; }
+      body.is-android .bcchf_snowball_page .screen:not(#screen-1) .row {
+        height: auto !important; }
+    body.is-android .bcchf_snowball_page .screen#screen-5 {
+      padding-bottom: 33vh; }
+  body:not(.is-android) .bcchf_snowball_page #screen_h {
+    mix-blend-mode: multiply; }
 
 .bcchf_donate > .main {
   background-color: #fefefe;
