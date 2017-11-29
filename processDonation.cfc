@@ -539,6 +539,7 @@
 				rqst_bank_message = rqst_bank_message,
 				rqst_exact_message = rqst_exact_message,
 				rqst_formpost_message = rqst_formpost_message,
+				rqst_exact_respCode = rqst_exact_respCode,
 				rqst_AVS = rqst_AVS
 			}/>
             
@@ -572,6 +573,7 @@
     
     	<cfset rqst_transaction_approved = 0>
         <cfset rqst_exact_respCode = 0>
+        <cfset rqst_bank_message = 0>
     	<cfset chargeAproved = 0>
         <cfset exact_respCode = 0>
         <cfset returnMSG = 'Charge Not Attempted'>
@@ -588,14 +590,18 @@
     	<cfset chargeAproved = 0>
         <cfset exact_respCode = rqst_exact_respCode>
         <cfset returnMSG = 'charging-notapproved'>
+        <cftry>
+        <!--- check decline code 
+		- for pick up card or malicious codes, block the IP --->
+        <cfif rqst_bank_message EQ 'PICK UP CARD       * CALL BANK          =' 
+			OR rqst_bank_message EQ 'HOLD CARD          * CALL               ='>
+            <cfset recordIP = blockIP(newIP)>
+        </cfif>
         
-        
-        <!--- track non approvals in IP Blocer Table ---->
-		<!--- check decline code - for pick up card or malicious codes, block the IP --->
-		
+		<!--- track non approvals in IP Blocer Table ---->
 		<!--- try to check IP against blacklist 
 			-- if this IP has already made a failed attempt send to error page --->
-        <cftry>
+        
 
 		<cfset recordIP = recordIPaddress(newIP)>
 		
@@ -1506,8 +1512,14 @@
             <cfset payDetail.transactions[1]["invoice_number"] = variables.newUUID>
             <cfset payDetail.transactions[1]["soft_descriptor"] = "BCCHF">
             <cfset payDetail["redirect_urls"] = {}>
-            <cfset payDetail.redirect_urls["return_url"] = '#secureBCCHF#/donate/completeDonation-New-PayPal.cfm?Event=#gift_type#&UUID=#variables.newUUID#'>
-            <cfset payDetail.redirect_urls["cancel_url"] = '#secureBCCHF#/donate/donation-New.cfm?DtnID=#variables.newUUID#&#CGI.QUERY_STRING#'>
+            
+            <cfif gift_type EQ 'HolidaySnowball'>
+            	<cfset payDetail.redirect_urls["cancel_url"] = '#secureBCCHF#/donate/donation-Snowball.cfm?DtnID=#variables.newUUID#&Event=#gift_type#&Donation=Gen&SHP=yes&#CGI.QUERY_STRING#'>
+                <cfset payDetail.redirect_urls["return_url"] = '#secureBCCHF#/donate/completeDonation-Snowball-PayPal.cfm?Event=#gift_type#&SHP=yes&UUID=#variables.newUUID#'>
+            <cfelse>
+				<cfset payDetail.redirect_urls["cancel_url"] = '#secureBCCHF#/donate/donation-New.cfm?DtnID=#variables.newUUID#&#CGI.QUERY_STRING#'>
+                <cfset payDetail.redirect_urls["return_url"] = '#secureBCCHF#/donate/completeDonation-New-PayPal.cfm?Event=#gift_type#&UUID=#variables.newUUID#'>
+            </cfif>
             
             <!--- Call PayPal API --->
             <cfhttp 
@@ -2671,6 +2683,8 @@
         <cfif goodXDS EQ 0>
             <cfset attemptCharge = 0>
         </cfif>
+        
+        
     
 		<!--- check IP against blacklist --->
         <cfset goodIP = checkIPaddress(newIP)>
@@ -2755,6 +2769,7 @@
 				rqst_bank_message = rqst_bank_message,
 				rqst_exact_message = rqst_exact_message,
 				rqst_formpost_message = rqst_formpost_message,
+				rqst_exact_respCode = rqst_exact_respCode,
 				rqst_AVS = rqst_AVS
 			}/>
             
@@ -2809,8 +2824,12 @@
 			multiple non-approvals from the same IP should trigger message and blocking
 			---->
         
-		
+		<cftry>
 		<!--- check decline code - for pick up card or malicious codes, block the IP --->
+        <cfif rqst_bank_message EQ 'PICK UP CARD       * CALL BANK          =' 
+			OR rqst_bank_message EQ 'HOLD CARD          * CALL               ='>
+            <cfset recordIP = blockIP(newIP)>
+        </cfif>
 		
 		
 		
@@ -2818,7 +2837,7 @@
 		
 		
 		<!--- try to check IP against blacklist --->
-        <cftry>
+        
 		<!--- check if this IP has already made a failed attempt  --->
         
         <!--- check IP against list --->
@@ -3584,7 +3603,7 @@
         <!--- 8. ecard notification to Angela --->
         <cfif gift_type EQ 'eCard'>
         
-            <cfmail to="cspence@bcchf.ca, tkilloran@bcchf.ca" from="bcchfds@bcchf.ca" subject="Ecard Purchase Made" type="html">
+            <cfmail to="jyoung@bcchf.ca, tkilloran@bcchf.ca" from="bcchfds@bcchf.ca" subject="Ecard Purchase Made" type="html">
             An ecard purchase was just made online.<br />
             Details:<br />
             Occasion: #eCard_occasion#<br />
@@ -4464,6 +4483,7 @@
 				rqst_bank_message = rqst_bank_message,
 				rqst_exact_message = rqst_exact_message,
 				rqst_formpost_message = rqst_formpost_message,
+				rqst_exact_respCode = rqst_exact_respCode,
 				rqst_AVS = rqst_AVS
 			}/>
             
@@ -4513,10 +4533,15 @@
 			2. allow another attempt or abort
 		
 			---->
+            <cftry>
         <!--- multiple non-approvals from the same IP should trigger message and blocking --->
         <!--- record the failed attempt so we can block IP if necessary --->
+        <cfif rqst_bank_message EQ 'PICK UP CARD       * CALL BANK          =' 
+			OR rqst_bank_message EQ 'HOLD CARD          * CALL               ='>
+            <cfset recordIP = blockIP(newIP)>
+        </cfif>
 		
-        <cftry>
+        
 		<!--- check if this IP has already made a failed attempt  --->
 
 		<!--- check IP against list --->
@@ -7954,6 +7979,44 @@
 
 </cffunction>
 
+<!--- 2012-09-10 Recording the IP of client making a failed request --->
+<cffunction name="blockIP" access="private" returntype="boolean">
+
+	<cfargument name="newIP" type="string" required="yes">
+	<cfset ipBlocker = 0>
+    <!--- checking --->
+        <cfquery name="checkIP" datasource="bcchf_SHPadmin">
+        SELECT Attempts FROM BlockedIP_trace 
+        WHERE AttemptIP = '#newIP#'
+        </cfquery>
+        
+        <cfif newIP NEQ '142.103.232.17'><!--- hospital IP exception --->
+        
+        <cfif checkIP.recordcount EQ 0>
+        
+			<!--- no attempts from this IP--->
+            <cfquery name="recordIP" datasource="bcchf_SHPadmin">
+            INSERT INTO BlockedIP (BlockedIP, Source, BlockDT)
+            VALUES ('#newIP#', 'Online Script', #pty_Date#)
+            </cfquery>
+        
+        <cfelse><!--- previous attempts found --->
+        
+			<cfquery name="recordIP" datasource="bcchf_SHPadmin">
+            INSERT INTO BlockedIP (BlockedIP, Source, BlockDT)
+            VALUES ('#newIP#', 'Online Script', #pty_Date#)
+            </cfquery>
+                
+        </cfif>
+        </cfif>
+
+	<!--- abort --->
+	<cfset ipBlocker = 1>
+
+	<cfreturn ipBlocker>
+
+</cffunction>
+
 <!--- 2015-02-08 Recording Attempted Transactions --->
 <cffunction name="recordTransAttempt" access="private" returntype="boolean">
 
@@ -10945,6 +11008,7 @@ a:active {
 				rqst_bank_message = rqst_bank_message,
 				rqst_exact_message = rqst_exact_message,
 				rqst_formpost_message = rqst_formpost_message,
+				rqst_exact_respCode = rqst_exact_respCode,
 				rqst_AVS = rqst_AVS
 			}/>
             
@@ -12291,6 +12355,13 @@ default empty string).
     
     </cfif>
 
+	<!--- set url for completion pages --->
+    <cfif Event EQ 'HolidaySnowball'>
+    	<cfset payCompleteURL = 'https://secure.bcchf.ca/donate/completeDonation-snowball.cfm?UUID=#sup_pge_UUID#&Event=#Event#'>
+    <cfelse>
+    	<cfset payCompleteURL = 'https://secure.bcchf.ca/donate/completeDonation-mobile.cfm?UUID=#sup_pge_UUID#&Event=#Event#'>
+    </cfif>
+
 
 	<!--- return message --->
     <cfset ChargeAttmpt = {
@@ -12300,7 +12371,7 @@ default empty string).
 		exact_respCode = '',
 		ipBlocker = 0,
 		goodXDS = 1,
-		ppEXURL = 'https://secure.bcchf.ca/donate/completeDonation-mobile.cfm?UUID=#sup_pge_UUID#&Event=#Event#',
+		ppEXURL = '#payCompleteURL#',
 		ppID = '' 
 		} />
 

@@ -244,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<!-- Progress bar -->
 			<div class="bcchf_progress bcchf_progress_step4 js_bcchf_progress">
 				<div>
-					<p>Step <span class="js_bcchf_step_num">4</span> of 4</p>
+					
 					<div class="bcchf_progress_check"></div>
 				</div>
 				<div>
