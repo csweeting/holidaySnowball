@@ -448,6 +448,7 @@ jQuery.noConflict();
 			var donation_form = this.form.filter('.js_bcchf_donation'),
 				dedication_type = donation_form.find('input[name="bcchf_donation_honour"]'),
 				dedication_sections = donation_form.find('.js_bcchf_donation_honour'),
+				dedication_section = donation_form.find('.js_bcchf_donation_honmem'),
 				//donor_name_select = donation_form.find('.js_bcchf_donor_name'),
 				donor_name_corporate = donation_form.find('.js_bcchf_donor_corporate'),
 				donor_name_personal = donation_form.find('.js_bcchf_donor_personal'),
@@ -456,10 +457,11 @@ jQuery.noConflict();
 				donor_names = donation_form.find('.js_bcchf_donor_container'),
 				goto_button = donation_form.find('.js_bcchf_goto'),
 				donation_types = donation_form.find('[name="bcchf_donation_type"]'),
+				donation_tribute = donation_form.find('[name="bcchf_tribute"]'),
 				donation_radios = this.inputs.filter('[name="bcchf_gift_amount"]').not('.js_bcchf_radio_with_text'),
 				donation_type_copy = donation_form.find('.js_bcchf_donation_amt'),
 				donation_frequency = donation_form.find('.js_bcchf_monthly'),
-				donation_pledge = donation_form.find('.js_bcchf_pledge'),
+				//donation_pledge = donation_form.find('.js_bcchf_pledge'),
 				donation_selected = false,
 				_this = this;
 
@@ -479,6 +481,17 @@ jQuery.noConflict();
 
 				// Hide or show additional inputs depending on how the user
 				// wants to dedicate the donation
+				donation_tribute.on('click', function(e) {
+					//console.log(jQuery(donation_tribute).is(':checked'));
+					if(jQuery(donation_tribute).is(':checked') == true){
+						dedication_section.filter('.js_tribute').removeClass('hide');
+					} else {
+						dedication_section.filter('.js_tribute').addClass('hide');
+						dedication_sections.not('.js_' + e.currentTarget.id).addClass('hide');
+					}
+					
+				});
+				
 				dedication_type.on('change', function(e) {
 					// Show the selected sections
 					dedication_sections.filter('.js_' + e.currentTarget.id).removeClass('hide');
@@ -581,7 +594,7 @@ jQuery.noConflict();
 				
 				
 				var monthCheck = document.getElementById('bcchf_monthly').checked;
-				var pledgeCheck = document.getElementById('bcchf_pledge').checked;
+				//var pledgeCheck = document.getElementById('bcchf_pledge').checked;
 				
 				if (monthCheck == 1) {
 					//console.log('monthly');
@@ -653,13 +666,13 @@ jQuery.noConflict();
 				}
 				
 				
-				if (pledgeCheck == 1) {
+				//if (pledgeCheck == 1) {
 					// enable pledge payment area 
-					donation_pledge.removeClass('hide');
-				} else {
+					//donation_pledge.removeClass('hide');
+				//} else {
 					// hide pledge payment area
-					donation_pledge.addClass('hide');
-				}
+					//donation_pledge.addClass('hide');
+				//}
 				
 				
 				// Hide or show the monthly or one time donation amounts radio buttons ON CHANGE
@@ -671,7 +684,7 @@ jQuery.noConflict();
 
 					//redirecting tributes to general form
 					if (type === 'tribute') {
-						window.location.href = 'https://secure.bcchf.ca/donate/donation.cfm';
+						window.location.href = 'https://secure.bcchf.ca/donate/donation-New.cfm';
 					}
 					// Update the input values and copy based on which
 					// donation type was selected

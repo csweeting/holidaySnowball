@@ -49,11 +49,30 @@
   padding-bottom: 60px;
   width: 990px;
 }
-
 /* line 187, ../scss/_general.scss */
 .bcchf_donate label {
   display: inline-block;
   padding-right: 7px;
+}
+/* csweeting */
+@media only screen and (max-width: 640px) {
+	.bcchf_donate .main {
+	  /*overflow: hidden;
+	  padding-bottom: 60px; */
+	  /*csweeting*/
+	  width: 550px;
+	}
+}
+@media only screen and (max-width: 420px) {
+	.bcchf_donate .main {
+	  /*overflow: hidden;
+	  padding-bottom: 60px; */
+	  /*csweeting*/
+	  width: 320px;
+	}
+	.bcchf_donate label {
+	  padding-right: 0px;
+	}
 }
 /* line 196, ../scss/_general.scss */
 .bcchf_donate .error {
@@ -130,6 +149,7 @@
 /* line 281, ../scss/_general.scss */
 .bcchf_donate input[type="radio"] {
   /*display: none;*/
+
   /* If this is display none, validation will not work*/
   opacity: 0;
   position: absolute;
@@ -231,6 +251,28 @@
   position: relative;
   width: 280px;
   z-index: 3;
+}
+/*csweeting */
+@media only screen and (max-width: 640px) {
+	.bcchf_donate .bcchf_dropdown {
+	  width: 250px;
+	}
+	.bcchf_donate .bcchf_dropdown ul {
+		width: 250px;
+	}
+}
+/*csweeting */
+@media only screen and (max-width: 420px) {
+	.bcchf_donate .main input,
+	.bcchf_donate .main textarea {
+	  font-size: 65%;
+	}
+	.bcchf_donate .bcchf_dropdown {
+	  width: 150px;
+	}
+	.bcchf_donate .bcchf_dropdown ul {
+		width: 150px;
+	}
 }
 /* line 487, ../scss/_general.scss */
 .bcchf_donate .bcchf_dropdown ul:hover {
@@ -351,6 +393,7 @@
 }
 /* line 599, ../scss/_general.scss */
 .bcchf_donate .bcchf_progress > div:first-child {
+	
   border-radius: 35px 0 0 35px;
   width: 215px;
 }
@@ -388,6 +431,53 @@
   -webkit-transform: translate(50%, -50%);
   transform: translate(50%, -50%);
   z-index: 1000;
+}
+/*csweeting*/
+@media only screen and (max-width: 640px) {
+	
+	.bcchf_donate .bcchf_progress > div:first-child {
+	  width: 115px;
+	}
+	.bcchf_donate .bcchf_progress > div:nth-child(2) {
+	  width: 150px;
+	}
+	.bcchf_donate .bcchf_progress > div:nth-child(3) {
+	  width: 160px;
+	}
+	.bcchf_donate .bcchf_progress > div:last-child {
+	  border-radius: 0 35px 35px 0;
+	  /*width: 260px;*/
+	  width: 165px;
+	}
+	.bcchf_donate .bcchf_progress.bcchf_progress_step4 > div:last-child {
+	  width: 160px;
+	}
+}
+@media only screen and (max-width: 420px) {
+	.bcchf_donate .bcchf_progress,
+	.bcchf_donate .bcchf_progress > div {
+    	height: 20px;
+	}
+	.bcchf_donate .bcchf_progress > div:first-child {
+	  width: 64px;
+	}
+	.bcchf_donate .bcchf_progress > div:nth-child(2) {
+	  width: 64px;
+	}
+	.bcchf_donate .bcchf_progress > div:nth-child(3) {
+	  width: 64px;
+	}
+	.bcchf_donate .bcchf_progress > div:last-child {
+	  border-radius: 0 35px 35px 0;
+	  /*width: 260px;*/
+	  width: 64px;
+	}
+	.bcchf_donate .bcchf_progress.bcchf_progress_step4 > div:last-child {
+	  width: 64px;
+	}
+	.bcchf_donate .bcchf_progress_check {
+	  right: 15px;
+	}
 }
 /* line 642, ../scss/_general.scss */
 .bcchf_donate .bcchf_progress_step1 div:nth-last-child(-n+3) .bcchf_progress_check,
@@ -457,7 +547,8 @@
 }
 /* line 701, ../scss/_general.scss */
 .bcchf_donate .slick-slider {
-  width: 846px;
+  /*csweeting
+  width: 846px;*/
 }
 /* line 705, ../scss/_general.scss */
 .bcchf_donate .bcchf_stack_label {
@@ -518,6 +609,35 @@
   vertical-align: middle;
   width: 163px;
 }
+/*csweeting */
+@media only screen and (max-width: 640px) {
+	.bcchf_donate .bcchf_input_container > label {
+	  width: 115px;
+	}
+	.bcchf_donate .bcchf_input_container input {
+	  width: 250px;
+	  margin-right: 3px;
+	}
+	.bcchf_donate .bcchf_dropdown_container > label {
+	  width: 115px;
+	}
+}
+@media only screen and (max-width: 420px) {
+	.bcchf_donate .bcchf_input_container > label {
+	  width: 90px;
+	}
+	.bcchf_donate .bcchf_input_container .error > em {
+	  left: 91px;
+	  position: relative;
+	}
+	.bcchf_donate .bcchf_input_container input {
+	  width: 150px;
+	  margin-right: 1px;
+	}
+	.bcchf_donate .bcchf_dropdown_container > label {
+	  width: 90px;
+	}
+}
 /* line 774, ../scss/_general.scss */
 .bcchf_donate .bcchf_dropdown_container .bcchf_dropdown {
   /*position: absolute;*/
@@ -560,6 +680,21 @@
 /* line 815, ../scss/_general.scss */
 .bcchf_donate .bcchf_text_container {
   width: 570px;
+}
+/*csweeting */
+@media only screen and (max-width: 640px) {
+	.bcchf_donate .bcchf_text_container {
+	  width: 500px;
+	}
+}
+@media only screen and (max-width: 420px) {
+	.bcchf_donate .bcchf_text_container {
+	  width: 250px;
+	}
+	.bcchf_donate .bcchf_checkbox,
+	.bcchf_donate .bcchf_checkbox + p {
+	  padding-top: 0px;
+	}
 }
 /* line 819, ../scss/_general.scss */
 .bcchf_donate .bcchf_text_container textarea,
@@ -627,7 +762,8 @@
 }
 /* line 887, ../scss/_general.scss */
 .bcchf_donate .bcchf_step1 {
-  width: 846px;
+  /*csweeting
+  width: 846px; */
 }
 /* line 892, ../scss/_general.scss */
 .bcchf_donate .bcchf_in_honour {
@@ -644,6 +780,42 @@
 /* line 913, ../scss/_general.scss */
 .bcchf_donate .bcchf_encouragement .bcchf_checkbox_container {
   padding-top: 10px;
+}
+/*csweeting*/
+@media only screen and (max-width: 640px) {
+	.bcchf_donate .bcchf_checkbox_container {
+	  width: 400px;
+	  font-size: 0.8rem;
+	}
+	.bcchf_donate .js_bcchf_donation_amt_container {
+	  width: 500px;
+	}
+	.bcchf_donate .bcchf_in_honour .bcchf_checkbox_container {
+	  width: 400px;
+	  font-size: 0.8rem;
+	}
+}
+@media only screen and (max-width: 420px) {
+	.bcchf_donate .bcchf_valid_checkmark {
+	  display: none;
+	  height: 15px;
+	  padding-right: 20px;
+	  position: relative;
+	  top: 2px;
+	  width: 20px;
+	}
+	.bcchf_donate .bcchf_checkbox_container {
+	  width: 300px;
+	  font-size: 0.7rem;
+	}
+	.bcchf_donate .js_bcchf_donation_amt_container {
+	  width: 300px;
+	}
+	.bcchf_donate .bcchf_in_honour .bcchf_checkbox_container {
+	  width: 300px;
+	  font-size: 0.7rem;
+	  padding-bottom: 5px;
+	}
 }
 /* line 918, ../scss/_general.scss */
 .bcchf_donate .bcchf_donor_name .bcchf_checkbox_container {
@@ -1028,7 +1200,22 @@
   /*padding: 20px 0 28px 0;*/
   padding-bottom: 28px;
   padding-top: 10px;
-  width: 770px;
+  /*csweeting
+  width: 770px;*/
+}
+/*csweeting*/
+.bcchf_donate .bcchf_header p {
+
+	}
+@media only screen and (max-width: 640px) {
+	.bcchf_donate .bcchf_header p {
+		font-size: 0.7rem;
+	}
+}
+@media only screen and (max-width: 420px) {
+	.bcchf_donate .bcchf_header p {
+		font-size: 0.7rem;
+	}
 }
 /* line 1323, ../scss/_general.scss */
 .bcchf_donate .bcchf_header_image {

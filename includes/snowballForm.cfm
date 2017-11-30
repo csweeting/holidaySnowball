@@ -183,7 +183,7 @@
 
             <input type="radio" id="bcchf_in_memory" name="bcchf_donation_honour" value="memory" <cfif THIS.EVENT.gift_tributeType_memCHKstatus EQ 'yes'>checked</cfif> required/>
             <label class="bcchf_btn" for="bcchf_in_memory">In Memory</label>
-
+			<!--- --->
             <input type="radio" id="bcchf_pledge" name="bcchf_donation_honour" value="pledge" <cfif THIS.EVENT.gift_tributeType_pledgeCHKstatus EQ 'yes'>checked</cfif> required/>
             <label class="bcchf_btn" for="bcchf_pledge">Pledge Payment</label>
             
@@ -430,25 +430,33 @@
         </section>
         
         
-        <cfif THIS.EVENT.tribType_display EQ 'none'>
-        <input type="hidden" name="bcchf_donation_honour" id="bcchf_support" value="support">
-        </cfif>
         <!-- Donation in honour of -->
-        <section class="bcchf_in_honour<cfif THIS.EVENT.tribType_display EQ 'none'> hide</cfif>">
-            <label class="bcchf_stack_label">Please make my donation*:</label>
-            <input type="radio" id="bcchf_general" name="bcchf_donation_honour" value="general" <cfif THIS.EVENT.gift_tributeType_generalCHKstatus EQ 'yes'>checked</cfif> required/>
+        <section class="bcchf_in_honour">
+            <!-- in honour or memory option -->
+            <div class="bcchf_checkbox_container">
+                <div class="bcchf_checkbox">
+                    <input type="checkbox" id="bcchf_tribute" name="bcchf_tribute" value="1" />
+                    <label for="bcchf_tribute"></label>
+                </div>
+                <p>I would like to dedicate my gift in honour/memory of someone special</p>
+            </div>
+            
+            
+            <div class="js_bcchf_donation_honmem js_tribute hide">
+            <!--- <input type="radio" id="bcchf_general" name="bcchf_donation_honour" value="general" <cfif THIS.EVENT.gift_tributeType_generalCHKstatus EQ 'yes'>checked</cfif> required/>
             <label class="bcchf_btn" for="bcchf_general">General</label>
-
+			--->
             <input type="radio" id="bcchf_in_honour" name="bcchf_donation_honour" value="honour" <cfif THIS.EVENT.gift_tributeType_honCHKstatus EQ 'yes'>checked</cfif> required/>
             <label class="bcchf_btn" for="bcchf_in_honour">In Honour</label>
 
             <input type="radio" id="bcchf_in_memory" name="bcchf_donation_honour" value="memory" <cfif THIS.EVENT.gift_tributeType_memCHKstatus EQ 'yes'>checked</cfif> required/>
             <label class="bcchf_btn" for="bcchf_in_memory">In Memory</label>
-
+			<!--- 
             <input type="radio" id="bcchf_pledge" name="bcchf_donation_honour" value="pledge" <cfif THIS.EVENT.gift_tributeType_pledgeCHKstatus EQ 'yes'>checked</cfif> required/>
-            <label class="bcchf_btn" for="bcchf_pledge">Pledge Payment</label>
+            <label class="bcchf_btn" for="bcchf_pledge">Pledge Payment</label>--->
             
             <p class="bcchf_message error"><em></em></p>
+            </div>
 
             <!-- If in honour of is chosen, show this -->
             <div class="bcchf_input_container js_bcchf_donation_honour js_bcchf_in_honour hide">
@@ -488,7 +496,7 @@
         <!-- Encouragement message -->
 
         <!-- Donor name -->
-        <section class="bcchf_donor_name">
+        <section class="bcchf_donor_name hide">
             <div class="js_bcchf_donor_container js_bcchf_personal">
                 <div class="bcchf_input_container">
                     <label for="bcchf_donor_first_name">Your First Name:</label>
@@ -553,6 +561,15 @@
             <span class="bcchf_valid_checkmark"></span>
             <p class="bcchf_message error hide"><em></em></p>
         </div>
+        
+        <!-- If in honour of or memory of is chosen, show this -->
+            <div class="bcchf_checkbox_container" style="padding-bottom:15px;">
+                <div class="bcchf_checkbox">
+                    <input type="checkbox" id="bcchf_corptax" name="bcchf_corptax" value="1" />
+                    <label for="bcchf_corptax"></label>
+                </div>
+                <p>Please send a corporate tax receipt.</p>
+            </div>
 
         <!-- Salutation -->
         <div class="bcchf_input_container bcchf_dropdown_container js_bcchf_input_container">
@@ -723,10 +740,10 @@
 
         <!-- Credit card number -->
         <div class="bcchf_input_container bcchf_cc_input js_bcchf_input_container">
-            <label for="bcchf_cc_number1">Credit Card Number*:</label>
+            <label for="bcchf_cc_number1">Card Number*:</label>
             <input type="text" maxlength="16" id="bcchf_cc_number" value="" name="bcchf_cc_number" required/>
             <span class="bcchf_valid_checkmark"></span>
-            <img src="images/icons/credit-cards.png" alt="Mastercard, Visa, or American Express"/>
+            <img class="cardoptions" src="images/icons/credit-cards.png" alt="Mastercard, Visa, or American Express"/>
             <p class="bcchf_message error hide"><em></em></p>
         </div>
 
@@ -740,7 +757,7 @@
 
         <!-- Cardholder Name -->
         <div class="bcchf_input_container js_bcchf_input_container">
-            <label for="bcchf_cc_name">Cardholder Name*:</label>
+            <label for="bcchf_cc_name">Cardholder*:</label>
             <input type="text" id="bcchf_cc_name" name="bcchf_cc_name" value="" required/>
             <span class="bcchf_valid_checkmark"></span>
             <p class="bcchf_message error hide"><em></em></p>

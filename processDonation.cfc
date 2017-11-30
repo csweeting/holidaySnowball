@@ -184,8 +184,13 @@
         
         <!--- tribute type --->
         <!--- eCard for eCards - Pledge for Pledge --->
-        <cfset hiddenTributeType = bcchf_donation_honour>
-        <cfset gift_TributeType = bcchf_donation_honour>
+        <cfif IsDefined('bcchf_donation_honour')>
+			<cfset hiddenTributeType = bcchf_donation_honour>
+            <cfset gift_TributeType = bcchf_donation_honour>
+        <cfelse>
+			<cfset hiddenTributeType = 'general'>
+            <cfset gift_TributeType = 'general'>
+        </cfif>
         
         <!--- tax receipt information --->
         <cfset pty_tax = bcchf_receipt>
@@ -8415,7 +8420,9 @@
 	<cfargument name="post_card_number" type="string" required="yes">
     <cfargument name="hiddenDonationType" type="string" required="yes">
     
-<!--- ensure card type is recorded properly --->
+    	
+    
+		<!--- ensure card type is recorded properly --->
         <!--- check left most digit of card number --->
         <cfif Left(post_card_number, 1) EQ 3>
 			<cfset post_card_type = 'AMEX'>
@@ -8428,6 +8435,9 @@
         <cfelse>
 			<cfset post_card_type = 'Invalid'>
         </cfif>
+        
+        
+        <cftry>
         
         <!--- Only record cc info for monthly transactions --->
 		<cfif hiddenDonationType EQ 'monthly'>
@@ -8472,6 +8482,12 @@
 			encryptedCardData = encrypt(theString, decryptedKey, 'AES', 'Base64');
 			
 		</cfscript>
+        
+        <cfcatch type="any">
+        	<cfset encryptedCardData = 'encryption failed'>
+            <cfset DEKID = 0>
+        </cfcatch>
+        </cftry>
 
 	<cfset secureCard = {encData = encryptedCardData,
 					encType = post_card_type,
