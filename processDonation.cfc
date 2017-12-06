@@ -112,6 +112,10 @@
         	<cfset Show = 1>
         </cfif>
         
+        <cfif IsDefined('bcchf_corptax') AND bcchf_corptax EQ 1>
+        	<cfset hiddenDonationPCType = 'corporate'>
+        </cfif>
+        
         <!--- Personal Corporate Donation --->
         <cfif hiddenDonationPCType EQ 'corporate'>
         	<cfset DName = '#TRIM(bcchf_donor_company_name)#'>
@@ -7875,8 +7879,8 @@
 	<cfargument name="newIP" type="string" required="yes">
     
     <!--- check for blocked IPs --->
-    <cfquery name="CheckIP" datasource="bcchf_SHPadmin">
-    SELECT Source FROM BlockedIp WHERE BlockedIP = '#newIP#'
+    <cfquery name="CheckIP" datasource="bcchf_Superhero">
+    SELECT Source FROM BlockedIP WHERE BlockedIP = '#newIP#'
     </cfquery>
     
     <cfif CheckIP.recordcount EQ 0>
@@ -7905,7 +7909,7 @@
 
 	<cfargument name="newIP" type="string" required="yes">
 
-	<cfquery name="checkIP" datasource="bcchf_SHPadmin">
+	<cfquery name="checkIP" datasource="bcchf_Superhero">
     SELECT Attempts FROM BlockedIP_trace 
     WHERE AttemptIP = '#newIP#'
     </cfquery>
@@ -7914,7 +7918,7 @@
         <!--- good --->
         <cfelse>
         <!--- remove --->
-        	<cfquery name="recordIP" datasource="bcchf_SHPadmin">
+        	<cfquery name="recordIP" datasource="bcchf_Superhero">
             UPDATE BlockedIP_trace SET 
             Attempts = 0, 
             LastAttempt = #pty_Date#
@@ -7936,7 +7940,7 @@
 	<cfargument name="newIP" type="string" required="yes">
 	<cfset ipBlocker = 0>
     <!--- checking --->
-        <cfquery name="checkIP" datasource="bcchf_SHPadmin">
+        <cfquery name="checkIP" datasource="bcchf_Superhero">
         SELECT Attempts FROM BlockedIP_trace 
         WHERE AttemptIP = '#newIP#'
         </cfquery>
@@ -7944,7 +7948,7 @@
         <cfif checkIP.recordcount EQ 0>
         
 			<!--- no attempts from this IP--->
-            <cfquery name="recordIP" datasource="bcchf_SHPadmin">
+            <cfquery name="recordIP" datasource="bcchf_Superhero">
             INSERT INTO BlockedIP_trace (AttemptIP, Attempts, LastAttempt)
             VALUES ('#newIP#', 1, #pty_Date#)
             </cfquery> 
@@ -7954,7 +7958,7 @@
 			<!--- there have been previous attempts --->
             <cfset Attempts = checkIP.Attempts + 1>
             <!--- record this attempts --->
-            <cfquery name="recordIP" datasource="bcchf_SHPadmin">
+            <cfquery name="recordIP" datasource="bcchf_Superhero">
             UPDATE BlockedIP_trace SET 
             Attempts = #Attempts#, 
             LastAttempt = #pty_Date#
@@ -7967,7 +7971,7 @@
                 
                 <cfif newIP NEQ '142.103.232.17'><!--- hospital IP exception --->
                 
-                <cfquery name="recordIP" datasource="bcchf_SHPadmin">
+                <cfquery name="recordIP" datasource="bcchf_Superhero">
                 INSERT INTO BlockedIP (BlockedIP, Source, BlockDT)
                 VALUES ('#newIP#', 'Online Script', #pty_Date#)
                 </cfquery>
@@ -7990,7 +7994,7 @@
 	<cfargument name="newIP" type="string" required="yes">
 	<cfset ipBlocker = 0>
     <!--- checking --->
-        <cfquery name="checkIP" datasource="bcchf_SHPadmin">
+        <cfquery name="checkIP" datasource="bcchf_Superhero">
         SELECT Attempts FROM BlockedIP_trace 
         WHERE AttemptIP = '#newIP#'
         </cfquery>
@@ -8000,14 +8004,14 @@
         <cfif checkIP.recordcount EQ 0>
         
 			<!--- no attempts from this IP--->
-            <cfquery name="recordIP" datasource="bcchf_SHPadmin">
+            <cfquery name="recordIP" datasource="bcchf_Superhero">
             INSERT INTO BlockedIP (BlockedIP, Source, BlockDT)
             VALUES ('#newIP#', 'Online Script', #pty_Date#)
             </cfquery>
         
         <cfelse><!--- previous attempts found --->
         
-			<cfquery name="recordIP" datasource="bcchf_SHPadmin">
+			<cfquery name="recordIP" datasource="bcchf_Superhero">
             INSERT INTO BlockedIP (BlockedIP, Source, BlockDT)
             VALUES ('#newIP#', 'Online Script', #pty_Date#)
             </cfquery>

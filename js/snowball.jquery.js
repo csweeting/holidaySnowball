@@ -1133,10 +1133,12 @@ jQuery.noConflict();
 							value = inputs.eq(i).val().replace(/</g, '&lt;').replace(/>/g, '&gt;');
 							inputs.eq(i).val(value);
 						}
-
+						
+						
 						// hide the form and show the survey
 						jQuery(form).addClass('hide');
-						jQuery('.js_bcchf_survey').removeClass('hide');
+						//jQuery('.js_bcchf_survey').removeClass('hide');
+						jQuery('#tribCardThankYouEmail').removeClass('hide');
 						
 						// send the form to be processed
 						// AWK CARD PROCESSOR

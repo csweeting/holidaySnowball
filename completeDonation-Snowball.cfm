@@ -201,9 +201,9 @@ ga('ecommerce:send');
     <!-- For development -->
     <!--- <link rel="stylesheet" type="text/css" media="screen" href="../css/combined_secure.css?m=1445910939" /> --->
     <link rel="stylesheet" href="css/footer.css" media="all">
-    <link rel="stylesheet" href="css/donate-snowball.css" media="all">
+    <link rel="stylesheet" href="css/donate-snowball.css?v=4.5" media="all">
     <link rel="stylesheet" href="css/slick.css" media="all">
-    <link rel="stylesheet" href="css/style.css?v=4.4" media="all">
+    <link rel="stylesheet" href="css/style.css?v=4.5" media="all">
 
     <!-- Typekit settings for Futura font 
     <script src="https://use.typekit.net/pcl4xdw.js"></script>
@@ -341,7 +341,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </section>
             
-                <cfset hideSurvey = ''>
+                <cfif selectTransaction.card_send EQ 'ask'>
+
+					<!--- if tribute --->
+					<cfset hideSurvey = ' js_bcchf_survey hide'>
+
+					<cfif selectTransaction.trib_notes eq 'honour'>
+						<cfset AWKcardMSG = 'Honour'>
+					<cfelseif selectTransaction.trib_notes eq 'memory'>
+						<cfset AWKcardMSG = 'Memory'>
+					<cfelse>
+						<cfset AWKcardMSG = 'Honour'>
+					</cfif>
+					<section id="tribute" class="main panel">
+                    <div id="formContainer">
+					
+					<cfinclude template="includes/snowballTribCardInfo.cfm">
+					
+					</div>
+					</section>
+
+				<cfelse>
+
+					<cfset hideSurvey = ''>
+
+				</cfif>
 
                 <section id="thanks-step2" class="panel">
                     <div class="row">
@@ -444,10 +468,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="js/slick.min.js"></script>
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="js/default.jquery.js"></script>
+	<script type="text/javascript" src="js/snowball.jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <script type="text/javascript" src="js/foundation.min.js"></script>
-    <script type="text/javascript" src="js/scripts.min.js?v=4.4"></script>
+    <script type="text/javascript" src="js/scripts.min.js?v=4.3"></script>
 
     <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];

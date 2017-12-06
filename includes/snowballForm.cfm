@@ -169,6 +169,8 @@
             <p class="bcchf_message error"><em></em></p>
         </section>
         
+        
+        
         <cfif THIS.EVENT.tribType_display EQ 'none'>
         <input type="hidden" name="bcchf_donation_honour" id="bcchf_support" value="support">
         </cfif>
@@ -209,7 +211,7 @@
                     <input type="checkbox" id="bcchf_acknowledgement" name="bcchf_acknowledgement" value="1" />
                     <label for="bcchf_acknowledgement"></label>
                 </div>
-                <p>I would like to send an acknowledgement card once I've completed my donation.</p>
+                <p>I would like to send an acknowledgement message once I've completed my donation.</p>
             </div>
 
             <!-- if pledge payment is chosen, show this -->
@@ -331,10 +333,10 @@
             <label class="bcchf_btn" for="bcchf_monthly">Monthly</label>
             <input type="radio" id="bcchf_once" name="bcchf_donation_type" value="Single" <cfif THIS.EVENT.hiddenDonationType EQ 'single'>checked</cfif> required/>
             <label class="bcchf_btn" for="bcchf_once">One-time</label>
-            <!--- ---><cfif IsDefined('URL.lp')><cfelse>
+            <!--- <cfif IsDefined('URL.lp')><cfelse>
             <input type="radio" id="bcchf_tribute" name="bcchf_donation_type" value="hon/mem" <cfif THIS.EVENT.hiddenDonationType EQ 'hom/mem'>checked</cfif> required/>
             <label class="bcchf_btn" for="bcchf_tribute">In Honour / Memory</label>
-            </cfif> 
+            </cfif> --->
             <p class="bcchf_message error hide"><em></em></p>
         </section>
 
@@ -431,7 +433,7 @@
         
         
         <!-- Donation in honour of -->
-        <section class="bcchf_in_honour">
+        <section class="bcchf_in_honour <cfif IsDefined('URL.lp')>hide<cfelse></cfif>">
             <!-- in honour or memory option -->
             <div class="bcchf_checkbox_container">
                 <div class="bcchf_checkbox">

@@ -110,9 +110,9 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz
 <!-- For development 
 <link rel="stylesheet" type="text/css" media="screen" href="../css/combined_secure.css?m=1445910939" />-->
 <link rel="stylesheet" href="css/footer.css" media="all">
-<link rel="stylesheet" href="css/donate-snowball.css" media="all">
+<link rel="stylesheet" href="css/donate-snowball.css?v=4.5" media="all">
 <link rel="stylesheet" href="css/slick.css" media="all">
-<link rel="stylesheet" href="css/style.css?v=4.4" media="all">
+<link rel="stylesheet" href="css/style.css?v=4.5" media="all">
 
 <!-- Typekit settings for Futura font 
 <script src="https://use.typekit.net/pcl4xdw.js"></script>

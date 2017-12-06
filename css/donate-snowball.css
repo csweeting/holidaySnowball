@@ -989,6 +989,17 @@
 .bcchf_donate .bcchf_thankyou_page .bcchf_input_container > label {
   width: 185px;
 }
+/*csweeting */
+@media only screen and (max-width: 640px) {
+	.bcchf_donate .bcchf_thankyou_page .bcchf_input_container > label {
+	  width: 115px;
+	}
+}
+@media only screen and (max-width: 420px) {
+	.bcchf_donate .bcchf_thankyou_page .bcchf_input_container > label {
+	  width: 90px;
+	}
+}
 /* line 1091, ../scss/_general.scss */
 .bcchf_donate .bcchf_thankyou {
   width: 621px;
@@ -1052,7 +1063,7 @@
   line-height: 1.2;
   text-align: right;
   vertical-align: top;
-  width: 185px;
+  width: 285px;
 }
 /* line 1168, ../scss/_general.scss */
 .bcchf_donate .bcchf_personalized_msg .bcchf_text_container {
