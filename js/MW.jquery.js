@@ -791,8 +791,8 @@ jQuery.noConflict();
 							toggleDivOn('exactResponseNegative');
 							document.getElementById('exactResponseNegative').innerHTML = 'Ytransaction was successful, you will be directed to our thank you page in a moment.';
 							
-							if (eventToken == 'HolidaySnowball'){
-								window.location.href = 'completeDonation-Snowball.cfm?Event='+eventToken+'&UUID='+UUID;
+							if (eventToken == 'MW'){
+								window.location.href = 'completeDonation-MW.cfm?Event='+eventToken+'&UUID='+UUID;
 							} else {
 								window.location.href = 'completeDonation-NEW.cfm?Event='+eventToken+'&UUID='+UUID;
 							}

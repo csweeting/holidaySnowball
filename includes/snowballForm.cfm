@@ -92,7 +92,7 @@
                 <label for="bcchf_100"></label>
             </div>
             <div class="bcchf_radio">
-                <input type="radio" id="bcchf_50" name="bcchf_gift_amount" data-monthly="50" data-once="200" value="50" required/>
+                <input type="radio" id="bcchf_50" name="bcchf_gift_amount" data-monthly="50" data-once="200" value="50"  required/>
                 <div class="bcchf_radio_label">
                     <div class="bcchf_radio_top">
                         <div class="bcchf_check center vertical_align"></div>

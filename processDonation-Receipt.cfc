@@ -386,8 +386,8 @@
         
         
         <!--- default settings --->
-		<cfset GIFT.RECEIPT.image = "GC5.jpg">
-        <cfset GIFT.RECEIPT.imageAlt = "Grayson Christopher">
+		<cfset GIFT.RECEIPT.image = "2018_TaxReceiptsLong.jpg">
+        <cfset GIFT.RECEIPT.imageAlt = "Thanks for helping us aim higher.">
 
         
         <!--- TAX message --->
@@ -587,8 +587,8 @@
             
             
 			<cfif selectBBQ.TeamID EQ 0>
-            <!--- virtual button --->
-            <cfset GIFT.EMAIL.MainText = "<p>Thank you for participating in Jeans Day&trade;. Your 2017 virtual button can be <a href='https://secure.bcchf.ca/SuperheroPages/JeansDayVirtual.cfm?Event=JeansDay'>downloaded here</a>.</p><p>Show that you're supporting the most urgent needs at BC Children's Hospital by sharing your button on <a href='https://www.facebook.com/BCCHF'>Facebook</a>, <a href='https://www.instagram.com/BCCHF/'>Instagram</a> or <a href='https://twitter.com/BCCHF'>Twitter</a> and tagging us at @bcchf. We look forward to seeing your Canadian Tuxedo as we ##JeanUp on Thursday, May 4 for BC's Kids.">
+            <!--- virtual button
+            <cfset GIFT.EMAIL.MainText = "<p>Thank you for participating in Jeans Day&trade;. Your 2018 virtual button can be <a href='https://secure.bcchf.ca/SuperheroPages/JeansDayVirtual.cfm?Event=JeansDay'>downloaded here</a>.</p><p>Show that you're supporting the most urgent needs at BC Children's Hospital by sharing your button on <a href='https://www.facebook.com/BCCHF'>Facebook</a>, <a href='https://www.instagram.com/BCCHF/'>Instagram</a> or <a href='https://twitter.com/BCCHF'>Twitter</a> and tagging us at @bcchf. We look forward to seeing your Canadian Tuxedo as we ##JeanUp on Thursday, May 3 for BC's Kids."> --->
             
             
             </cfif>
@@ -696,7 +696,8 @@
 <cfif selectTransaction.gift_type EQ 'ChildRun'
 	OR selectTransaction.gift_type EQ 'RFTK'
 	OR selectTransaction.gift_type EQ 'JeansDay'
-	OR selectTransaction.gift_type EQ 'General'>
+	OR selectTransaction.gift_type EQ 'General'
+	OR selectTransaction.gift_type EQ 'HolidaySnowball'>
 
 
 
@@ -712,11 +713,10 @@
 <title>BC Children's Hospital Foundation</title>
 
 
-<link href="../css/styles-superhero.css" rel="stylesheet" type="text/css" />
-<link href="../css/ANOM-emailStyles.css" rel="stylesheet" type="text/css" />
-
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700" rel="stylesheet">
 <script type="text/javascript" src="https://use.typekit.com/tcs6epu.js"></script>
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
 </head>
 
 <body text="##333333" link="##FF6600" vlink="##FF6600" alink="##FF6600" leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" bgcolor="##c8c9cb">
@@ -756,15 +756,19 @@ a:active {
     
     <cfelseif selectTransaction.gift_type EQ 'RFTK'>
 
-	<div><img src="http://newsletter.bcchf.ca/images/2017/header-RFTK.png" width="720" alt="2017 RBC Race for the Kids" border="0"></div>
+	<div><img src="http://newsletter.bcchf.ca/images/2018/header-RFTK.png" width="720" alt="2018 RBC Race for the Kids" border="0"></div>
 	
 	<cfelseif selectTransaction.gift_type EQ 'JeansDay'>
 
-	<div><img src="http://newsletter.bcchf.ca/images/2016/header-JeansDay.png" width="720" alt="Jeans Day&trade;" border="0" ></div>
+	<div><img src="http://newsletter.bcchf.ca/images/2018/header-JeansDay.png" width="720" alt="Jeans Day" border="0" ></div>
     
     <cfelseif selectTransaction.gift_type EQ 'General'>
 
 	<div><img src="http://newsletter.bcchf.ca/images/2016/header-GeneralA.png" width="720" border="0" alt="BC Children's Hospital Foundation"></div>
+    
+    <cfelseif selectTransaction.gift_type EQ 'HolidaySnowball'>
+
+	<div><img src="http://newsletter.bcchf.ca/images/2017/header-holidaySnowball.png" width="720" border="0" alt="BC Children's Hospital Foundation"></div>
 
 
 </cfif>
@@ -792,18 +796,20 @@ a:active {
 <tr>
 <td>&nbsp;</td>
 <td>
-<div style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; text-align: left; line-height: 20px; padding-right: 30px; color: ##000000;">
+<div style="font-family: <cfif selectTransaction.gift_type EQ 'HolidaySnowball'>Roboto, </cfif>Verdana, Arial, Helvetica, sans-serif; font-size: 12px; text-align: left; line-height: 20px; padding-right: 30px; color: ##000000;">
 <p>Dear #selectTransaction.pty_fname# #selectTransaction.pty_lname#,</p>
 </div>
 
-<div style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; text-align: left; line-height: 20px; padding-right: 30px; color: ##000000;">
+<div style="font-family: <cfif selectTransaction.gift_type EQ 'HolidaySnowball'>Roboto, </cfif>Verdana, Arial, Helvetica, sans-serif; font-size: 12px; text-align: left; line-height: 20px; padding-right: 30px; color: ##000000;">
 #GIFT.EMAIL.MainText#
 </div>
 
-<div style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; text-align: left; line-height: 20px; padding-right: 30px; color: ##000000;">
-<p>Teri Nicholas<br />
+<div style="font-family: <cfif selectTransaction.gift_type EQ 'HolidaySnowball'>Roboto, </cfif>Verdana, Arial, Helvetica, sans-serif; font-size: 12px; text-align: left; line-height: 20px; padding-right: 30px; color: ##000000;">
+<cfif selectTransaction.gift_type NEQ 'JeansDay'>
+<p><cfif selectTransaction.gift_type EQ 'HolidaySnowball'><strong>Teri Nicholas</strong><cfelse>Teri Nicholas</cfif><br />
 President &amp; CEO<br />
 BC Children's Hospital Foundation</p>
+</cfif>
 <cfif GIFT.RECEIPT.type EQ 'TAX-ANNUAL'>
 <p>Your charitable tax receipt will be mailed to your address shortly after the end of the year. </p>
 </cfif>
@@ -908,7 +914,7 @@ Thank You.<br />
 
 <cfelseif selectTransaction.gift_type EQ 'JeansDay'>
 
-<div><img src="http://newsletter.bcchf.ca/images/2016/footer-new.png" width="720" border="0" height="168" usemap="##JeansMap"></div>
+<div><img src="http://newsletter.bcchf.ca/images/2018/footer-jeansday.png" width="720" border="0" height="158" usemap="##JeansMap"></div>
 
 
 <map name="JeansMap">
@@ -943,7 +949,7 @@ Thank You.<br />
     <a href="#YTfootLink#" target="_blank" alt="YouTube">YouTube-FooterMap</a>
     <a href="#donationLink#" target="_blank" alt="Donate">DonateNow-FooterMap</a>
 -->
-
+<cfelseif selectTransaction.gift_type EQ 'HolidaySnowball'>
 </cfif>
 
 </td>
@@ -971,7 +977,7 @@ content="#donationTaxReceipt#"
 />
 </cfif>
 <cfif GIFT.TICKET.attach EQ 1>
-<!--- attempt to generate and attach tickets --->
+<!--- attempt to generate and attach tickets
     
 	<cfloop query="selectBBQtix">
     <cfset GIFT.TICKET.number = selectBBQtix.BBQticketnumber>
@@ -987,6 +993,7 @@ content="#donationTaxReceipt#"
         content="#JDBBQcurrentTicket#"
         />
     </cfloop>
+ --->
 </cfif>
  
 </cfmail>

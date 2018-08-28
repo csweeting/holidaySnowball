@@ -39,6 +39,7 @@
 					</ul>
 
 				</li>
+                <!--- 
 				<li>
 					<h3>Social Media</h3>
 					<ul>
@@ -52,7 +53,7 @@
 					</ul>
 
 
-				</li>
+				</li> --->
 				<li id="fc-last">
 					<!--
 					<a href="https://secure.bcchf.ca/donate/donation.cfm" class="button button-survey-footer">Donate Now</a>
@@ -61,7 +62,7 @@
 				</li>
 			</ul>
 			
-
+			<!--- 
 			<div class="bcchf-footer-fc-last">
 				<h3>Search site</h3>
 				<form  id="SearchForm_SearchForm" action="/donate/ZendSearchLuceneForm" method="get" enctype="application/x-www-form-urlencoded">
@@ -85,7 +86,7 @@
 						<input class="bcchf_input_subscribe js_bcchf_input_subscribe" type="submit" value="Subscribe">
 					</form>
 				</div>
-			</div>
+			</div> --->
 
 			<ul id="footer-bottom" class="clearfix">
 				<li>
@@ -94,8 +95,8 @@
 				<li>
 					<ul id="footer-bottom-list" class="clearfix">
 						<li><a href="http://www.bcchf.ca/donor-rights">Donor Rights</a></li>
-						<li><a href="http://www.bcchf.ca/privacy-policy">Privacy Policy</a></li>
-						<li id="fbl-last"><a href="http://www.bcchf.ca/donor-code-of-ethics/">Donor Code of Ethics</a></li>
+						<li id="fbl-last"><a href="http://www.bcchf.ca/privacy-policy">Privacy Policy</a></li>
+						<!--- <li id="fbl-last"><a href="http://www.bcchf.ca/donor-code-of-ethics/">Donor Code of Ethics</a></li> --->
 					</ul>
 				</li>
 			</ul>

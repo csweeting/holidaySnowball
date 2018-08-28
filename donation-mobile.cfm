@@ -28,7 +28,7 @@ SetEncoding("url","utf-8");
     
     <cfif IsDefined('URL.Donation') AND URL.Donation EQ 'Stories'>
     
-    <cfmail to="csweeting@bcchf.ca" from="stories@bcchf.ca" subject="Sties CGI" type="html">
+    <cfmail to="csweeting@bcchf.ca" from="stories@bcchf.ca" subject="Sties URL.donation = Stories CGI MOBILE" type="html">
     <cfdump var="#CGI#">
     </cfmail>
     
@@ -62,7 +62,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="description" content="Discover More Moments in BC">
+<meta name="description" content="Support child health with a donation to BC Children's Hospital today.">
 
 <!-- For live -->
 <!-- compressed files go here -->
@@ -134,7 +134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<header>
 			<nav class="tab-bar">
 				<section class="left-small">
-					<img class="bcchf-logo" src="images/secure/logo-bcchf-225x178.png" width="104" height="82" alt="BC Children's Hospital Foundation">
+					<img class="bcchf-logo" src="images/secure/bcchf.png" width="104" height="95" alt="BC Children's Hospital Foundation">
 				</section>
 				<section class="right-small bcchf-right-small">
 					<a href="bcchf-modal-1" class="bcchf-rth-link js-bcchf-rth-link">Return to Home</a>
@@ -929,13 +929,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 										<div class="small-6 columns bcchf-no-rpadding">
 											<select id="js-bcchf-expiration-year" name="js_bcchf_expiration_year" tabindex="-1">
 												<option selected="selected" value="">Select Year</option>
-												<option value="16">16</option>
-												<option value="17">17</option>
+												
 												<option value="18">18</option>
                                                 <option value="19">19</option>
                                                 <option value="20">20</option>
                                                 <option value="21">21</option>
                                                 <option value="22">22</option>
+                                                <option value="23">23</option>
+                                                <option value="24">24</option>
+                                                <option value="25">25</option>
+                                                <option value="26">26</option>
+                                                <option value="27">27</option>
+                                                <option value="28">28</option>
+                                                
 											</select>
 										</div>
 									</div>

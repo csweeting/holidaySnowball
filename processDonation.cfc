@@ -200,6 +200,7 @@
         <cfset pty_tax = bcchf_receipt>
         <!--- DEFAULT Ink Friendly --->
         <cfset pty_ink = 'Yes'>
+        <cfset pty_ink = 'No'>
         
         <!--- cardholder data --->
         <cfset post_card_number = bcchf_cc_number>
@@ -295,7 +296,7 @@
         	<cfif pty_tax EQ "no">
                 <cfset receipt_type = 'NONE'>
             <cfelse>
-    			<cfset receipt_type = 'TAX-IF'>
+    			<cfset receipt_type = 'TAX'>
             </cfif>
              
         </cfif>
@@ -586,6 +587,8 @@
     	<cfset chargeAproved = 0>
         <cfset exact_respCode = 0>
         <cfset returnMSG = 'Charge Not Attempted'>
+        
+        <cfset eATPrec = recordFraudAttempt(variables.newUUID)>
     
     </cfif>
     <!--- -------------------- end of exact of processing  ---------------------- --->
@@ -1109,6 +1112,10 @@
         	<cfset Show = 1>
         </cfif>
         
+        <cfif IsDefined('bcchf_corptax') AND bcchf_corptax EQ 1>
+        	<cfset hiddenDonationPCType = 'corporate'>
+        </cfif>
+        
         <!--- Personal Corporate Donation --->
         <cfif hiddenDonationPCType EQ 'corporate'>
         	<cfset DName = '#TRIM(bcchf_donor_company_name)#'>
@@ -1177,8 +1184,13 @@
         
         <!--- tribute type --->
         <!--- eCard for eCards - Pledge for Pledge --->
-        <cfset hiddenTributeType = bcchf_donation_honour>
-        <cfset gift_TributeType = bcchf_donation_honour>
+        <cfif IsDefined('bcchf_donation_honour')>
+			<cfset hiddenTributeType = bcchf_donation_honour>
+            <cfset gift_TributeType = bcchf_donation_honour>
+        <cfelse>
+			<cfset hiddenTributeType = 'general'>
+            <cfset gift_TributeType = 'general'>
+        </cfif>
         
         <!--- tax receipt information --->
         <cfset pty_tax = bcchf_receipt>
@@ -2812,6 +2824,8 @@
     	<cfset chargeAproved = 0>
         <cfset exact_respCode = 0>
         <cfset returnMSG = 'Charge Not Attempted'>
+        
+        <cfset eATPrec = recordFraudAttempt(variables.newUUID)>
     
     </cfif>
     <!--- ---------------------------- end of exact of processing  ------------------------------------- --->
@@ -3612,7 +3626,7 @@
         <!--- 8. ecard notification to Angela --->
         <cfif gift_type EQ 'eCard'>
         
-            <cfmail to="jyoung@bcchf.ca, tkilloran@bcchf.ca" from="bcchfds@bcchf.ca" subject="Ecard Purchase Made" type="html">
+            <cfmail to="jyoung@bcchf.ca, mneels@bcchf.ca" from="bcchfds@bcchf.ca" subject="Ecard Purchase Made" type="html">
             An ecard purchase was just made online.<br />
             Details:<br />
             Occasion: #eCard_occasion#<br />
@@ -4524,6 +4538,8 @@
     	<cfset chargeAproved = 0>
         <cfset exact_respCode = 0>
         <cfset returnMSG = 'Charge Not Attempted'>
+        
+        <cfset eATPrec = recordFraudAttempt(variables.newUUID)>
     
     </cfif>
     
@@ -7661,7 +7677,7 @@
             <img src="http://newsletter.bcchf.ca/images/2015/header-ChildRun.png" width="720" alt="ChildRun" border="0">
             
         	<cfelseif emEvent EQ 'RFTK'>
-            <img src="http://newsletter.bcchf.ca/images/2017/header-RFTK.png" width="720" alt="2017 RBC Race for the Kids" border="0">
+            <img src="http://newsletter.bcchf.ca/images/2018/header-RFTK.png" width="720" alt="2018 RBC Race for the Kids" border="0">
 			
 			
 			<cfelseif emEvent EQ 'SloPitch'>
@@ -7792,7 +7808,7 @@
         <cfelse>
                 
         <p>#SelectMember.SupFName# #SelectMember.SupLName#</p>
-		<p>Congratulations, a donation has been made from #selectDonor.pty_fname# #selectDonor.pty_lname# to your <cfif emEvent EQ 'WigsForKids'><cfelse>#selectEventName.EventCurrentYear# </cfif>#selectEventName.Event_Name# Page. </p>
+		<p>Congratulations, a donation has been made from #selectDonor.pty_fname# #selectDonor.pty_lname# to your <cfif emEvent EQ 'WigsForKids' OR emEvent EQ 'BFD'><cfelse>#selectEventName.EventCurrentYear# </cfif>#selectEventName.Event_Name# Page. </p>
         
 		#DonationNotification#
         
@@ -8140,7 +8156,7 @@
         Message: #cfcatch.Message#
         Detail: #cfcatch.Detail#
         <cfdump var="#cfcatch#" label="catch">
-        <cfdump var="#form#" hide="POST_CARD_NUMBER,POST_CVV,FIELDNAMES,POST_DOLLARAMOUNT,js_bcchf_cardnumber,js_bcchf_cvv">
+        <cfdump var="#form#" hide="POST_CARD_NUMBER,POST_CVV,FIELDNAMES,POST_DOLLARAMOUNT,js_bcchf_cardnumber,js_bcchf_cvv,bcchf_cc_number,bcchf_cvv,JS_BCCHF_CARDNUMBER,JS_BCCHF_CVV,BCCHF_CC_NUMBER,BCCHF_CVV">
         </cfmail>
     </cfcatch>
     </cftry>
@@ -8242,7 +8258,7 @@
         Message: #cfcatch.Message#
         Detail: #cfcatch.Detail#
         <cfdump var="#cfcatch#" label="catch">
-        <cfdump var="#form#" hide="POST_CARD_NUMBER,POST_CVV,FIELDNAMES,POST_DOLLARAMOUNT,js_bcchf_cardnumber,js_bcchf_cvv">
+        <cfdump var="#form#" hide="POST_CARD_NUMBER,POST_CVV,FIELDNAMES,POST_DOLLARAMOUNT,js_bcchf_cardnumber,js_bcchf_cvv,bcchf_cc_number,bcchf_cvv">
         </cfmail>
     </cfcatch>
     </cftry>
@@ -8351,7 +8367,7 @@
         Message: #cfcatch.Message#
         Detail: #cfcatch.Detail#
         <cfdump var="#cfcatch#" label="catch">
-        <cfdump var="#form#" hide="POST_CARD_NUMBER,POST_CVV,FIELDNAMES,POST_DOLLARAMOUNT,js_bcchf_cardnumber,js_bcchf_cvv">
+        <cfdump var="#form#" hide="POST_CARD_NUMBER,POST_CVV,FIELDNAMES,POST_DOLLARAMOUNT,js_bcchf_cardnumber,js_bcchf_cvv,bcchf_cc_number,bcchf_cvv">
         </cfmail>
     </cfcatch>
     </cftry>
@@ -8408,13 +8424,55 @@
         Message: #cfcatch.Message#
         Detail: #cfcatch.Detail#
         <cfdump var="#cfcatch#" label="catch">
-        <cfdump var="#form#" hide="POST_CARD_NUMBER,POST_CVV,FIELDNAMES,POST_DOLLARAMOUNT,js_bcchf_cardnumber,js_bcchf_cvv">
+        <cfdump var="#form#" hide="POST_CARD_NUMBER,POST_CVV,FIELDNAMES,POST_DOLLARAMOUNT,js_bcchf_cardnumber,js_bcchf_cvv,bcchf_cc_number,bcchf_cvv,JS_BCCHF_CARDNUMBER,JS_BCCHF_CVV,BCCHF_CC_NUMBER,BCCHF_CVV">
         </cfmail>
     </cfcatch>
     </cftry>
         
         
 	<cfreturn tAttemptSuc>
+
+</cffunction>
+
+
+<!--- 2018-07-04 Recording Attempted Transactions - FRAUD Data --->
+<cffunction name="recordFraudAttempt" access="private" returntype="boolean">
+
+    <cfargument name="tUUID" type="string" required="yes">
+    
+    <cftry>
+                
+    <cfset tAttemptFraud = 1>
+    
+    
+    <CFQUERY datasource="#APPLICATION.DSN.Superhero#" name="insert_record">
+    UPDATE tblAttempt SET
+    	post_exactAttpt = 'STOPPED:FRAUD',
+        rqst_authorization_num = 'STOPPED:FRAUD',
+        POST_REFERENCE_NO = 'STOPPED:FRAUD'
+    WHERE pge_UUID = '#tUUID#'
+    </CFQUERY>
+    
+    
+    
+    <!--- if the try block fails --->
+	<!--- send email with details to isbcchf --- log transaction --->
+    <cfcatch type="any">
+    
+    	<cfset tAttemptFraud = 1>
+    
+        <cfmail to="csweeting@bcchf.ca" from="error@bcchf.ca" subject="error recording transaction data attempt" type="html">
+        Error recording database data into tblAttempt
+        Message: #cfcatch.Message#
+        Detail: #cfcatch.Detail#
+        <cfdump var="#cfcatch#" label="catch">
+        <cfdump var="#form#" hide="POST_CARD_NUMBER,POST_CVV,FIELDNAMES,POST_DOLLARAMOUNT,js_bcchf_cardnumber,js_bcchf_cvv,bcchf_cc_number,bcchf_cvv,JS_BCCHF_CARDNUMBER,JS_BCCHF_CVV,BCCHF_CC_NUMBER,BCCHF_CVV">
+        </cfmail>
+    </cfcatch>
+    </cftry>
+        
+        
+	<cfreturn tAttemptFraud>
 
 </cffunction>
 
@@ -8650,7 +8708,7 @@
         Message: #cfcatch.Message#
         Detail: #cfcatch.Detail#
         <cfdump var="#cfcatch#" label="catch">
-        <cfdump var="#form#" hide="POST_CARD_NUMBER,POST_CVV,FIELDNAMES,POST_DOLLARAMOUNT,js_bcchf_cardnumber,js_bcchf_cvv">
+        <cfdump var="#form#" hide="POST_CARD_NUMBER,POST_CVV,FIELDNAMES,POST_DOLLARAMOUNT,js_bcchf_cardnumber,js_bcchf_cvv,bcchf_cc_number,bcchf_cvv">
         </cfmail>
     </cfcatch>
     </cftry>
@@ -8798,7 +8856,7 @@
         Message: #cfcatch.Message#
         Detail: #cfcatch.Detail#
         <cfdump var="#cfcatch#" label="catch">
-        <cfdump var="#form#" hide="POST_CARD_NUMBER,POST_CVV,FIELDNAMES,POST_DOLLARAMOUNT,js_bcchf_cardnumber,js_bcchf_cvv">
+        <cfdump var="#form#" hide="POST_CARD_NUMBER,POST_CVV,FIELDNAMES,POST_DOLLARAMOUNT,js_bcchf_cardnumber,js_bcchf_cvv,bcchf_cc_number,bcchf_cvv">
         </cfmail>
     </cfcatch>
     </cftry>
@@ -8960,7 +9018,7 @@
         Message: #cfcatch.Message#
         Detail: #cfcatch.Detail#
         <cfdump var="#cfcatch#" label="catch">
-        <cfdump var="#form#" hide="POST_CARD_NUMBER,POST_CVV,FIELDNAMES,POST_DOLLARAMOUNT,js_bcchf_cardnumber,js_bcchf_cvv">
+        <cfdump var="#form#" hide="POST_CARD_NUMBER,POST_CVV,FIELDNAMES,POST_DOLLARAMOUNT,js_bcchf_cardnumber,js_bcchf_cvv,bcchf_cc_number,bcchf_cvv">
         </cfmail>
     </cfcatch>
     </cftry>
@@ -9003,7 +9061,7 @@
         Message: #cfcatch.Message#
         Detail: #cfcatch.Detail#
         <cfdump var="#cfcatch#" label="catch">
-        <cfdump var="#form#" hide="POST_CARD_NUMBER,POST_CVV,FIELDNAMES,POST_DOLLARAMOUNT,js_bcchf_cardnumber,js_bcchf_cvv">
+        <cfdump var="#form#" hide="POST_CARD_NUMBER,POST_CVV,FIELDNAMES,POST_DOLLARAMOUNT,js_bcchf_cardnumber,js_bcchf_cvv,bcchf_cc_number,bcchf_cvv">
         </cfmail>
     </cfcatch>
     </cftry>
@@ -9374,7 +9432,7 @@ a:active {
 <!--- header --->
 	<cfset divTagSuffux = ''>
     
-	<div><img src="http://newsletter.bcchf.ca/images/2014/header-General.png" width="720" alt="BC Children's Hospital Foundation" border="0" ></div>
+	<div><img src="http://newsletter.bcchf.ca/images/2016/header-GeneralA.png" width="720" alt="BC Children's Hospital Foundation" border="0" ></div>
 
 </td>
 </tr>
@@ -9426,7 +9484,7 @@ a:active {
     </cfif>
     <p>Sincerely,<br />
     &nbsp;<br />
-    Cherie Spence<br />
+    Jodi Young<br />
     Philanthropy Coordinator<br />
     Tribute Program<br />
     BC Children's Hospital Foundation<br />
@@ -9448,13 +9506,14 @@ a:active {
 <tr>
 <td bgcolor="##ffffff">
 
-<div><img src="http://newsletter.bcchf.ca/images/2015/footer.png" width="720" border="0" height="168" usemap="##GeneralMap"></div>
+<div><img src="http://newsletter.bcchf.ca/images/2016/footer-new.png" width="720" border="0" height="168" usemap="##GeneralMap"></div>
 
 <map name="GeneralMap">
-	<area shape="rect" coords="627,15,667,57" href="https://instagram.com/bcchf" target="_blank" alt="Instagram" />
-    <area shape="rect" coords="506,15,549,59" href="https://www.facebook.com/BCCHF" target="_blank" alt="Facebook">
-    <area shape="rect" coords="568,15,608,57" href="http://twitter.com/bcchf" target="_blank" alt="Twitter">
-    <area shape="rect" coords="504,71,704,132" href="http://www.bcchf.ca/donate/?utm_source=newsletter17&utm_medium=email&utm_campaign=General&utm_content=BottomGraphic" target="_blank" alt="Donate">
+	<area shape="rect" coords="644,84,687,128" href="https://www.youtube.com/bcchf" target="_blank" alt="YouTube" />
+    <area shape="rect" coords="598,84,641,128" href="https://instagram.com/bcchf" target="_blank" alt="Instagram" />
+    <area shape="rect" coords="507,84,550,128" href="https://www.facebook.com/BCCHF" target="_blank" alt="Facebook">
+    <area shape="rect" coords="553,84,596,128" href="https://twitter.com/bcchf" target="_blank" alt="Twitter">
+    <area shape="rect" coords="507,10,687,81" href="http://www.bcchf.ca/donate/?utm_source=newsletter17&utm_medium=email&utm_campaign=General&utm_content=BottomGraphic" target="_blank" alt="Donate">
 </map>
 
 </td>
@@ -9997,12 +10056,12 @@ a:active {
                     <cfset DonNotEmailTemplate = 'Goal100NotLT'>
                     
                     <!--- 2015 - no conditional 100% goal
-						2016 - re-add this conditional. --->
+						2016 - re-add this conditional. 
                     <cfif selectReg.EventFundGoal GT 999.99>
                         <cfset DonNotEmailTemplate = 'Goal100NotGT'>
                     <cfelse>
                         <cfset DonNotEmailTemplate = 'Goal100NotLT'>
-                    </cfif>
+                    </cfif>--->
                     
                 <cfelseif PerOfTotal GT 74>
                     <cfset DonNotEmailTemplate = 'Goal75Not'> 
@@ -10554,11 +10613,12 @@ a:active {
     <cfelse>
     
     	<!--- 2015 MO Blocking --->
+        <!--- 2018 adjust to atleast $20 from Brasil --->
         <cfif (ptc_country EQ 'brasil'
 			OR ptc_country EQ 'uruguai'
 			OR ptc_country EQ 'Argentina')
-			AND gift_frequency EQ 'monthly'
-			AND post_dollaramount LT 10>
+			<!--- AND gift_frequency EQ 'monthly' --->
+			AND post_dollaramount LT 20>
             
             <cfset fradulent = 1>
             
@@ -10609,6 +10669,18 @@ a:active {
     
     <!--- check for MO --->
     <cfif ptc_email EQ 'daraerik8@gmail.com'><!---  --->
+    
+    	<!--- MO blocked - ABORT --->
+        <cfset fradulent = 1>
+        <!--- Set a marker ---
+		<cfset frapi.trace( "MO Blocked; ABORTING" )>--->
+	</cfif>
+    
+    <!--- check for MO --->
+    <cfif (pty_tax_fname EQ 'Felipe') 
+		AND (pty_tax_lname EQ 'Araujo')
+		AND ptc_email EQ 'fatalitym7@gmail.com'
+		><!---  --->
     
     	<!--- MO blocked - ABORT --->
         <cfset fradulent = 1>
@@ -11061,6 +11133,10 @@ a:active {
     	<cfset chargeAproved = 0>
         <cfset exact_respCode = 0>
         <cfset returnMSG = 'Charge Not Attempted'>
+        
+        <cfset eATPrec = recordFraudAttempt(variables.newUUID)>
+        
+        
     
     </cfif>
     <!--- ---------------------------- end of exact of processing  ------------------------------------- --->

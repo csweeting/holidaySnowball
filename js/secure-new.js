@@ -1645,7 +1645,11 @@ function mdonationResultHandler(result) {
 		
 		
 		// move to confirmation page
-		window.location='completeDonation-mobile.cfm?Event='+eventToken+'&UUID='+UUID;
+		if (eventToken == 'HolidaySnowball'){
+			window.location='completeDonation-Snowball.cfm?Event='+eventToken+'&UUID='+UUID;
+		} else {
+			window.location='completeDonation-mobile.cfm?Event='+eventToken+'&UUID='+UUID;
+		}
 		
 	}
 	else{

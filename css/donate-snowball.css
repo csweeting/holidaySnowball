@@ -55,7 +55,7 @@
   padding-right: 7px;
 }
 /* csweeting */
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 790px) {
 	.bcchf_donate .main {
 	  /*overflow: hidden;
 	  padding-bottom: 60px; */
@@ -253,7 +253,7 @@
   z-index: 3;
 }
 /*csweeting */
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 790px) {
 	.bcchf_donate .bcchf_dropdown {
 	  width: 250px;
 	}
@@ -433,7 +433,7 @@
   z-index: 1000;
 }
 /*csweeting*/
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 790px) {
 	
 	.bcchf_donate .bcchf_progress > div:first-child {
 	  width: 115px;
@@ -610,7 +610,7 @@
   width: 163px;
 }
 /*csweeting */
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 790px) {
 	.bcchf_donate .bcchf_input_container > label {
 	  width: 115px;
 	}
@@ -682,7 +682,7 @@
   width: 570px;
 }
 /*csweeting */
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 790px) {
 	.bcchf_donate .bcchf_text_container {
 	  width: 500px;
 	}
@@ -782,7 +782,7 @@
   padding-top: 10px;
 }
 /*csweeting*/
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 790px) {
 	.bcchf_donate .bcchf_checkbox_container {
 	  width: 400px;
 	  font-size: 0.8rem;
@@ -990,7 +990,7 @@
   width: 185px;
 }
 /*csweeting */
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 790px) {
 	.bcchf_donate .bcchf_thankyou_page .bcchf_input_container > label {
 	  width: 115px;
 	}
@@ -1218,7 +1218,7 @@
 .bcchf_donate .bcchf_header p {
 
 	}
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 790px) {
 	.bcchf_donate .bcchf_header p {
 		font-size: 0.7rem;
 	}

@@ -554,7 +554,9 @@ jQuery.noConflict();
 					donor_names.filter('.' + e.currentTarget.getAttribute('href')).removeClass('hide');
 					donor_names.not('.' + e.currentTarget.getAttribute('href')).addClass('hide');
 					document.getElementById('hiddenDonationPCType').value = 'corporate';
+					// doesnt work document.getElementById('js_bcchf_corporate_review').innerHTML = 'Corporate Donation';
 					//console.log('switch to corp');
+					alert('Note that your tax receipt will be in the name of the company you enter for a Corporate Donation');
 				});
 				
 				donor_name_personal.on('click', function(e) {
@@ -562,6 +564,7 @@ jQuery.noConflict();
 					donor_names.filter('.' + e.currentTarget.getAttribute('href')).removeClass('hide');
 					donor_names.not('.' + e.currentTarget.getAttribute('href')).addClass('hide');
 					document.getElementById('hiddenDonationPCType').value = 'personal';
+					// doesnt work document.getElementById('js_bcchf_corporate_review').innerHTML = 'Personal Donation';
 					//console.log('switch to personal');
 				});
 				
@@ -590,7 +593,56 @@ jQuery.noConflict();
 					// update paypal options 
 					donation_form.find('.bcchf_payment_cta_monthly').removeClass('hide');
 					donation_form.find('.bcchf_payment_cta').addClass('hide');
+					
+					// set donation amount
+					var dtnAmtSet = 0;
+					for (var i = 0; i < donation_radios.length; i++) {
+						var amt = donation_radios.eq(i).attr('data-monthly');
+
+						// Update the values
+						donation_radios.eq(i).val(amt);
+
+						// Update the copy
+						amt += '';
+						donation_type_copy.eq(i).html('$' + amt + '/mo.');
+
+						// If the user hasn't selected the donation yet,
+						if (hiddenGiftAmount == 0) {
+							
+							//console.log('set default amount');
+							
+							if (!donation_selected) {
+								if (donation_radios.eq(i).attr('data-monthly_default')) {
+									donation_radios.eq(i).prop('checked', true);
+								} else {
+									donation_radios.eq(i).prop('checked', false);
+								}
+							}	
+							
+						} else {
+							
+							//console.log('set selected amount');
+							if (Number(hiddenGiftAmount) == Number(amt)) {
+								donation_radios.eq(i).prop('checked', true);
+								dtnAmtSet = 1;
+							} else {
+								donation_radios.eq(i).prop('checked', false);
+							}
+							
+						}
+						// set the default donation as checked
 						
+					}
+					
+					// if the radio has not been set AND there is a doantion amount
+					// set and select bcchf_other
+					//console.log('set other amount');
+					if (hiddenGiftAmount != 0 && dtnAmtSet == 0) {
+						
+						jQuery("#bcchf_other").prop('checked', true);
+						jQuery("#bcchf_other").val(Number(hiddenGiftAmount));
+						jQuery("#bcchf_other_amt").val(Number(hiddenGiftAmount));
+					}
 						
 				} else {
 					//console.log('single');
@@ -1465,8 +1517,11 @@ jQuery.noConflict();
 	* when the complete page is fully loaded,
 	* including all frames, objects and images.
 	***********************************************/
-	jQuery(window).load(function() {
-
+	// jQuery has deprecated the load() method since version 1.8 and removed it from jQuery version 3.0.
+	//jQuery(window).load(function() will not work in 3.0
+	//try and use the on() method or bind() method. The on() method is good if your element might not be there when the page loads so jQuery can keep listening for your element.
+	jQuery(window).on("load", function() {
+	
 	});
 
 

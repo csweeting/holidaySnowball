@@ -1618,7 +1618,7 @@ label {
     padding: 0.4rem 0; }
 
 /*csweeting */
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 790px) {
 	label {
 		font-size: 0.7rem;
 	}
@@ -4281,7 +4281,7 @@ h3, .h3 {
     color: #f48020;
     border-color: #f48020; }
 /*csweeting */
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 790px) {
 	.bcchf_btn,
 	.button {
 		padding: 0.75em 0.15em;
@@ -4372,7 +4372,7 @@ input[type="checkbox"]:checked + label {
   background: #00c1d5 url(../images/snowtheme/check.svg) no-repeat center; }
 
 /*csweeting 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 790px) {
 	input[type="radio"]:checked + .bcchf_radio_label .bcchf_check {
   background: #00c1d5 url(../images/snowtheme/checksm.svg) no-repeat center; }
   .bcchf_checkbox {
@@ -4817,7 +4817,7 @@ body.ready .site-header.hidden #counter {
   padding: 3.6rem;
   margin-bottom: 3.4rem; }
 /*csweeting */
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 790px) {
 	.bcchf_donate > .main {
 	  padding: 2.6rem;
 	  margin-bottom: 3.4rem; }

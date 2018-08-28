@@ -363,7 +363,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button id="cta"><svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72"><defs><style>.cta-1{fill:#19bfd3;}</style></defs><path class="cta-1 cta-circle" d="M100.67,851.47a36,36,0,1,1,36-36A36,36,0,0,1,100.67,851.47Zm0-63.65a27.65,27.65,0,1,0,27.65,27.65A27.68,27.68,0,0,0,100.67,787.81Z" transform="translate(-64.67 -779.47)"/><path class="cta-1 cta-arrow" d="M100.67,827a4.16,4.16,0,0,1-3-1.22l-12-12a4.17,4.17,0,1,1,5.9-5.9l9.09,9.09,9.09-9.09a4.17,4.17,0,1,1,5.9,5.9l-12,12A4.16,4.16,0,0,1,100.67,827Z" transform="translate(-64.67 -779.47)"/></svg></button>
     </main>
     
-    <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
     <script type="text/javascript" src="js/foundation.min.js"></script>
     <script type="text/javascript" src="js/scripts.min.js?v=4.4"></script>

@@ -208,64 +208,6 @@
 </cfif>
 
 
-<!-- BCCHF's Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '511237559044138'); // Insert your pixel ID here.
-fbq('track', 'PageView');
-fbq('track', 'Purchase', {value: '#selectTransaction.gift#' ,currency: 'CAD'});
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=511237559044138&ev=PageView&noscript=1"
-/></noscript>
-<!-- DO NOT MODIFY -->
-<!-- End Facebook Pixel Code -->
 
-<!--- Google Code for Grant Account - AdWords Donation Tracking Conversion Page --->
-<script type="text/javascript">
-/* <![CDATA[ */
-var google_conversion_id = 978521268;
-var google_conversion_language = "en";
-var google_conversion_format = "3";
-var google_conversion_color = "ffffff";
-var google_conversion_label = "yKBCCOrv8GsQtJnM0gM";
-var google_conversion_value = #selectTransaction.gift#;
-var google_conversion_currency = "CAD";
-var google_remarketing_only = false;
-/* ]]> */
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/978521268/?value=#selectTransaction.gift#&amp;currency_code=CAD&amp;label=yKBCCOrv8GsQtJnM0gM&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
-
-
-<!--- Google Code for New Paid Account - AdWords Donation Tracking Conversion Page --->
-<script type="text/javascript">
-/* <![CDATA[ */
-var google_conversion_id = 867189927;
-var google_conversion_language = "en";
-var google_conversion_format = "3";
-var google_conversion_color = "ffffff";
-var google_conversion_label = "jDgtCIS3pmwQp4nBnQM";
-var google_conversion_value = #selectTransaction.gift#;
-var google_conversion_currency = "CAD";
-var google_remarketing_only = false;
-/* ]]> */
-</script>
-<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
-</script>
-<noscript>
-<div style="display:inline;">
-<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/867189927/?value=#selectTransaction.gift#&amp;currency_code=CAD&amp;label=jDgtCIS3pmwQp4nBnQM&amp;guid=ON&amp;script=0"/>
-</div>
-</noscript>
 
 </cfoutput>

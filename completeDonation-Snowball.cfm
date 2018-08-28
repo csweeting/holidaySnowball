@@ -102,24 +102,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 
-<!-- Facebook Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-fbq('init', '511237559044138');
-fbq('track', "PageView");
-fbq('track', 'Purchase', {value: '#selectTransaction.gift#', currency: 'CAD'});</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=511237559044138&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Facebook Pixel Code -->
-
-	<!-- Site Improve Scripting -->
-	<script type="text/javascript">
+<!-- Site Improve Scripting -->
+<script type="text/javascript">
 /*<![CDATA[*/
 (function() {
 var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
@@ -465,7 +449,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <cfinclude template="includes/footer-snowball.cfm">
     
-	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="js/slick.min.js"></script>
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="js/snowball.jquery.js"></script>
