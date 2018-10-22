@@ -57,6 +57,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- end of GA pageview -->
 
 
+
+
 <meta charset="UTF-8">
 <title>BC Children's Hospital Foundation</title>
 <meta name="description" content="A description of the page.">
@@ -69,7 +71,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Enable search engine to index this page and follow links, replace with no-index or no-follow to disable -->
-<meta name="robots" content="index, follow">
+<meta name="robots" content="noindex">
 
 <link href="css/vaccine.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,700" rel="stylesheet">
@@ -140,7 +142,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
 		</section>
 	</div>
-	<cfinclude template="includes/footer-snowball.cfm">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<!--- ---><script type="text/javascript" src="js/slick.min.js"></script> 
@@ -169,6 +170,39 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	document.getElementById('uadevicevendor').value = result.device.vendor;
 	-->	
     </script>
+    
+    <!--- TEST IDLE CODE --->
+	<script type="text/javascript">
+    var idleTime = 0;
+	( function($) {
+    $(document).ready(function () {
+        //Increment the idle time counter every minute.
+        var idleInterval = setInterval(timerIncrement, 60000); // 60000 = 1 minute
+    
+        //Zero the idle timer on mouse movement.
+        $(this).mousemove(function (e) {
+            idleTime = 0;
+        });
+		$(this).scroll(function (e) {
+            idleTime = 0;
+        });
+		/* $(this).tap(function (e) {
+            idleTime = 0;
+            console.log('reset timer (tap)');
+        }); */
+        $(this).keypress(function (e) {
+            idleTime = 0;
+        });
+    });
+	} ) ( jQuery );
+    
+    function timerIncrement() {
+        idleTime = idleTime + 1;
+        if (idleTime > 1) { // 19 = 20 minutes
+            window.location.reload();
+        }
+    }
+    </script>   
     
 </body>
 </html>

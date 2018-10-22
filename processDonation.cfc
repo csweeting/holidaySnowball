@@ -51,7 +51,11 @@
     <cfset exact_respCode = 0>
     
     <!--- set source --->
+    <cfif IsDefined('hiddenFORMType')>
+    <cfset donation_source = 'New 2015 Donation Form+#hiddenFORMType#'>
+    <cfelse>
     <cfset donation_source = 'New 2015 Donation Form'>
+    </cfif>
     <cfset pty_tax_issuer = 'BCCHF'>
 
     
@@ -83,6 +87,16 @@
         <cfset ptc_post = TRIM(bcchf_postal_code)>
         <cfset ptc_email = TRIM(bcchf_email)>
         <cfset ptc_phone = TRIM(bcchf_phone)>
+        
+        <!--- check address length --->
+        <cfif Len(ptc_address) GT 50>
+        <!--- trim address and add into address 2 --->
+        	<cfset ptc_address = Left(ptc_address, 40)>
+            <cfset ptc_address = "#ptc_address#-TRIM">
+            <cfset ptc_addTwo = "1: #Right(TRIM(bcchf_address), Len(bcchf_address)-40)# - 2: #ptc_addTwo#">
+        <cfelse>
+        <!--- no actions required --->
+        </cfif>
         
         <!--- ESubscribe options ---->
         <cfif IsDefined('bcchf_allow_contact')>
@@ -1052,7 +1066,11 @@
     <cfset exact_respCode = 0>
     
     <!--- set source --->
-    <cfset donation_source = 'New 2015 Donation Form'>
+    <cfif IsDefined('hiddenFORMType')>
+    <cfset donation_source = 'New 2015 Donation Form (PayPal)+#hiddenFORMType#'>
+    <cfelse>
+    <cfset donation_source = 'New 2015 Donation Form (PayPal)'>
+    </cfif>
     <cfset pty_tax_issuer = 'BCCHF'>
 
     
@@ -10390,7 +10408,7 @@ a:active {
         <cfif selectTransaction.gift_type EQ 'FOT' 
 			AND (selectTransaction.TeamID EQ 4211 OR selectTransaction.TeamID EQ 4212 OR selectTransaction.TeamID EQ 4213)>
         	<cfset EventDonNotifySend = 1>
-        	<cfset EventDonNotifyTo = 'dfullwood@bcchf.ca'>
+        	<cfset EventDonNotifyTo = 'amcmurray@bcchf.ca'>
             <cfset EventDonNotifyCC = ''>
         </cfif> 
         

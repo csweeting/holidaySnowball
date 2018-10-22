@@ -10,7 +10,7 @@
     <!--- lookup event details --->
     <CFQUERY name="selectDonation" datasource="#APPLICATION.DSN.Superhero#">
     SELECT Sum(Hero_Donate.Amount) AS sumAmount, Count(Hero_Donate.ID) AS countAmount FROM Hero_Donate 
-    WHERE Campaign = 2017
+    WHERE Campaign = 2018
     AND Event = 'HolidaySnowball' 
     </CFQUERY>
     

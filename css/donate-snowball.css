@@ -991,11 +991,17 @@
 }
 /*csweeting */
 @media only screen and (max-width: 790px) {
+	.bcchf_donate header .center {
+	  width:inherit;
+	}
 	.bcchf_donate .bcchf_thankyou_page .bcchf_input_container > label {
 	  width: 115px;
 	}
 }
 @media only screen and (max-width: 420px) {
+	.bcchf_donate header .center {
+	  width:inherit;
+	}
 	.bcchf_donate .bcchf_thankyou_page .bcchf_input_container > label {
 	  width: 90px;
 	}

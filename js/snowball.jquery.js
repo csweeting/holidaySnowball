@@ -791,11 +791,12 @@ jQuery.noConflict();
 							toggleDivOn('exactResponseNegative');
 							document.getElementById('exactResponseNegative').innerHTML = 'Ytransaction was successful, you will be directed to our thank you page in a moment.';
 							
-							if (eventToken == 'HolidaySnowball'){
+							// all traffic to snowball confirmation
 								window.location.href = 'completeDonation-Snowball.cfm?Event='+eventToken+'&UUID='+UUID;
-							} else {
+								/*
+							if (eventToken == 'HolidaySnowball'){} else {
 								window.location.href = 'completeDonation-NEW.cfm?Event='+eventToken+'&UUID='+UUID;
-							}
+							} */
 							
 						} else {
 							// declined messaging
