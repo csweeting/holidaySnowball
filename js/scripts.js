@@ -13,7 +13,13 @@ jQuery(document).ready(function($) {
     // SETTINGS
     // ------------------
 
-    
+    // Odometer Options
+    // ------
+
+    window.odometerOptions = {
+        duration: 1200
+    }
+
     // Velocty Easing
     // ------
 
@@ -61,10 +67,15 @@ jQuery(document).ready(function($) {
 
     if ($('.snowball-throw-styles').length) {
         $('.snowball-throw-styles').snowballThrowStyleSelector();
+    } else if ($('#facebook-share').length) {
+        $('#facebook-share').simpleShare();
     }
 
     if ($('.bcchf_snowball_page').length) {
         $('.bcchf_snowball_page').snowballLanding({is_android: is_android});
+    }
+    if ($('.bcchf_thankyou_page').length) {
+        $('.bcchf_thankyou_page').snowballIntro({intro_frames: 10, fg_frames: 20, total_frames: 20, is_android: is_android});
     }
 
     if ($('.throwCount').length) {
@@ -86,6 +97,28 @@ jQuery(document).ready(function($) {
 
     // Snowball Throw Style Selector
     // ------
+
+    $.fn.simpleShare = function(options) {
+        var settings = $.extend({}, options);
+
+        var $share_button = $('#facebook-share');
+        var id = $share_button.data('share');
+        
+        $share_button.on('click', function() {
+            fbShare(id);
+        });
+
+        function fbShare(id, options) {
+            var settings = $.extend({
+                winWidth: 600,
+                winHeight: 450 
+            }, options);
+
+            var winTop = (screen.height / 2) - (settings.winHeight / 2);
+            var winLeft = (screen.width / 2) - (settings.winWidth / 2);
+            window.open('https://www.facebook.com/sharer/sharer.php?u='+ encodeURIComponent(id) +'&amp;src=sdkpreparse', 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width='+settings.winWidth+',height='+settings.winHeight);
+        }
+    }
 
     $.fn.snowballThrowStyleSelector = function() {
 
@@ -144,8 +177,122 @@ jQuery(document).ready(function($) {
     // Snowball landing animation
     // ------
 
+    $.fn.snowballIntro = function(options) {
+        var settings = $.extend({
+            intro_frames: 10,
+            fg_frames: 20,
+            total_frames: 144,
+            is_android: false
+        }, options);
+        var $html = $('html');
+        var $window = $(window);
+        var $container = this;
+        var $frames = $container.find('#slides-fg div, #slides div');
+        var $bg_frames = $container.find('#slides div');
+        var $fg_frames = $container.find('#slides-fg div');
+        var intro_frames = settings.intro_frames;
+        var fg_frames = settings.fg_frames;
+        var total_frames = settings.total_frames;
+        var controller = new ScrollMagic.Controller();
+        var obj = {curImg: 0};
+        var desktop = Foundation.MediaQuery.atLeast('medium');
+
+        var intro_tween = TweenMax.to(obj, .9,
+            {
+                curImg: intro_frames, // animate propery curImg to number of images
+                roundProps: "curImg", // only integers so it can be used as an array index
+                immediateRender: true, // load first image automatically
+                ease: Linear.easeNone,
+                onUpdate: function () {
+                    $bg_frames.css({visibility: 'hidden'}).eq(obj.curImg).css({visibility: 'visible'});
+                    $fg_frames.css({visibility: 'hidden'}).eq(obj.curImg).css({visibility: 'visible'});
+                }
+            }
+        );
+
+        function update_view(event, name) {
+            desktop = Foundation.MediaQuery.atLeast('medium');
+        }
+        $(window).on('changed.zf.mediaquery', update_view);
+
+        var intro_frames_scene = new ScrollMagic.Scene({offset: 0})
+            .setTween(intro_tween);
+
+        var scroll_frames_scene = new ScrollMagic.Scene({offset: 0, duration: '75%'})
+            .on("progress", function (e) {
+                scroll_prog(e.progress);
+            });
+
+        function scroll_prog(prog) {
+            var id = intro_frames;
+            if (prog > 1) {
+                id = total_frames;
+            } else if (prog > 0) {
+                id = Math.floor(prog * (total_frames - intro_frames)) + intro_frames;
+            }
+            $bg_frames.css({visibility: 'hidden'}).eq(id).css({visibility: 'visible'});
+            $fg_frames.css({visibility: 'hidden'});
+            if (prog < fg_frames/total_frames) {
+                $fg_frames.eq(id).css({visibility: 'visible'});
+            }
+        }
+
+        var preload = [];
+        var promises = [];
+        var $preload_bg = $bg_frames.slice(0,intro_frames);
+        var $preload_fg = $fg_frames.slice(0,intro_frames);
+        var $preload_frames = settings.is_android ? $.fn.add.call($preload_bg,$preload_fg) : $frames;
+        $preload_frames.each(function(i) {
+            var style = $(this).attr('style');
+            var start = style.indexOf('url(') + 4;
+            var end = style.indexOf(');');
+            preload[i] = style.substring(start, end).replace(/^\"+|\"+$/g, '');
+        });
+        
+        for (var i = 0; i < preload.length; i++) {
+            (function(url, promise) {
+                var img = new Image();
+                img.onload = function() {
+                  promise.resolve();
+                };
+                img.src = url;
+            })(preload[i], promises[i] = $.Deferred());
+        }
+        $.when.apply($, promises).done(function() {
+            
+            setTimeout(function() {
+                $container.addClass('preloaded');
+            }, 300);
+
+            if (!settings.is_android) {
+                setTimeout(function() {
+
+                    controller.addScene([
+                        scroll_frames_scene,
+                    ]);         
+
+                }, 450);
+            }
+            
+            setTimeout(startIntro, 900);
+        });        
+        
+
+        function startIntro() {
+            var pageHeight = $window.height() * 5;
+            controller.addScene([intro_frames_scene]);
+        }
+
+        return this;
+    }
+
+
+
     $.fn.snowballLanding = function(options) {
         var settings = $.extend({
+            intro_frames: 10,
+            fg_frames: 20,
+            total_frames: 144,
             is_android: false
         }, options);
         var $html = $('html');
@@ -158,9 +305,9 @@ jQuery(document).ready(function($) {
         var $screens = $container.find('.screen');
         var $cta = $('#cta');
         var $triggers = $('.screen-trigger');
-        var intro_frames = 10;
-        var fg_frames = 34;
-        var total_frames = 144;
+        var intro_frames = settings.intro_frames;
+        var fg_frames = settings.fg_frames;
+        var total_frames = settings.total_frames;
         var controller = new ScrollMagic.Controller();
         var obj = {curImg: 0};
         var desktop = Foundation.MediaQuery.atLeast('medium');
@@ -355,7 +502,7 @@ jQuery(document).ready(function($) {
 
         setTimeout(function() {
             $num.html($num.data('value'));    
-        }, 200);
+        }, 1800);
 
         return this;
     }

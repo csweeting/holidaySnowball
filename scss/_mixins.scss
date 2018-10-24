@@ -142,13 +142,13 @@ span.amp {
         }
 
         &.odometer-animating-up {
-            .odometer-ribbon-inner {transition: transform 2s;}
+            .odometer-ribbon-inner {transition: transform 1.2s;}
             &.odometer-animating .odometer-ribbon-inner {transform: translateY(-100%);}
         }
 
         &.odometer-animating-down {
             .odometer-ribbon-inner {transform: translateY(-100%);}
-            &.odometer-animating .odometer-ribbon-inner {transition: transform 2s; transform: translateY(0);}
+            &.odometer-animating .odometer-ribbon-inner {transition: transform 1.2s; transform: translateY(0);}
         }
 
     }

@@ -279,171 +279,134 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
 
     <main class="site-content bcchf_thankyou_page">
-        <div class="row">
-            <article class="small-12 columns bcchf_thankyou">
 
-                <!-- Success thank you message -->
-                <section id="thanks-top" class="panel">
-                    <div class="row align-middle">
-                        <div class="small-12 medium-8 columns">
-                            
-                            <h2 class="bcchf_thanks">Thank you for donating, #selectTransaction.pty_fname#!</h2>
-                    
-                            <!--- sending the email / receipt from here in all scenarios --->
-                            <input type="hidden" name="UUID" id="UUID" value="#sup_pge_UUID#" />
-                            
-                            <cftry>
-                            
-                            <cfdiv id="taxMessage" style="display:block" bind="cfc:processDonation-Receipt.sendReceipt({UUID})" bindOnLoad="true"><p>A confirmation email <cfif selectTransaction.pty_tax EQ 'yes' AND selectTransaction.gift_frequency NEQ 'Monthly' AND selectTransaction.gift_frequency NEQ 'Monthly - No Receipt'>with your tax receipt </cfif>has been sent to you. If you have any questions about your donation<cfif selectTransaction.pty_tax EQ 'yes' AND selectTransaction.gift_frequency NEQ 'Monthly' AND selectTransaction.gift_frequency NEQ 'Monthly - No Receipt'> or receipt</cfif>, please contact us at 604-875-2444 or call toll free 1-888-663-3033 if you're outside of Greater Vancouver.</p></cfdiv> 
-                            
-                            <cfcatch type="any">
-                            
-                            <p>A confirmation email <cfif selectTransaction.pty_tax EQ 'yes' AND selectTransaction.gift_frequency NEQ 'Monthly' AND selectTransaction.gift_frequency NEQ 'Monthly - No Receipt'>with your tax receipt </cfif>has been sent to you. If you have any questions about your donation<cfif selectTransaction.pty_tax EQ 'yes' AND selectTransaction.gift_frequency NEQ 'Monthly' AND selectTransaction.gift_frequency NEQ 'Monthly - No Receipt'> or receipt</cfif>, please contact us at 604-875-2444 or call toll free 1-888-663-3033 if you're outside of Greater Vancouver.</p>
-                            
-                            <cfmail to="csweeting@bcchf.ca" from="error@bcchf.ca" subject="Error Loading Receipt CFC" type="html">
-                            <cfdump var="#cfcatch#">
-                            </cfmail>
-                            
-                            </cfcatch>
-                            </cftry>
-                    
-                    
-                        </div>
-                        <div class="small-12 medium-4 columns">
+        <section id="slides">
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00000.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00001.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00002.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00003.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00004.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00005.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00006.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00007.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00008.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00009.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00010.jpg); visibility: visible;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00011.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00012.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00013.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00014.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00015.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00016.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00017.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00018.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00019.jpg); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BG_shadow_00020.jpg); visibility: hidden;"></div>
+        </section>
+        <section id="slides-fg">
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00000.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00001.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00002.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00003.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00004.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00005.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00006.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00007.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00008.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00009.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00010.png); visibility: visible;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00011.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00012.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00013.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00014.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00015.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00016.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00017.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00018.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00019.png); visibility: hidden;"></div>
+            <div style="background-image: url(images/snowtheme/slides-compressed/BCCH_landing_BALL_NoShadow_00020.png); visibility: hidden;"></div>
+        </section>
 
-                            <h5>Snowball Stats</h5>
-                            <dl>
-                                <dt>#DollarFormat(selectTransaction.gift)#</dt>
-                                <dd>Your donation</dd>
-                                <dt>#DollarFormat(totalDonations)#</dt>
-                                <dd>Raised so far</dd>
-                                <dt>#CountDonations#</dt>
-                                <dd>Snowballs thrown</dd>
-                            </dl>
+        <article id="foreground-content">
+            <div class="row">
 
-                        </div>
+                <div class="small-12 medium-10 large-8 columns">
+
+                    <h1>Number of people who have joined the fight</h1>
+
+                    <div id="counter">
+                        <cfoutput>
+                        <div class="throwCount odometer" data-value="1#countDonations#">1#countDonations-1#</div>
+                        </cfoutput>
                     </div>
-                </section>
-            
-                <cfif selectTransaction.card_send EQ 'ask'>
 
-					<!--- if tribute --->
-					<cfset hideSurvey = ' js_bcchf_survey hide'>
-
-					<cfif selectTransaction.trib_notes eq 'honour'>
-						<cfset AWKcardMSG = 'Honour'>
-					<cfelseif selectTransaction.trib_notes eq 'memory'>
-						<cfset AWKcardMSG = 'Memory'>
-					<cfelse>
-						<cfset AWKcardMSG = 'Honour'>
-					</cfif>
-					<section id="tribute" class="main panel">
-                    <div id="formContainer">
-					
-					<cfinclude template="includes/snowballTribCardInfo.cfm">
-					
-					</div>
-					</section>
-
-				<cfelse>
-
-					<cfset hideSurvey = ''>
-
-				</cfif>
-
-                <section id="thanks-step2" class="panel">
-                    <div class="row">
-                        <div class="small-12 columns">
-                            <h2>Step 2</h2>
-                            <h1>You've earned a snowball, now choose how you want to throw it:</h1>
-                        </div>
-                    </div>
-                    <div class="row snowball-throw-styles">
-                        <div class="small-12 medium-4 columns">
-                            <a href="javascript:void(0)" id="the-corkscrew" data-share="https://www.facebook.com/BCCHF/videos/10155306942110805/" class="selected">
-                                <div class="preview">
-                                    <video muted playsinline loop poster="images/snowtheme/snowball-preview-1-thumb.jpg">
-                                        <source src="videos/BCCH_throw_cork.mov" type="video/mp4">
-                                    </video>
-                                </div>
-                                <h6>The Corkscrew</h6>
-                                <div class="indicator"><span></span></div>
-                            </a>
-                        </div>
-                        <div class="small-12 medium-4 columns">
-                            <a href="javascript:void(0)" id="the-triple-whammy" data-share="https://www.facebook.com/BCCHF/videos/10155306946090805/">
-                                <div class="preview">
-                                    <video muted playsinline loop poster="images/snowtheme/snowball-preview-2-thumb.jpg">
-                                        <source src="videos/BCCH_throw_triple.mov" type="video/mp4">
-                                    </video>
-                                </div>
-                                <h6>The Triple Whammy</h6>
-                                <div class="indicator"><span></span></div>
-                            </a>
-                        </div>
-                        <div class="small-12 medium-4 columns">
-                            <a href="javascript:void(0)" id="the-just-chuck-it" data-share="https://www.facebook.com/BCCHF/videos/10155306934990805/">
-                                <div class="preview">
-                                    <video muted playsinline loop poster="images/snowtheme/snowball-preview-3-thumb.jpg">
-                                        <source src="videos/BCCH_throw_straight.mov" type="video/mp4">
-                                    </video>
-                                </div>
-                                <h6>The Just-Chuck-It</h6>
-                                <div class="indicator"><span></span></div>
-                            </a>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="thanks-step3" class="panel">
-                    <div class="row">
-                        <div class="small-12 columns">
-                            <h2>Step 3</h2>
-                            <h1>Share and don't forget to tag the friends you want to hit with your snowball.</h1>
-                            <button id="facebook-share"><svg xmlns="http://www.w3.org/2000/svg" width="23.24" height="50" viewBox="0 0 23.24 50"><defs><style>.cls-1{fill:##ffffff;}</style></defs><path class="cls-1" d="M-28.64,712.14h-7v25H-46v-25H-51v-8.83H-46V697.6c0-4.08,1.94-10.48,10.48-10.48l7.69,0v8.57h-5.58a2.12,2.12,0,0,0-2.2,2.41v5.19h7.92Z" transform="translate(50.96 -687.12)"/></svg> Share</button>
-                            <p>If you don't have a Facebook account or would prefer not to participate in the snowball fight, that's okay. We've received your donation and appreciate your support over the holiday season.</p>
-                        </div>
-                    </div>
-                </section>
-        
-                                
-                <!--- receipt --->
-                <div class="clearfix" style="display:none;">
-                    <h3 style="margin-bottom:5px; margin-top:15px;">Below is your transaction record.</h3>
-                    <em>You will receive a copy of this confirmation via email.</em>
-                    
-                    <p>&nbsp;</p>
-                    <p>Received on: #DateFormat(Now(), "DDDD, MMMM DD, YYYY")#<br />
-                    Donor Name: #selectTransaction.pty_fname# #selectTransaction.pty_lname#<br />
-                    Email: #selectTransaction.ptc_email#<br />
-                    Address: #selectTransaction.ptc_address# #selectTransaction.ptc_add_Two#<br />
-                    City: #selectTransaction.ptc_city#<br />
-                    Province: #selectTransaction.ptc_prov#<br />
-                    Postal Code: #selectTransaction.ptc_post#<br />
-                    Phone: #selectTransaction.ptc_phone#<br />
-                    Gift Type: #selectTransaction.gift_frequency#<br />
-                    <cfif selectTransaction.gift_frequency EQ 'monthly'>
-                    For monthly donation, you may cancel your authorization at any time by notifying the Foundation at 604-875-2444.<br />
-                    </cfif><br />
-                    Donation: #DollarFormat(selectTransaction.gift)#<br />
-
-                    </p>
-                    <p>======Transaction Record======<br />
-                    BC Children&rsquo;s Hospital Foundation<br />
-                    938 West 28th Ave.<br />
-                    Vancouver, BC V5Z 4H4<br />
-                    Canada<br />
-                    <a href="http://www.bcchf.ca">www.bcchf.ca</a><br />
-                    TYPE: Purchase<br />
-                    DATE: #DateFormat(selectTransaction.pty_date, "DD MMM YYYY")# #TimeFormat(selectTransaction.pty_date, "h:mm:ss tt")#<br />
-                    AMOUNT: #DollarFormat(selectTransaction.gift)# CAD<br />
-                    AUTH: #selectTransaction.rqst_authorization_num#<br />
-                    REF: #selectTransaction.rqst_sequenceno#<br /><br />
-                    #SupportingTitle# #SupportingName#</p>
                 </div>
-                
-		    </article>
-        </div>
+
+                <div id="thanks-top" class="small-12 medium-10 large-8 columns">
+                    
+                    <h2 class="bcchf_thanks">Thank you for being one of them, #selectTransaction.pty_fname#!</h2>
+                        
+                    <!--- sending the email / receipt from here in all scenarios --->
+                    <input type="hidden" name="UUID" id="UUID" value="#sup_pge_UUID#" />
+                                
+                    <cftry>
+                    
+                    <cfdiv id="taxMessage" style="display:block" bind="cfc:processDonation-Receipt.sendReceipt({UUID})" bindOnLoad="true"><p>A confirmation email <cfif selectTransaction.pty_tax EQ 'yes' AND selectTransaction.gift_frequency NEQ 'Monthly' AND selectTransaction.gift_frequency NEQ 'Monthly - No Receipt'>with your tax receipt </cfif>has been sent to you. If you have any questions about your donation<cfif selectTransaction.pty_tax EQ 'yes' AND selectTransaction.gift_frequency NEQ 'Monthly' AND selectTransaction.gift_frequency NEQ 'Monthly - No Receipt'> or receipt</cfif>, please contact us at 604-875-2444 or call toll free 1-888-663-3033 if you're outside of Greater Vancouver.</p></cfdiv> 
+                    
+                    <cfcatch type="any">
+                    
+                    <p>A confirmation email <cfif selectTransaction.pty_tax EQ 'yes' AND selectTransaction.gift_frequency NEQ 'Monthly' AND selectTransaction.gift_frequency NEQ 'Monthly - No Receipt'>with your tax receipt </cfif>has been sent to you. If you have any questions about your donation<cfif selectTransaction.pty_tax EQ 'yes' AND selectTransaction.gift_frequency NEQ 'Monthly' AND selectTransaction.gift_frequency NEQ 'Monthly - No Receipt'> or receipt</cfif>, please contact us at 604-875-2444 or call toll free 1-888-663-3033 if you're outside of Greater Vancouver.</p>
+                    
+                    <cfmail to="csweeting@bcchf.ca" from="error@bcchf.ca" subject="Error Loading Receipt CFC" type="html">
+                    <cfdump var="#cfcatch#">
+                    </cfmail>
+                    
+                    </cfcatch>
+                    </cftry>
+
+                    <h2 class="bcchf_share">Now, challenge your friends to join the fight on Facebook.</h2>
+                    <button id="facebook-share" data-share="https://www.facebook.com/BCCHF/videos/10155306934990805/"><svg xmlns="http://www.w3.org/2000/svg" width="23.24" height="50" viewBox="0 0 23.24 50"><defs><style>.cls-1{fill:#ffffff;}</style></defs><path class="cls-1" d="M-28.64,712.14h-7v25H-46v-25H-51v-8.83H-46V697.6c0-4.08,1.94-10.48,10.48-10.48l7.69,0v8.57h-5.58a2.12,2.12,0,0,0-2.2,2.41v5.19h7.92Z" transform="translate(50.96 -687.12)"/></svg> Share</button>
+            
+                                    
+                    <!--- receipt --->
+                    <div class="clearfix" style="display:none;">
+                        <h3 style="margin-bottom:5px; margin-top:15px;">Below is your transaction record.</h3>
+                        <em>You will receive a copy of this confirmation via email.</em>
+                        
+                        <p>&nbsp;</p>
+                        <p>Received on: #DateFormat(Now(), "DDDD, MMMM DD, YYYY")#<br />
+                        Donor Name: #selectTransaction.pty_fname# #selectTransaction.pty_lname#<br />
+                        Email: #selectTransaction.ptc_email#<br />
+                        Address: #selectTransaction.ptc_address# #selectTransaction.ptc_add_Two#<br />
+                        City: #selectTransaction.ptc_city#<br />
+                        Province: #selectTransaction.ptc_prov#<br />
+                        Postal Code: #selectTransaction.ptc_post#<br />
+                        Phone: #selectTransaction.ptc_phone#<br />
+                        Gift Type: #selectTransaction.gift_frequency#<br />
+                        <cfif selectTransaction.gift_frequency EQ 'monthly'>
+                        For monthly donation, you may cancel your authorization at any time by notifying the Foundation at 604-875-2444.<br />
+                        </cfif><br />
+                        Donation: #DollarFormat(selectTransaction.gift)#<br />
+
+                        </p>
+                        <p>======Transaction Record======<br />
+                        BC Children&rsquo;s Hospital Foundation<br />
+                        938 West 28th Ave.<br />
+                        Vancouver, BC V5Z 4H4<br />
+                        Canada<br />
+                        <a href="http://www.bcchf.ca">www.bcchf.ca</a><br />
+                        TYPE: Purchase<br />
+                        DATE: #DateFormat(selectTransaction.pty_date, "DD MMM YYYY")# #TimeFormat(selectTransaction.pty_date, "h:mm:ss tt")#<br />
+                        AMOUNT: #DollarFormat(selectTransaction.gift)# CAD<br />
+                        AUTH: #selectTransaction.rqst_authorization_num#<br />
+                        REF: #selectTransaction.rqst_sequenceno#<br /><br />
+                        #SupportingTitle# #SupportingName#</p>
+                    </div>
+                    
+    		    </div>
+            </div>
+        </article>
+
     </main>
     
     

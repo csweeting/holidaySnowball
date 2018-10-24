@@ -107,8 +107,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</div>
 	</header>
 	<div class="main center">
-		<!--- <h2>Step 1</h2> --->
-        <cfinclude template="includes/topHeadline-snowball.cfm">
+		
+        <h1 class="bcchf_header_title">Donors Like You Help Us Get Kids Back to Being Kids.</h1>
+		
+		<section class="bcchf_header">
+			<p>Thank you for helping us make the holidays brighter for thousands of kids and their families. Just by donating, you'll be part of the Big BC Snowball Fight for Kids – a digital snowball fight that supports kids accross BC and the Yukon.</p>
+		</section>
+
 		<section>
 			<!-- Progress bar -->
 			<div class="bcchf_progress bcchf_progress_step1 js_bcchf_progress">

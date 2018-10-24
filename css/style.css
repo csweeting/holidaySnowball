@@ -3489,13 +3489,18 @@ table {
   tfoot {
     background: #f1f1f1;
     color: #555555; }
-  thead tr, tfoot tr {
+  thead tr,
+  tfoot tr {
     background: transparent; }
-  thead th, thead td, tfoot th, tfoot td {
+  thead th,
+  thead td,
+  tfoot th,
+  tfoot td {
     padding: 0.4rem 0.5rem 0.5rem;
     font-weight: 700;
     text-align: left; }
-  tbody th, tbody td {
+  tbody th,
+  tbody td {
     padding: 0.4rem 0.5rem 0.5rem; }
   tbody tr:nth-child(even) {
     border-bottom: 0;
@@ -4280,23 +4285,7 @@ h3, .h3 {
     background-color: transparent;
     color: #f48020;
     border-color: #f48020; }
-/*csweeting */
-@media only screen and (max-width: 790px) {
-	.bcchf_btn,
-	.button {
-		padding: 0.75em 0.15em;
-		font-size: 0.8rem;
-		width: 8rem;
-	}
-}
-@media only screen and (max-width: 420px) {
-	.bcchf_btn,
-	.button {
-		padding: 0.65em 0.05em;
-		font-size: 0.7rem;
-		width: 6rem;
-	}
-}
+
 .bcchf_return {
   font-style: italic;
   color: #555555;
@@ -4354,7 +4343,7 @@ textarea + p.align_right {
     margin-bottom: 0; }
 
 input[type="radio"]:checked + .bcchf_radio_label .bcchf_check {
-  background: #00c1d5 url(../images/snowtheme/check.svg) no-repeat center; } 
+  background: #00c1d5 url(../images/snowtheme/check.svg) no-repeat center; }
 
 .bcchf_checkbox {
   width: 2.8rem;
@@ -4370,33 +4359,6 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked + label {
   background: #00c1d5 url(../images/snowtheme/check.svg) no-repeat center; }
-
-/*csweeting 
-@media only screen and (max-width: 790px) {
-	input[type="radio"]:checked + .bcchf_radio_label .bcchf_check {
-  background: #00c1d5 url(../images/snowtheme/checksm.svg) no-repeat center; }
-  .bcchf_checkbox {
-  width: 2.0rem;
-  height: 2.0rem; }
-}*/
-@media only screen and (max-width: 420px) {
-	.bcchf_check {
-	  width: 2.0rem;
-	  height: 2.0rem; }
-	input[type="radio"]:checked + .bcchf_radio_label .bcchf_check {
-	  background: #00c1d5 url(../images/snowtheme/checksm.svg) no-repeat center; }
-  	.bcchf_checkbox {
-	  width: 2.0rem;
-	  height: 2.0rem; }
-	input[type="checkbox"] + label {
-      width: 2.0rem;
-      height: 2.0rem;
-     }
-
-	input[type="checkbox"]:checked + label {
-	  background: #00c1d5 url(../images/snowtheme/checksm.svg) no-repeat center; }
-} 
-
 
 .bcchf_checkbox_container > P {
   max-width: calc(100% - 4rem); }
@@ -4544,13 +4506,13 @@ body.ready .site-header.hidden #counter {
       .odometer.odometer-auto-theme .odometer-digit .odometer-value.odometer-last-value, .odometer.odometer-theme-default .odometer-digit .odometer-value.odometer-last-value {
         position: absolute; }
   .odometer.odometer-auto-theme.odometer-animating-up .odometer-ribbon-inner, .odometer.odometer-theme-default.odometer-animating-up .odometer-ribbon-inner {
-    transition: transform 2s; }
+    transition: transform 1.2s; }
   .odometer.odometer-auto-theme.odometer-animating-up.odometer-animating .odometer-ribbon-inner, .odometer.odometer-theme-default.odometer-animating-up.odometer-animating .odometer-ribbon-inner {
     transform: translateY(-100%); }
   .odometer.odometer-auto-theme.odometer-animating-down .odometer-ribbon-inner, .odometer.odometer-theme-default.odometer-animating-down .odometer-ribbon-inner {
     transform: translateY(-100%); }
   .odometer.odometer-auto-theme.odometer-animating-down.odometer-animating .odometer-ribbon-inner, .odometer.odometer-theme-default.odometer-animating-down.odometer-animating .odometer-ribbon-inner {
-    transition: transform 2s;
+    transition: transform 1.2s;
     transform: translateY(0); }
 
 #counter {
@@ -4596,6 +4558,41 @@ body.ready .site-header.hidden #counter {
     #counter .throwCount .odometer-inside .odometer-digit:first-child {
       display: none; }
 
+#slides-fg,
+#slides {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none; }
+  #slides-fg div,
+  #slides div {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    background: transparent no-repeat center/cover; }
+    #slides-fg div:first-child,
+    #slides div:first-child {
+      visibility: visible; }
+  @media screen and (max-width: 39.9375em) {
+    #slides-fg,
+    #slides {
+      left: -25%;
+      width: 125%;
+      top: -15vh;
+      height: 115vh; } }
+
+#slides-fg {
+  z-index: 2; }
+
+#foreground-content {
+  position: relative;
+  z-index: 3; }
+
 .bcchf_snowball_page {
   position: relative;
   left: 0;
@@ -4606,35 +4603,6 @@ body.ready .site-header.hidden #counter {
   @media screen and (max-width: 39.9375em) {
     .bcchf_snowball_page .row {
       width: 94%; } }
-  .bcchf_snowball_page #slides-fg,
-  .bcchf_snowball_page #slides {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    pointer-events: none; }
-    .bcchf_snowball_page #slides-fg div,
-    .bcchf_snowball_page #slides div {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      visibility: hidden;
-      background: transparent no-repeat center/cover; }
-      .bcchf_snowball_page #slides-fg div:first-child,
-      .bcchf_snowball_page #slides div:first-child {
-        visibility: visible; }
-    @media screen and (max-width: 39.9375em) {
-      .bcchf_snowball_page #slides-fg,
-      .bcchf_snowball_page #slides {
-        left: -25%;
-        width: 125%;
-        top: -15vh;
-        height: 115vh; } }
-  .bcchf_snowball_page #slides-fg {
-    z-index: 2; }
   .bcchf_snowball_page #screen_h {
     position: fixed;
     left: 0;
@@ -4816,18 +4784,7 @@ body.ready .site-header.hidden #counter {
   box-shadow: 0 0 0.35rem rgba(0, 0, 0, 0.15);
   padding: 3.6rem;
   margin-bottom: 3.4rem; }
-/*csweeting */
-@media only screen and (max-width: 790px) {
-	.bcchf_donate > .main {
-	  padding: 2.6rem;
-	  margin-bottom: 3.4rem; }
 
-}
-@media only screen and (max-width: 420px) {
-	.bcchf_donate > .main {
-	  padding: 1.6rem;
-	  margin-bottom: 3.4rem; }
-}
 .panel {
   background-color: #fefefe;
   border-radius: 0.35rem;
@@ -4849,6 +4806,9 @@ body.ready .site-header.hidden #counter {
       .panel:last-child {
         margin-bottom: 3.4rem; } }
 
+.bcchf_header_title {
+  max-width: 31.5rem; }
+
 .bcchf_donate .bcchf_progress > div {
   width: 25% !important;
   background-color: #ebebeb; }
@@ -4858,14 +4818,6 @@ body.ready .site-header.hidden #counter {
   height: 2.25rem !important;
   background-color: #ebebeb !important;
   border: 0.25rem solid #ebebeb !important; }
-
-/*csweeting*/
-@media only screen and (max-width: 420px) {
-	.bcchf_donate .bcchf_progress .bcchf_progress_check {
-	  width: 1.75rem !important;
-	  height: 1.75rem !important;
-	  border: 0.2rem solid #ebebeb !important; }
-}
 
 .bcchf_donate .bcchf_progress.bcchf_progress_step1 > div:first-child {
   background-color: #00c1d5 !important; }
@@ -4930,6 +4882,11 @@ body.ready .site-header.hidden #counter {
 .js_bcchf_donor_corporate {
   font-size: 0.8rem; }
 
+.bcchf_dropdown_stacked .bcchf_text_container > label,
+.bcchf_dropdown_stacked .bcchf_dropdown,
+.bcchf_dropdown_stacked .bcchf_dropdown ul {
+  width: 100%; }
+
 .bcchf_step_final h3 + .bcchf_message {
   font-size: 1rem;
   padding-bottom: 0 !important; }
@@ -4983,9 +4940,42 @@ body.ready .site-header.hidden #counter {
     border-color: #00c1d5;
     color: #00c1d5; }
 
-@media print, screen and (min-width: 40em) {
-  .bcchf_thankyou h1 {
-    font-size: 2.25rem; } }
+.bcchf_thankyou h1 {
+  font-size: 1.8rem;
+  max-width: 22rem; }
+  @media print, screen and (min-width: 40em) {
+    .bcchf_thankyou h1 {
+      font-size: 2.6rem; } }
+
+.bcchf_thankyou #counter {
+  margin-top: 0.1rem;
+  margin-bottom: 1.9rem; }
+  @media print, screen and (min-width: 40em) {
+    .bcchf_thankyou #counter {
+      text-align: left;
+      margin-top: 0.5rem;
+      margin-bottom: 2.75rem; } }
+  .bcchf_thankyou #counter .throwCount {
+    font-size: 1.7rem; }
+    .bcchf_thankyou #counter .throwCount .odometer-digit {
+      line-height: 2.8rem;
+      margin: 0.05rem; }
+    .bcchf_thankyou #counter .throwCount .odometer-digit-spacer {
+      width: 2.15rem; }
+    .bcchf_thankyou #counter .throwCount .odometer-digit-inner {
+      left: .3em; }
+    .bcchf_thankyou #counter .throwCount .odometer-value {
+      margin-top: .1em; }
+    @media print, screen and (min-width: 40em) {
+      .bcchf_thankyou #counter .throwCount {
+        font-size: 2.95rem; }
+        .bcchf_thankyou #counter .throwCount .odometer-digit {
+          line-height: 4rem;
+          margin: 0.2rem; }
+        .bcchf_thankyou #counter .throwCount .odometer-digit-spacer {
+          width: 3.1rem; }
+        .bcchf_thankyou #counter .throwCount .odometer-digit-inner {
+          left: .225em; } }
 
 @media print, screen and (min-width: 40em) {
   #thanks-top .columns:first-child {
@@ -4997,13 +4987,24 @@ body.ready .site-header.hidden #counter {
     padding-bottom: 1rem;
     margin-bottom: 1rem; } }
 
-#thanks-top .bcchf_thanks {
+#thanks-top .bcchf_thanks, #thanks-top .bcchf_share {
   font-weight: 700; }
+
+#thanks-top .bcchf_share {
+  font-size: 1.2rem;
+  margin-top: 1.7rem; }
+  @media print, screen and (min-width: 40em) {
+    #thanks-top .bcchf_share {
+      font-size: 1.2rem;
+      margin-top: 2.75rem; } }
 
 #thanks-top h5 {
   text-align: center;
   text-transform: uppercase;
   color: #00c1d5; }
+
+#thanks-top p {
+  font-weight: 500; }
 
 #thanks-top dl {
   text-align: center;
@@ -5071,9 +5072,6 @@ body.ready .site-header.hidden #counter {
 #the-just-chuck-it .preview {
   background-image: url(../images/snowtheme/snowball-preview-3-thumb.jpg); }
 
-#thanks-step3 p {
-  font-weight: 500; }
-
 #facebook-share {
   display: inline-block;
   vertical-align: middle;
@@ -5091,7 +5089,7 @@ body.ready .site-header.hidden #counter {
   color: #fefefe;
   transition: none;
   display: block;
-  margin: 0.75rem auto 1.5rem;
+  margin: 1.2rem 0 4rem;
   font-weight: 500;
   padding: 0.38em 1em 0.25em .85em;
   border-radius: 0.5rem;
@@ -5118,59 +5116,130 @@ body.ready .site-header.hidden #counter {
   @media screen and (max-width: 39.9375em) {
     #facebook-share {
       display: block;
-      width: 100%; } }
+      width: 100%;
+      margin-bottom: 2rem; } }
 
-#footer form {
-  margin: 0; }
-
-#footer legend {
-  margin: 0; }
-
-#footer input[type=text], #footer textarea {
-  background-color: #ebebeb; }
-
-#footer input[type=submit] {
-  box-sizing: border-box; }
-
-.site-content + #footer {
-  height: auto; }
-  .site-content + #footer #footer-content {
-    max-width: calc(100% - 1rem); }
-    .site-content + #footer #footer-content #footer-columns {
-      width: 100%; }
-  @media print, screen and (min-width: 40em) {
+#footer {
+  position: relative;
+  z-index: 3; }
+  #footer form {
+    margin: 0; }
+  #footer legend {
+    margin: 0; }
+  #footer input[type=text], #footer textarea {
+    background-color: #ebebeb; }
+  #footer input[type=submit] {
+    box-sizing: border-box; }
+  .site-content + #footer {
+    height: auto; }
     .site-content + #footer #footer-content {
-      max-width: calc(100% - 2rem); } }
-  @media screen and (max-width: 46.875em) {
-    .site-content + #footer {
-      padding: 0.75rem 0; }
+      max-width: calc(100% - 1rem); }
+      .site-content + #footer #footer-content #footer-columns {
+        width: 100%; }
+    @media print, screen and (min-width: 40em) {
       .site-content + #footer #footer-content {
-        height: auto; }
-        .site-content + #footer #footer-content h3 {
-          margin-top: 0.5rem; }
-        .site-content + #footer #footer-content #footer-columns li {
-          width: 100%;
-          float: none; }
-        .site-content + #footer #footer-content .bcchf-footer-fc-last {
-          position: relative;
-          left: 0;
-          width: 100%;
-          max-width: 15rem;
-          margin-top: 0.5rem; }
-        .site-content + #footer #footer-content .bcchf-newsletter-footer {
-          box-sizing: border-box;
-          width: 100%;
-          max-width: 15rem; }
-        .site-content + #footer #footer-content #footer-bottom {
-          position: relative;
-          left: 0;
-          top: 0;
-          margin-top: 0.5rem;
-          width: 100%; }
-          .site-content + #footer #footer-content #footer-bottom > li {
+        max-width: calc(100% - 2rem); } }
+    @media screen and (max-width: 46.875em) {
+      .site-content + #footer {
+        padding: 0.75rem 0; }
+        .site-content + #footer #footer-content {
+          height: auto; }
+          .site-content + #footer #footer-content h3 {
+            margin-top: 0.5rem; }
+          .site-content + #footer #footer-content #footer-columns li {
+            width: 100%;
             float: none; }
-        .site-content + #footer #footer-content #footer-bottom-list {
-          margin: 0.5rem -0.5rem; } }
+          .site-content + #footer #footer-content .bcchf-footer-fc-last {
+            position: relative;
+            left: 0;
+            width: 100%;
+            max-width: 15rem;
+            margin-top: 0.5rem; }
+          .site-content + #footer #footer-content .bcchf-newsletter-footer {
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 15rem; }
+          .site-content + #footer #footer-content #footer-bottom {
+            position: relative;
+            left: 0;
+            top: 0;
+            margin-top: 0.5rem;
+            width: 100%; }
+            .site-content + #footer #footer-content #footer-bottom > li {
+              float: none; }
+          .site-content + #footer #footer-content #footer-bottom-list {
+            margin: 0.5rem -0.5rem; } }
+
+/*csweeting */
+@media only screen and (max-width: 790px) {
+  label {
+    font-size: 0.7rem; }
+  [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],
+  textarea {
+    font-size: 0.7rem; } }
+
+@media only screen and (max-width: 420px) {
+  label {
+    font-size: 0.6rem; }
+  [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],
+  textarea {
+    font-size: 0.6rem; } }
+
+/*csweeting */
+@media only screen and (max-width: 790px) {
+  .bcchf_btn,
+  .button {
+    padding: 0.75em 0.15em;
+    font-size: 0.8rem;
+    width: 8rem; } }
+
+@media only screen and (max-width: 420px) {
+  .bcchf_btn,
+  .button {
+    padding: 0.65em 0.05em;
+    font-size: 0.7rem;
+    width: 6rem; } }
+
+/*csweeting 
+@media only screen and (max-width: 790px) {
+    input[type="radio"]:checked + .bcchf_radio_label .bcchf_check {
+  background: #00c1d5 url(../images/snowtheme/checksm.svg) no-repeat center; }
+  .bcchf_checkbox {
+  width: 2.0rem;
+  height: 2.0rem; }
+}*/
+@media only screen and (max-width: 420px) {
+  .bcchf_check {
+    width: 2.0rem;
+    height: 2.0rem; }
+  input[type="radio"]:checked + .bcchf_radio_label .bcchf_check {
+    background: #00c1d5 url(../images/snowtheme/checksm.svg) no-repeat center; }
+  .bcchf_checkbox {
+    width: 2.0rem;
+    height: 2.0rem; }
+  input[type="checkbox"] + label {
+    width: 2.0rem;
+    height: 2.0rem; }
+  input[type="checkbox"]:checked + label {
+    background: #00c1d5 url(../images/snowtheme/checksm.svg) no-repeat center; } }
+
+/*csweeting */
+@media only screen and (max-width: 790px) {
+  .bcchf_donate > .main {
+    padding: 2.6rem;
+    margin-bottom: 3.4rem; } }
+
+@media only screen and (max-width: 420px) {
+  .bcchf_donate > .main {
+    padding: 1.6rem;
+    margin-bottom: 3.4rem; } }
+
+/*csweeting*/
+@media only screen and (max-width: 420px) {
+  .bcchf_donate .bcchf_progress .bcchf_progress_check {
+    width: 1.75rem !important;
+    height: 1.75rem !important;
+    border: 0.2rem solid #ebebeb !important; } }
 
 /******************************************************************
 

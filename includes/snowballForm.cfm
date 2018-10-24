@@ -224,6 +224,35 @@
             </div>
         </section>
 
+        <!-- Compelled by -->
+        <div class="bcchf_input_container bcchf_dropdown_container bcchf_dropdown_stacked">
+            <div class="bcchf_text_container">
+                <label for="bcchf_compelledby">What complelled you to give today?</label>
+                <div class="bcchf_dropdown js_bcchf_custom_select">
+                    <!-- This ul will serve as the select tag and li as options. It must match the element in select tag underneath -->
+                    <ul class="">
+                        <li data-value=""><span>Optional</span></li>
+                        <li data-value="Reason One">Reason One</li>
+                        <li data-value="Reason Two">Reason Two</li>
+                        <li data-value="Reason Three">Reason Three</li>
+                        <li data-value="Reason Four">Reason Four</li>
+                        <li data-value="Reason Five">Reason Five</li>
+                    </ul>
+                    <!-- This is hidden due to select tag being unstyleable -->
+                    <select name="bcchf_compelledby" id="bcchf_compelledby">
+                        <option value="">Optional</option>
+                        <option value="Reason One">Reason One</option>                          
+                        <option value="Reason Two">Reason Two</option>
+                        <option value="Reason Three">Reason Three</option>
+                        <option value="Reason Four">Reason Four</option>
+                        <option value="Reason Five">Reason Five</option>
+                    </select>
+                    
+                    <label class="bcchf_dropdown_arrow">&nbsp;</label>
+                </div>
+            </div>
+        </div>
+
         <!-- Encouragement message -->
         <section class="bcchf_encouragement">
             <div class="bcchf_text_container js_bcchf_text_container">
@@ -492,7 +521,36 @@
                 <p class="bcchf_message error hide"><em></em></p>
             </div>
         </section>
-		
+
+
+        <!-- Compelled by -->
+        <div class="bcchf_input_container bcchf_dropdown_container bcchf_dropdown_stacked">
+            <div class="bcchf_text_container">
+                <label for="bcchf_compelledby">What complelled you to give today?</label>
+                <div class="bcchf_dropdown js_bcchf_custom_select">
+                    <!-- This ul will serve as the select tag and li as options. It must match the element in select tag underneath -->
+                    <ul class="">
+                        <li data-value=""><span>Optional</span></li>
+                        <li data-value="Reason One">Reason One</li>
+                        <li data-value="Reason Two">Reason Two</li>
+                        <li data-value="Reason Three">Reason Three</li>
+                        <li data-value="Reason Four">Reason Four</li>
+                        <li data-value="Reason Five">Reason Five</li>
+                    </ul>
+                    <!-- This is hidden due to select tag being unstyleable -->
+                    <select name="bcchf_compelledby" id="bcchf_compelledby">
+                        <option value="">Optional</option>
+                        <option value="Reason One">Reason One</option>                          
+                        <option value="Reason Two">Reason Two</option>
+                        <option value="Reason Three">Reason Three</option>
+                        <option value="Reason Four">Reason Four</option>
+                        <option value="Reason Five">Reason Five</option>
+                    </select>
+                    
+                    <label class="bcchf_dropdown_arrow">&nbsp;</label>
+                </div>
+            </div>
+        </div>		
         
         
         <!-- Encouragement message -->

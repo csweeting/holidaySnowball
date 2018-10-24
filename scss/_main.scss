@@ -247,19 +247,25 @@ $themeName: "odometer-theme-default";
 }
 
 
+#slides-fg,
+#slides {position: fixed; left: 0; top: 0; width: 100%; height: 100vh; pointer-events: none;
+    div {position: absolute; left: 0; top: 0; width: 100%; height: 100%; visibility: hidden; background: transparent no-repeat center/cover;
+        &:first-child {visibility: visible;}
+    }
+    @include breakpoint(small down) {left: -25%; width: 125%; top: -15vh; height: 115vh;}
+}
+#slides-fg {z-index: 2;}
+
+#foreground-content {position: relative; z-index: 3;}
+// body:not(.is-android) #foreground-content {mix-blend-mode: multiply;}
+
+
 .bcchf_snowball_page {position: relative; left: 0; top: 0; width: 100%; height: 100vh; overflow: hidden;
 
     .row {
         @include breakpoint(small down) {width: 94%;}
     }
-    #slides-fg,
-    #slides {position: fixed; left: 0; top: 0; width: 100%; height: 100vh; pointer-events: none;
-        div {position: absolute; left: 0; top: 0; width: 100%; height: 100%; visibility: hidden; background: transparent no-repeat center/cover;
-            &:first-child {visibility: visible;}
-        }
-        @include breakpoint(small down) {left: -25%; width: 125%; top: -15vh; height: 115vh;}
-    }
-    #slides-fg {z-index: 2;}
+    
 
     #screen_h {position: fixed; left: 0; top: 0; width: 100%; height: 500vh;}
 
@@ -361,6 +367,8 @@ $themeName: "odometer-theme-default";
     }
 }
 
+.bcchf_header_title {max-width: rem-calc(630);}
+
 
 // Progress Bar
 // ------
@@ -421,6 +429,12 @@ $themeName: "odometer-theme-default";
 
 .js_bcchf_donor_corporate {font-size: rem-calc(16);}
 
+.bcchf_dropdown_stacked {
+    .bcchf_text_container > label, 
+    .bcchf_dropdown,
+    .bcchf_dropdown ul {width: 100%;}
+}
+
 
 
 // Final Step
@@ -460,8 +474,27 @@ $themeName: "odometer-theme-default";
 
 
 .bcchf_thankyou {
-    @include breakpoint(medium) {
-        h1 {font-size: rem-calc(45);}
+
+    h1 {font-size: rem-calc(36); max-width: rem-calc(440);
+        @include breakpoint(medium) {font-size: rem-calc(52);}
+    }
+    
+    #counter {margin-top: rem-calc(2); margin-bottom: rem-calc(38);
+        
+        @include breakpoint(medium) {text-align: left; margin-top: rem-calc(10); margin-bottom: rem-calc(55);}
+
+        .throwCount {font-size: rem-calc(34); 
+            .odometer-digit {line-height: rem-calc(56); margin: rem-calc(1);}
+            .odometer-digit-spacer {width: rem-calc(43);}
+            .odometer-digit-inner {left: .3em;}
+            .odometer-value {margin-top: .1em;}
+
+            @include breakpoint(medium) {font-size: rem-calc(59);
+                .odometer-digit {line-height: rem-calc(80); margin: rem-calc(4);}
+                .odometer-digit-spacer {width: rem-calc(62);}
+                .odometer-digit-inner {left: .225em;}
+            }
+        }
     }
 }
 
@@ -472,9 +505,15 @@ $themeName: "odometer-theme-default";
         @include breakpoint(small down) {border-bottom: 2px dotted $primary-color; padding-bottom: rem-calc(20); margin-bottom: rem-calc(20);}
     }
 
-    .bcchf_thanks {font-weight: $global-weight-bold;}
+    .bcchf_thanks, .bcchf_share {font-weight: $global-weight-bold;}
+
+    .bcchf_share {font-size: rem-calc(24); margin-top: rem-calc(34);
+        @include breakpoint(medium) {font-size: rem-calc(24); margin-top: rem-calc(55);}
+    }
 
     h5 {text-align: center; text-transform: uppercase; color: $primary-color;}
+
+    p {font-weight: 500;}
 
     dl {text-align: center; margin-bottom: 0;
         dt {margin-bottom: 0;}
@@ -483,59 +522,57 @@ $themeName: "odometer-theme-default";
         }
     }
 }
-
-#thanks-step2 {}
     
-    .snowball-throw-styles {
-        a {display: block; margin-top: rem-calc(15); text-align: center;
-            .preview {position: relative; height: 0; padding-bottom: calc(100% - #{rem-calc(6)}); background: #f6f7fa no-repeat center/cover; border: 3px solid $white;
-                video {visibility: hidden; position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
-            }
-            .indicator {width: rem-calc(32); height: rem-calc(32); margin: 0 auto; border: 2px solid $primary-color; border-radius: 50%;
-                span {display: block; width: rem-calc(16); height: rem-calc(16); margin: rem-calc(6); border-radius: 50%;}
-            }
-            h6 {font-size: rem-calc(18); margin: rem-calc(15 0);}
-            &:hover {color: $primary-color;
-                .preview {border-color: $primary-color;}
-            }
-            &.selected {
-                .preview {border-color: $primary-color;
-                    video {visibility: visible;}
-                }
-                .indicator span {background-color: $primary-color;}
-            }
-
-            @include breakpoint(small down) {margin-bottom: rem-calc(20);}
+.snowball-throw-styles {
+    a {display: block; margin-top: rem-calc(15); text-align: center;
+        .preview {position: relative; height: 0; padding-bottom: calc(100% - #{rem-calc(6)}); background: #f6f7fa no-repeat center/cover; border: 3px solid $white;
+            video {visibility: hidden; position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
         }
-    }
+        .indicator {width: rem-calc(32); height: rem-calc(32); margin: 0 auto; border: 2px solid $primary-color; border-radius: 50%;
+            span {display: block; width: rem-calc(16); height: rem-calc(16); margin: rem-calc(6); border-radius: 50%;}
+        }
+        h6 {font-size: rem-calc(18); margin: rem-calc(15 0);}
+        &:hover {color: $primary-color;
+            .preview {border-color: $primary-color;}
+        }
+        &.selected {
+            .preview {border-color: $primary-color;
+                video {visibility: visible;}
+            }
+            .indicator span {background-color: $primary-color;}
+        }
 
-    #the-corkscrew {
-        .preview {background-image: url(../images/snowtheme/snowball-preview-1-thumb.jpg);}
+        @include breakpoint(small down) {margin-bottom: rem-calc(20);}
     }
-    #the-triple-whammy {
-        .preview {background-image: url(../images/snowtheme/snowball-preview-2-thumb.jpg);}
-    }
-    #the-just-chuck-it {
-        .preview {background-image: url(../images/snowtheme/snowball-preview-3-thumb.jpg);}
-    }
-
-
-#thanks-step3 {
-    p {font-weight: 500;}
 }
 
-    #facebook-share {
-        @include button(false, $secondary-color, darken($secondary-color,10%), $white, solid);
-        transition: none; display: block; margin: #{rem-calc(15)} auto #{rem-calc(30)}; font-weight: 500; padding: 0.38em 1em 0.25em .85em; border-radius: rem-calc(10); line-height: rem-calc(42); font-size: rem-calc(32); border-width: rem-calc(3);
+#the-corkscrew {
+    .preview {background-image: url(../images/snowtheme/snowball-preview-1-thumb.jpg);}
+}
+#the-triple-whammy {
+    .preview {background-image: url(../images/snowtheme/snowball-preview-2-thumb.jpg);}
+}
+#the-just-chuck-it {
+    .preview {background-image: url(../images/snowtheme/snowball-preview-3-thumb.jpg);}
+}
 
-        svg {vertical-align: middle; position: relative; top: rem-calc(-4); margin-right: .6em; height: rem-calc(42);}
 
-        &:hover {background-color: transparent; border-color: $secondary-color; color: $secondary-color;
-            svg * {fill: $secondary-color;}
-        }
+#facebook-share {
+    @include button(false, $secondary-color, darken($secondary-color,10%), $white, solid);
+    transition: none; display: block; margin: #{rem-calc(24)} 0 #{rem-calc(80)}; font-weight: 500; padding: 0.38em 1em 0.25em .85em; border-radius: rem-calc(10); line-height: rem-calc(42); font-size: rem-calc(32); border-width: rem-calc(3);
 
-        @include breakpoint(small down) {display: block; width: 100%;}
+    svg {vertical-align: middle; position: relative; top: rem-calc(-4); margin-right: .6em; height: rem-calc(42);}
+
+    &:hover {background-color: transparent; border-color: $secondary-color; color: $secondary-color;
+        svg * {fill: $secondary-color;}
     }
+
+    @include breakpoint(small down) {display: block; width: 100%; margin-bottom: rem-calc(40);}
+}
+
+
+
+
 
 
 
@@ -544,7 +581,7 @@ $themeName: "odometer-theme-default";
 // -------------------------------------------------------------------------------------------------------------------
 
 
-#footer {
+#footer {position: relative; z-index: 3;
     form {margin: 0;}
     legend {margin: 0;}
     input[type=text], textarea {background-color: $light-gray;}
@@ -582,3 +619,86 @@ $themeName: "odometer-theme-default";
     }
 }
 
+
+
+
+/*csweeting */
+@media only screen and (max-width: 790px) {
+    label {
+        font-size: 0.7rem;
+    }
+    [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],
+    textarea {
+      font-size: 0.7rem;
+      }
+}
+@media only screen and (max-width: 420px) {
+    label {
+        font-size: 0.6rem;
+    }
+    [type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],
+    textarea {
+      font-size: 0.6rem;
+      }
+}
+/*csweeting */
+@media only screen and (max-width: 790px) {
+    .bcchf_btn,
+    .button {
+        padding: 0.75em 0.15em;
+        font-size: 0.8rem;
+        width: 8rem;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .bcchf_btn,
+    .button {
+        padding: 0.65em 0.05em;
+        font-size: 0.7rem;
+        width: 6rem;
+    }
+}
+/*csweeting 
+@media only screen and (max-width: 790px) {
+    input[type="radio"]:checked + .bcchf_radio_label .bcchf_check {
+  background: #00c1d5 url(../images/snowtheme/checksm.svg) no-repeat center; }
+  .bcchf_checkbox {
+  width: 2.0rem;
+  height: 2.0rem; }
+}*/
+@media only screen and (max-width: 420px) {
+    .bcchf_check {
+      width: 2.0rem;
+      height: 2.0rem; }
+    input[type="radio"]:checked + .bcchf_radio_label .bcchf_check {
+      background: #00c1d5 url(../images/snowtheme/checksm.svg) no-repeat center; }
+    .bcchf_checkbox {
+      width: 2.0rem;
+      height: 2.0rem; }
+    input[type="checkbox"] + label {
+      width: 2.0rem;
+      height: 2.0rem;
+     }
+
+    input[type="checkbox"]:checked + label {
+      background: #00c1d5 url(../images/snowtheme/checksm.svg) no-repeat center; }
+} 
+/*csweeting */
+@media only screen and (max-width: 790px) {
+    .bcchf_donate > .main {
+      padding: 2.6rem;
+      margin-bottom: 3.4rem; }
+
+}
+@media only screen and (max-width: 420px) {
+    .bcchf_donate > .main {
+      padding: 1.6rem;
+      margin-bottom: 3.4rem; }
+}
+/*csweeting*/
+@media only screen and (max-width: 420px) {
+    .bcchf_donate .bcchf_progress .bcchf_progress_check {
+      width: 1.75rem !important;
+      height: 1.75rem !important;
+      border: 0.2rem solid #ebebeb !important; }
+}
