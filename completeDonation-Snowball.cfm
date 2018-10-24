@@ -58,9 +58,9 @@ AND Event = 'HolidaySnowball'
 </cfif>
 
 <cfif selectDonation.countAmount EQ ''>
-	<cfset countDonations = 0>
+	<cfset countDonations = 100>
 <cfelse>
-	<cfset countDonations = selectDonation.countAmount>
+	<cfset countDonations = 100 + selectDonation.countAmount>
 </cfif>
 
 
@@ -365,7 +365,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </cftry>
 
                     <h2 class="bcchf_share">Now, challenge your friends to join the fight on Facebook.</h2>
-                    <button id="facebook-share" data-share="https://www.facebook.com/BCCHF/videos/10155306934990805/"><svg xmlns="http://www.w3.org/2000/svg" width="23.24" height="50" viewBox="0 0 23.24 50"><defs><style>.cls-1{fill:#ffffff;}</style></defs><path class="cls-1" d="M-28.64,712.14h-7v25H-46v-25H-51v-8.83H-46V697.6c0-4.08,1.94-10.48,10.48-10.48l7.69,0v8.57h-5.58a2.12,2.12,0,0,0-2.2,2.41v5.19h7.92Z" transform="translate(50.96 -687.12)"/></svg> Share</button>
+                    <button id="facebook-share" data-share="https://www.facebook.com/BCCHF/videos/10155306934990805/"><svg xmlns="http://www.w3.org/2000/svg" width="23.24" height="50" viewBox="0 0 23.24 50"><defs><style>.cls-1{fill:##ffffff;}</style></defs><path class="cls-1" d="M-28.64,712.14h-7v25H-46v-25H-51v-8.83H-46V697.6c0-4.08,1.94-10.48,10.48-10.48l7.69,0v8.57h-5.58a2.12,2.12,0,0,0-2.2,2.41v5.19h7.92Z" transform="translate(50.96 -687.12)"/></svg> Share</button>
             
                                     
                     <!--- receipt --->
