@@ -187,7 +187,7 @@ ga('ecommerce:send');
     <link rel="stylesheet" href="css/footer.css" media="all">
     <link rel="stylesheet" href="css/donate-snowball.css?v=4.5" media="all">
     <link rel="stylesheet" href="css/slick.css" media="all">
-    <link rel="stylesheet" href="css/style.css?v=4.5" media="all">
+    <link rel="stylesheet" href="css/style.css?v=5.0" media="all">
 
     <!-- Typekit settings for Futura font 
     <script src="https://use.typekit.net/pcl4xdw.js"></script>

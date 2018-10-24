@@ -76,7 +76,7 @@
     <meta property="og:image:width" content="1200"/>
     <meta property="og:image:height" content="630"/>
     
-    <link rel="stylesheet" href="css/style.css?v=4.4" media="all">
+    <link rel="stylesheet" href="css/style.css?v=5.0" media="all">
 
 </head>
 <body class="bcchf_snowball">
