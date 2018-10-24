@@ -230,8 +230,9 @@
                 <label for="bcchf_compelledby">What complelled you to give today?</label>
                 <div class="bcchf_dropdown js_bcchf_custom_select">
                     <!-- This ul will serve as the select tag and li as options. It must match the element in select tag underneath -->
+                    <!-- csweeting: we'll need to add conditionals here to load the previously selected option in this area -->
                     <ul class="">
-                        <li data-value=""><span>Optional</span></li>
+                        <li data-value="" class="active"><span>Optional</span></li>
                         <li data-value="Reason One">Reason One</li>
                         <li data-value="Reason Two">Reason Two</li>
                         <li data-value="Reason Three">Reason Three</li>
@@ -240,7 +241,7 @@
                     </ul>
                     <!-- This is hidden due to select tag being unstyleable -->
                     <select name="bcchf_compelledby" id="bcchf_compelledby">
-                        <option value="">Optional</option>
+                        <option value="" selected="selected">Optional</option>
                         <option value="Reason One">Reason One</option>                          
                         <option value="Reason Two">Reason Two</option>
                         <option value="Reason Three">Reason Three</option>
@@ -529,8 +530,9 @@
                 <label for="bcchf_compelledby">What complelled you to give today?</label>
                 <div class="bcchf_dropdown js_bcchf_custom_select">
                     <!-- This ul will serve as the select tag and li as options. It must match the element in select tag underneath -->
+                    <!-- csweeting: no conditionals required here, fresh load here -->
                     <ul class="">
-                        <li data-value=""><span>Optional</span></li>
+                        <li data-value="" class="active"><span>Optional</span></li>
                         <li data-value="Reason One">Reason One</li>
                         <li data-value="Reason Two">Reason Two</li>
                         <li data-value="Reason Three">Reason Three</li>
@@ -539,7 +541,7 @@
                     </ul>
                     <!-- This is hidden due to select tag being unstyleable -->
                     <select name="bcchf_compelledby" id="bcchf_compelledby">
-                        <option value="">Optional</option>
+                        <option value="" selected="selected">Optional</option>
                         <option value="Reason One">Reason One</option>                          
                         <option value="Reason Two">Reason Two</option>
                         <option value="Reason Three">Reason Three</option>
