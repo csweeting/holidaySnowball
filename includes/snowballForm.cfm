@@ -14,6 +14,40 @@
 <cfset dOptions.monthly[5] = 20>
 <cfset dMonthlyDefault = 25>
 
+
+<cfif (THIS.Event.token EQ 'DM')
+	AND THIS.EVENT.TeamID NEQ 0  
+	AND THIS.EVENT.displayAMT NEQ 0>
+        
+	<cfset dSingleDefault = THIS.EVENT.displayAMT>
+        
+	<cfif THIS.EVENT.displayAMT EQ 500>
+        
+		<cfset dOptions.single[1] = 5000>
+		<cfset dOptions.single[2] = 2500>
+		<cfset dOptions.single[3] = 1500>
+		<cfset dOptions.single[4] = 1000>
+		<cfset dOptions.single[5] = 500>
+            
+	<cfelse>
+        
+		<cfset dOptions.single[1] = 10000>
+		<cfset dOptions.single[2] = 5000>
+		<cfset dOptions.single[3] = 2500>
+		<cfset dOptions.single[4] = 1500>
+		<cfset dOptions.single[5] = 1000>
+        
+	</cfif>
+ 	
+</cfif>
+<cfif THIS.Event.token EQ 'DM' AND THIS.EVENT.TeamID EQ 13479>
+	<cfset dOptions.single[1] = 125>
+	<cfset dOptions.single[2] = 85>
+	<cfset dOptions.single[3] = 65>
+	<cfset dOptions.single[4] = 45>
+	<cfset dOptions.single[5] = 25>
+</cfif>   
+
 <form class="js_bcchf_donation" name="js_bcchf_donation" id="js_bcchf_donation" action="" method="post">
             
 
@@ -324,34 +358,6 @@
     
     <cfelse>
     <!---- no ID --- default donation form --->
-    
-    <cfif (THIS.Event.token EQ 'DM')
-		AND THIS.EVENT.TeamID NEQ 0  
-		AND THIS.EVENT.displayAMT NEQ 0>
-        
-        <cfset dSingleDefault = THIS.EVENT.displayAMT>
-        
-        <cfif THIS.EVENT.displayAMT EQ 500>
-        
-			<cfset dOptions.single[1] = 5000>
-            <cfset dOptions.single[2] = 2500>
-            <cfset dOptions.single[3] = 1500>
-            <cfset dOptions.single[4] = 1000>
-            <cfset dOptions.single[5] = 500>
-            
-        <cfelse>
-        
-			<cfset dOptions.single[1] = 10000>
-            <cfset dOptions.single[2] = 5000>
-            <cfset dOptions.single[3] = 2500>
-            <cfset dOptions.single[4] = 1500>
-            <cfset dOptions.single[5] = 1000>
-        
-        </cfif>
-    
-    </cfif>
-    
-    
     
         <h3>Your Donation</h3>
         <p class="bcchf_message"><em>Fields marked with * are required.</em></p>
