@@ -261,7 +261,7 @@
         <!-- Compelled by -->
         <div class="bcchf_input_container bcchf_dropdown_container bcchf_dropdown_stacked">
             <div class="bcchf_text_container">
-                <label for="bcchf_compelledby">What complelled you to give today?</label>
+                <label for="bcchf_compelledby">What compelled you to give today?</label>
                 <div class="bcchf_dropdown js_bcchf_custom_select">
                     <!-- This ul will serve as the select tag and li as options. It must match the element in select tag underneath -->
                     <!-- csweeting: we'll need to add conditionals here to load the previously selected option in this area -->
@@ -533,7 +533,7 @@
         <!-- Compelled by -->
         <div class="bcchf_input_container bcchf_dropdown_container bcchf_dropdown_stacked">
             <div class="bcchf_text_container">
-                <label for="bcchf_compelledby">What complelled you to give today?</label>
+                <label for="bcchf_compelledby">What compelled you to give today?</label>
                 <div class="bcchf_dropdown js_bcchf_custom_select">
                     <!-- This ul will serve as the select tag and li as options. It must match the element in select tag underneath -->
                     <!-- csweeting: no conditionals required here, fresh load here -->
