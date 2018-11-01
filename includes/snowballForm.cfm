@@ -486,7 +486,7 @@
                     <input type="checkbox" id="bcchf_tribute" name="bcchf_tribute" value="1" />
                     <label for="bcchf_tribute"></label>
                 </div>
-                <p>I would like to dedicate my gift in honour/memory of someone special</p>
+                <p>I would like to dedicate my gift in honour/memory of someone special<br /><strong><small>For gifts of $200 or more, we’ll add your loved one’s name to our Tribute Tree in the lobby of the hospital.</small></strong></p>
             </div>
             
             
