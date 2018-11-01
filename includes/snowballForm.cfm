@@ -267,20 +267,30 @@
                     <!-- csweeting: we'll need to add conditionals here to load the previously selected option in this area -->
                     <ul class="">
                         <li data-value="" class="active"><span>Optional</span></li>
-                        <li data-value="Reason One">Reason One</li>
-                        <li data-value="Reason Two">Reason Two</li>
-                        <li data-value="Reason Three">Reason Three</li>
-                        <li data-value="Reason Four">Reason Four</li>
-                        <li data-value="Reason Five">Reason Five</li>
+                        <li data-value="I work at BC Children’s Hospital">I work at BC Children’s Hospital</li>
+                        <li data-value="I’ve been impacted by the care provided">I’ve been impacted by the care provided</li>
+                        <li data-value="I saw a billboard/outdoor ad">I saw a billboard/outdoor ad</li>
+                        <li data-value="I received mail or an email">I received mail or an email</li>
+                        <li data-value="I saw it on social media">I saw it on social media</li>
+                        <li data-value="I saw the TV commercial">I saw the TV commercial</li>
+                        <li data-value="My workplace fundraises">My workplace fundraises</li>
+                        <li data-value="I saw it at a store">I saw it at a store</li>
+                        <li data-value="Someone told me about the snowball fight">Someone told me about the snowball fight</li>
+                        <li data-value="Other">Other</li>
                     </ul>
                     <!-- This is hidden due to select tag being unstyleable -->
                     <select name="bcchf_compelledby" id="bcchf_compelledby">
                         <option value="" selected="selected">Optional</option>
-                        <option value="Reason One">Reason One</option>                          
-                        <option value="Reason Two">Reason Two</option>
-                        <option value="Reason Three">Reason Three</option>
-                        <option value="Reason Four">Reason Four</option>
-                        <option value="Reason Five">Reason Five</option>
+                        <option value="I work at BC Children’s Hospital">I work at BC Children’s Hospital</option>
+                        <option value="I’ve been impacted by the care provided">I’ve been impacted by the care provided</option>
+                        <option value="I saw a billboard/outdoor ad">I saw a billboard/outdoor ad</option>
+                        <option value="I received mail or an email">I received mail or an email</option>
+                        <option value="I saw it on social media">I saw it on social media</option>
+                        <option value="I saw the TV commercial">I saw the TV commercial</option>
+                        <option value="My workplace fundraises">My workplace fundraises</option>
+                        <option value="I saw it at a store">I saw it at a store</option>
+                        <option value="Someone told me about the snowball fight">Someone told me about the snowball fight</option>
+                        <option value="Other">Other</option>
                     </select>
                     
                     <label class="bcchf_dropdown_arrow">&nbsp;</label>
@@ -539,20 +549,30 @@
                     <!-- csweeting: no conditionals required here, fresh load here -->
                     <ul class="">
                         <li data-value="" class="active"><span>Optional</span></li>
-                        <li data-value="Reason One">Reason One</li>
-                        <li data-value="Reason Two">Reason Two</li>
-                        <li data-value="Reason Three">Reason Three</li>
-                        <li data-value="Reason Four">Reason Four</li>
-                        <li data-value="Reason Five">Reason Five</li>
+                        <li data-value="I work at BC Children’s Hospital">I work at BC Children’s Hospital</li>
+                        <li data-value="I’ve been impacted by the care provided">I’ve been impacted by the care provided</li>
+                        <li data-value="I saw a billboard/outdoor ad">I saw a billboard/outdoor ad</li>
+                        <li data-value="I received mail or an email">I received mail or an email</li>
+                        <li data-value="I saw it on social media">I saw it on social media</li>
+                        <li data-value="I saw the TV commercial">I saw the TV commercial</li>
+                        <li data-value="My workplace fundraises">My workplace fundraises</li>
+                        <li data-value="I saw it at a store">I saw it at a store</li>
+                        <li data-value="Someone told me about the snowball fight">Someone told me about the snowball fight</li>
+                        <li data-value="Other">Other</li>
                     </ul>
                     <!-- This is hidden due to select tag being unstyleable -->
                     <select name="bcchf_compelledby" id="bcchf_compelledby">
                         <option value="" selected="selected">Optional</option>
-                        <option value="Reason One">Reason One</option>                          
-                        <option value="Reason Two">Reason Two</option>
-                        <option value="Reason Three">Reason Three</option>
-                        <option value="Reason Four">Reason Four</option>
-                        <option value="Reason Five">Reason Five</option>
+                        <option value="I work at BC Children’s Hospital">I work at BC Children’s Hospital</option>
+                        <option value="I’ve been impacted by the care provided">I’ve been impacted by the care provided</option>
+                        <option value="I saw a billboard/outdoor ad">I saw a billboard/outdoor ad</option>
+                        <option value="I received mail or an email">I received mail or an email</option>
+                        <option value="I saw it on social media">I saw it on social media</option>
+                        <option value="I saw the TV commercial">I saw the TV commercial</option>
+                        <option value="My workplace fundraises">My workplace fundraises</option>
+                        <option value="I saw it at a store">I saw it at a store</option>
+                        <option value="Someone told me about the snowball fight">Someone told me about the snowball fight</option>
+                        <option value="Other">Other</option>
                     </select>
                     
                     <label class="bcchf_dropdown_arrow">&nbsp;</label>
